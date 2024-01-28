@@ -1,0 +1,457 @@
+{
+    "variable": [
+        {
+            "id": "baseUrl",
+            "key": "baseUrl",
+            "type": "string",
+            "name": "string",
+            "value": "http:\/\/127.0.0.1:8000"
+        }
+    ],
+    "info": {
+        "name": "Phrontlyne API",
+        "_postman_id": "c01409b5-4f80-4c88-a5bc-c4ae0c2bc29d",
+        "description": "",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
+    },
+    "item": [
+        {
+            "name": "Endpoints",
+            "description": "",
+            "item": [
+                {
+                    "name": "GET api\/customer\/identification-types-list",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/customer\/identification-types-list",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/customer\/identification-types-list"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n   \"ids\" = [\"national id card\", \"voters id card\", \"passport\" ]\n   }",
+                            "name": "Success"
+                        }
+                    ]
+                },
+                {
+                    "name": "GET api\/policy\/policy-list\/{accountno}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/policy\/policy-list\/:accountno",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/policy\/policy-list\/:accountno",
+                            "variable": [
+                                {
+                                    "id": "accountno",
+                                    "key": "accountno",
+                                    "value": "nihil",
+                                    "description": ""
+                                },
+                                {
+                                    "id": "account_number",
+                                    "key": "account_number",
+                                    "value": "223241984",
+                                    "description": ""
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "The api retrieves a list of policies based on an account number and adds\nadditional motor details to each policy.\n\nThe parameter \"account_number\" is used to filter the policies based on the account\nnumber. It is passed to the function as an argument. JSON response with the count of policies and the policies themselves."
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"count\": 3,\n\"policies\": [\n  {\n \"policyNumber\": \"ABC123\",\n \"coverageType\": \"Auto Insurance\",\n\"premium\": 500.00,\n\"deductible\": 1000.00\n  },\n  {\n \"policyNumber\": \"ABC123\",\n \"coverageType\": \"Auto Insurance\",\n\"premium\": 500.00,\n\"deductible\": 1000.00\n  },\n  {\n \"policyNumber\": \"ABC123\",\n \"coverageType\": \"Auto Insurance\",\n\"premium\": 500.00,\n\"deductible\": 1000.00\n  },\n]\n\n}",
+                            "name": "Success"
+                        }
+                    ]
+                },
+                {
+                    "name": "GET api\/policy\/motor-details-list\/{regNumber}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/policy\/motor-details-list\/:regNumber",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/policy\/motor-details-list\/:regNumber",
+                            "variable": [
+                                {
+                                    "id": "regNumber",
+                                    "key": "regNumber",
+                                    "value": "0",
+                                    "description": "string The account number assigned to an insurer."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "The endpoint retrieves motor details based on a given vehicle registration number\nand returns them in JSON format."
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"policy_number\": \"POL123456789\",\n\"endorsement_number\": \"EN123456\",\n\"vehicle_registration_number\": \"ABC123\",\n\"vehicle_make\": \"Toyota\",\n\"vehicle_model\": \"Camry\",\n\"vehicle_body_type\": \"Sedan\",\n\"Vehicle_cubic_capacity\": \"2000 cc\",\n\"vehicle_make_year\": \"2022\",\n\"vehicle_engine_number\": \"ENG789012345\",\n\"vehicle_chassis_number\": \"CHS678901234\",\n\"vehicle_seating_capacity\": \"5\",\n\"location_of_vehicle\": \"City XYZ\",\n\"owner_details\": \"John Doe\",\n\"agency_code\": \"AGC567\",\n\"vehicle_use\": \"Private\",\n\"vehicle_cover\": \"Comprehensive\",\n\"vehicle_risk\": \"High\",\n\"vehicle_value\": \"25000 USD\",\n\"annual_premium\": \"1200 USD\",\n\"netpremium\": \"1000 USD\",\n\"premium_due\": \"Due on January 15, 2025\",\n\"vehicle_currency\": \"USD\",\n\"vehicle_buy_back_excess\": \"Voluntary Excess Applicable\",\n\"voluntary_status\": \"10%\",\n\"vehicle_tppdl_value\": \"30000 USD\",\n\"vehicle_fleet_discount\": \"5%\",\n\"vehicle_ncd\": \"10%\",\n\"ref_number\": \"REF987654\",\n\"vehicle_tppdl_standard\": \"28000 USD\",\n\"period_from\": \"2024-01-01\",\n\"period_to\": \"2022-01-15\",\n\"vehicle_colour\": \"Blue\",\n\"vehicle_register_date\": \"2022-01-15\",\n\"certificate_number\": \"CERT456789\",\n\"brown_card_number\": \"BROWN123456\",\n\"base_premium\": \"800 USD\",\n\"own_damage_premium\": \"300 USD\",\n\"cc_age\": \"50 USD\",\n\"office_premium\": \"50 USD\",\n\"ncd_charge\": \"100 USD\",\n\"fleet_charge\": \"50 USD\",\n\"loading_applied\": \"15%\",\n\"contributions\": \"25 USD\",\n\"documentation_fee\": \"20 USD\",\n\"excess_charge_rate\": \"5%\",\n\"excess_bought\": \"150 USD\",\n\"scheme\": \"New\",\n\"customer_number\": \"CUST78901234\"\n}",
+                            "name": "Successful"
+                        }
+                    ]
+                },
+                {
+                    "name": "GET api\/policy\/get-risk-types",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/policy\/get-risk-types",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/policy\/get-risk-types"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                }
+                            ],
+                            "code": 401,
+                            "body": "{\"message\":\"Unauthenticated.\"}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "GET api\/policy\/get-exchange-rate",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/policy\/get-exchange-rate",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/policy\/get-exchange-rate"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n \"exchangeRate\" : {\n     type: \"GHS\/USD\",\n     rate: \"11\",\n    }\n  }",
+                            "name": "scenario"
+                        }
+                    ]
+                },
+                {
+                    "name": "POST api\/policy\/getVehicleRating",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/policy\/getVehicleRating",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/policy\/getVehicleRating"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"vehicle_registration_number\":\"id\"}"
+                        },
+                        "description": "The endpoint takes a vehicle registration number as parameter and returns the\nrating status of the vehicle (either \"New Rating\" or \"Old Rating\") based on the registration year."
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"getVehicleRating\" : \"New Rating\"\n}",
+                            "name": "Success"
+                        }
+                    ]
+                },
+                {
+                    "name": "POST api\/policy\/getVehicleUse",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/policy\/getVehicleUse",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/policy\/getVehicleUse"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"vehicle_risk\":\"illum\"}"
+                        },
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n   \"period\" = [\"Pro Rata\", \"Elevite\", \"Leviathan\", \"Console\"]\n  }",
+                            "name": "Success"
+                        }
+                    ]
+                },
+                {
+                    "name": "POST api\/policy\/get-policy-phone-number",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/policy\/get-policy-phone-number",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/policy\/get-policy-phone-number"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"phoneNumber\":\"0557693112\",\"itemid\":\"nbjhyt654esdr78uyhgfd\"}"
+                        },
+                        "description": "The endpoint searches for policies based on a given phone number and\nreturns the policies and related motor details if applicable."
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"message\" : \" policy found\",\n\"Policies\": {\n\"itemid\": \"ABC123\",\n\"account_number\": \"Xyz789\",\n\"fullname\": \"John Doe\",\n\"policy_number\": \"P123456\",\n\"master_policy_number\": \"MPN98765\",\n\"endorsement_number\": \"EN54321\",\n\"ref_number\": \"REF987\",\n\"policy_source\": \"Third Party Inc.\",\n\"policy_product\": \"Auto Insurance\",\n\"coverage\": \"Comprehensive\",\n\"policy_currency\": \"USD\",\n\"agency\": \"ABC123\",\n\"policy_branch\": \"Main Branch\",\n\"policy_status\": \"In Force\",\n\"endorsement_status\": \"Renewal\",\n\"endorsement_date\": \"2024-02-01\",\n\"insurance_period_from\": \"2024-01-01\",\n\"insurance_period_to\": \"2025-01-01\",\n\"managed_by\": \"John Doe\",\n\"created_by\": \"John Smith\",\n\"created_on\": \"2024-01-15\",\n\"policy_sales_channel\": \"Online\",\n\"policy_sales_type\": \"Direct\",\n\"first_issue_date\": \"2024-01-15\",\n\"acceptance_date\": \"2024-01-20\",\n\"policy_clause\": \"Clause A, Clause B\",\n\"policy_interest\": \"Company XYZ\",\n\"policy_upper_text\": \"This policy covers...\",\n\"policy_lower_text\": \"In case of loss, contact...\",\n\"policy_end_text\": \"Thank you for choosing our services.\",\n\"policy_renewal_text\": \"Renewal instructions:...\",\n\"policy_endorsement_text\": \"This policy has been endorsed to include additional coverage for...\",\n\"endorsement_new\": \"EN2024001\",\n\"rating_factor\": \"Pro Rata\",\n\"account_type\": \"Corporate\",\n\"insurance_period_days\": 180,\n}",
+                            "name": "Successful"
+                        },
+                        {
+                            "header": [],
+                            "code": 401,
+                            "body": "{\n\"message\": \"Invalid login credentials\"\n}",
+                            "name": "Failed Login"
+                        }
+                    ]
+                },
+                {
+                    "name": "GET api\/policy\/verify-policy-number\/{policyNumber}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/policy\/verify-policy-number\/:policyNumber",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/policy\/verify-policy-number\/:policyNumber",
+                            "variable": [
+                                {
+                                    "id": "policyNumber",
+                                    "key": "policyNumber",
+                                    "value": "earum",
+                                    "description": ""
+                                },
+                                {
+                                    "id": "policy_number",
+                                    "key": "policy_number",
+                                    "value": "23sddgsa1984",
+                                    "description": "The policy number assigned to a policy."
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": "The endpoint checks if a given policy number exists in the database and\nreturns a JSON response with the status."
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n \"status\" : 1\n}",
+                            "name": "Success"
+                        }
+                    ]
+                },
+                {
+                    "name": "POST api\/policy\/computeMotorPremiumAllRating",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/policy\/computeMotorPremiumAllRating",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/policy\/computeMotorPremiumAllRating"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"rating_status\":\"debitis\",\"vehicle_risk\":\"consequatur\",\"vehicle_use\":\"illum\",\"preferedcover\":\"possimus\",\"policy_sales_type\":\"et\",\"vehicle_value\":\"nesciunt\",\"vehicle_seating_capacity\":\"voluptatem\",\"vehicle_tppdl_value\":\"recusandae\",\"vehicle_ncd\":\"quia\",\"vehicle_currency\":\"qui\",\"vehicle_buy_back_excess\":\"possimus\",\"charge_cc_status\":\"voluptatibus\",\"vehicle_fleet_discount\":\"necessitatibus\",\"commence_date\":\"consequatur\",\"expiry_date\":\"et\",\"rating_factor\":\"eaque\"}"
+                        },
+                        "description": "The endpoint computes the motor premium based on the rating status\nprovided in the request."
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"rating_status\": \"Old Rating\",\n\"vehicle_risk\": \"X1 Private Individual\",\n\"vehicle_use\": \"Private\",\n\"preferedcover\": \"Third party\",\n\"policy_sales_type\": \"Direct\",\n\"vehicle_value\": \"0\",\n\"vehicle_seating_capacity\": \"5\",\n\"vehicle_tppdl_value\": \"6000\",\n\"vehicle_ncd\": \"None\",\n\"vehicle_currency\": \"GH\u00a2\",\n\"vehicle_buy_back_excess\": \"0\",\n\"charge_cc_status\": \"false\",\n\"charge_age_status\": \"false\",\n\"vehicle_fleet_discount\": \"No Fleet\",\n\"commence_date\": \"2023-01-01\",\n\"expiry_date\": \"2024-01-01\",\n\"rating_factor\": \"Full Year\"\n}",
+                            "name": "{"
+                        }
+                    ]
+                },
+                {
+                    "name": "GET api\/invoices\/payments-list\/{accountno}",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/invoices\/payments-list\/:accountno",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/invoices\/payments-list\/:accountno",
+                            "variable": [
+                                {
+                                    "id": "accountno",
+                                    "key": "accountno",
+                                    "value": "ad",
+                                    "description": "The account number assigned to an insurer"
+                                }
+                            ]
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n  \"count\": 1, \n  \"payments\": {\n    \"receipt_type\": \"Credit Card\",\n    \"receipt_number\": \"RC12345\",\n    \"invoice_number\": \"INV98765\",\n    \"receipt_date\": \"2024-01-27\",\n    \"debit_date\": \"2024-01-15\",\n    \"currency\": \"USD\",\n    \"amount_payable\": \"500.00\",\n    \"amount_paid\": \"450.00\",\n    \"over_payment\": \"50.00\",\n    \"collection_mode\": \"Online Transfer\",\n    \"reference_number\": \"123456789\",\n    \"paid_by\": \"John Doe\",\n    \"branch\": \"Main Branch\",\n    \"risk_type\": \"Auto Insurance\",\n    \"transaction_type\": \"Premium Payment\",\n    \"status\": \"Cleared\",\n    \"flag\": \"Active\",\n    \"master_policy_number\": \"MPN123456\",\n    \"period_from\": \"2024-01-01\",\n    \"period_to\": \"2024-12-31\",\n    \"agency\": \"AGT789\",\n    \"intermediary_source\": \"Online Broker\",\n    \"policy_product\": \"Comprehensive Coverage\",\n    \"account_number\": \"ACCT987654321\",\n    \"insured\": \"Jane Smith\",\n    \"exchange_rate\": \"1.20\",\n    \"reg_number\": \"XYZ123\",\n    \"debit_currency\": \"USD\",\n    \"post_dated_date\": \"2024-02-15\",\n    \"cheque_cleared_date\": \"2024-01-28\"\n    }\n   }",
+                            "name": "Success"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "auth": {
+        "type": "bearer",
+        "bearer": [
+            {
+                "key": "key",
+                "type": "string"
+            }
+        ]
+    }
+}
