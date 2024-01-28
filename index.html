@@ -1,0 +1,3219 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Phrontlyne API Documentation</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../docs/css/theme-default.style.css" media="screen">
+    <link rel="stylesheet" href="../docs/css/theme-default.print.css" media="print">
+
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
+
+    <link rel="stylesheet"
+          href="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/obsidian.min.css">
+    <script src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jets/0.14.1/jets.min.js"></script>
+
+    <style id="language-style">
+        /* starts out as display none and is replaced with js later  */
+                    body .content .bash-example code { display: none; }
+                    body .content .javascript-example code { display: none; }
+                    body .content .python-example code { display: none; }
+                    body .content .php-example code { display: none; }
+            </style>
+
+    <script>
+        var tryItOutBaseUrl = "http://127.0.0.1:8000";
+        var useCsrf = Boolean();
+        var csrfUrl = "/sanctum/csrf-cookie";
+    </script>
+    <script src="../docs/js/tryitout-4.29.0.js"></script>
+
+    <script src="../docs/js/theme-default-4.29.0.js"></script>
+
+</head>
+
+<body data-languages="[&quot;bash&quot;,&quot;javascript&quot;,&quot;python&quot;,&quot;php&quot;]">
+
+<a href="#" id="nav-button">
+    <span>
+        MENU
+        <img src="../docs/images/navbar.png" alt="navbar-image"/>
+    </span>
+</a>
+<div class="tocify-wrapper">
+            <img src="../img/phrontlyne_logo.jpeg" alt="logo" class="logo" style="padding-top: 10px;" width="100%"/>
+    
+            <div class="lang-selector">
+                                            <button type="button" class="lang-button" data-language-name="bash">bash</button>
+                                            <button type="button" class="lang-button" data-language-name="javascript">javascript</button>
+                                            <button type="button" class="lang-button" data-language-name="python">python</button>
+                                            <button type="button" class="lang-button" data-language-name="php">php</button>
+                    </div>
+    
+    <div class="search">
+        <input type="text" class="search" id="input-search" placeholder="Search">
+    </div>
+
+    <div id="toc">
+                    <ul id="tocify-header-introduction" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="introduction">
+                    <a href="#introduction">Introduction</a>
+                </li>
+                            </ul>
+                    <ul id="tocify-header-authenticating-requests" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="authenticating-requests">
+                    <a href="#authenticating-requests">Authenticating requests</a>
+                </li>
+                            </ul>
+                    <ul id="tocify-header-endpoints" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="endpoints">
+                    <a href="#endpoints">Endpoints</a>
+                </li>
+                                    <ul id="tocify-subheader-endpoints" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="endpoints-GETapi-customer-identification-types-list">
+                                <a href="#endpoints-GETapi-customer-identification-types-list">GET api/customer/identification-types-list</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-policy-policy-list--accountno-">
+                                <a href="#endpoints-GETapi-policy-policy-list--accountno-">GET api/policy/policy-list/{accountno}</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-policy-motor-details-list--regNumber-">
+                                <a href="#endpoints-GETapi-policy-motor-details-list--regNumber-">GET api/policy/motor-details-list/{regNumber}</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-policy-get-risk-types">
+                                <a href="#endpoints-GETapi-policy-get-risk-types">GET api/policy/get-risk-types</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-policy-get-exchange-rate">
+                                <a href="#endpoints-GETapi-policy-get-exchange-rate">GET api/policy/get-exchange-rate</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-policy-getVehicleRating">
+                                <a href="#endpoints-POSTapi-policy-getVehicleRating">POST api/policy/getVehicleRating</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-policy-getVehicleUse">
+                                <a href="#endpoints-POSTapi-policy-getVehicleUse">POST api/policy/getVehicleUse</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-policy-get-policy-phone-number">
+                                <a href="#endpoints-POSTapi-policy-get-policy-phone-number">POST api/policy/get-policy-phone-number</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-policy-verify-policy-number--policyNumber-">
+                                <a href="#endpoints-GETapi-policy-verify-policy-number--policyNumber-">GET api/policy/verify-policy-number/{policyNumber}</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-policy-computeMotorPremiumAllRating">
+                                <a href="#endpoints-POSTapi-policy-computeMotorPremiumAllRating">POST api/policy/computeMotorPremiumAllRating</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-invoices-payments-list--accountno-">
+                                <a href="#endpoints-GETapi-invoices-payments-list--accountno-">GET api/invoices/payments-list/{accountno}</a>
+                            </li>
+                                                                        </ul>
+                            </ul>
+            </div>
+
+    <ul class="toc-footer" id="toc-footer">
+                    <li style="padding-bottom: 5px;"><a href="../docs/collection.json">View Postman collection</a></li>
+                            <li style="padding-bottom: 5px;"><a href="../docs/openapi.yaml">View OpenAPI spec</a></li>
+                <li><a href="http://github.com/knuckleswtf/scribe">Documentation powered by Scribe ✍</a></li>
+    </ul>
+
+    <ul class="toc-footer" id="last-updated">
+        <li>Last updated: January 28, 2024</li>
+    </ul>
+</div>
+
+<div class="page-wrapper">
+    <div class="dark-box"></div>
+    <div class="content">
+        <h1 id="introduction">Introduction</h1>
+<aside>
+    <strong>Base URL</strong>: <code>http://127.0.0.1:8000</code>
+</aside>
+<p>This documentation aims to provide all the information you need to work with our API.</p>
+<aside>As you scroll, you'll see code examples for working with the API in different programming languages in the dark area to the right (or as part of the content on mobile).
+You can switch the language used with the tabs at the top right (or from the nav menu at the top left on mobile).</aside>
+
+        <h1 id="authenticating-requests">Authenticating requests</h1>
+<p>To authenticate requests, include an <strong><code>Authorization</code></strong> header with the value <strong><code>"Bearer {YOUR_AUTH_KEY}"</code></strong>.</p>
+<p>All authenticated endpoints are marked with a <code>requires authentication</code> badge in the documentation below.</p>
+<p>You can retrieve your token by visiting your dashboard and clicking <b>Generate API token</b>.</p>
+
+        <h1 id="endpoints">Endpoints</h1>
+
+    
+
+                                <h2 id="endpoints-GETapi-customer-identification-types-list">GET api/customer/identification-types-list</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-GETapi-customer-identification-types-list">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://127.0.0.1:8000/api/customer/identification-types-list" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/customer/identification-types-list"
+);
+
+const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="python-example">
+    <pre><code class="language-python">import requests
+import json
+
+url = 'http://127.0.0.1:8000/api/customer/identification-types-list'
+headers = {
+  'Authorization': 'Bearer {YOUR_AUTH_KEY}',
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+
+response = requests.request('GET', url, headers=headers)
+response.json()</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://127.0.0.1:8000/api/customer/identification-types-list';
+$response = $client-&gt;get(
+    $url,
+    [
+        'headers' =&gt; [
+            'Authorization' =&gt; 'Bearer {YOUR_AUTH_KEY}',
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-customer-identification-types-list">
+            <blockquote>
+            <p>Example response (200, Success):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+   &quot;ids&quot; = [&quot;national id card&quot;, &quot;voters id card&quot;, &quot;passport&quot; ]
+   }</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-customer-identification-types-list" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-customer-identification-types-list"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-customer-identification-types-list"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-customer-identification-types-list" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-customer-identification-types-list">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-customer-identification-types-list" data-method="GET"
+      data-path="api/customer/identification-types-list"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-customer-identification-types-list', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-customer-identification-types-list"
+                    onclick="tryItOut('GETapi-customer-identification-types-list');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-customer-identification-types-list"
+                    onclick="cancelTryOut('GETapi-customer-identification-types-list');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-customer-identification-types-list"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/customer/identification-types-list</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="GETapi-customer-identification-types-list"
+               value="Bearer {YOUR_AUTH_KEY}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {YOUR_AUTH_KEY}</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-customer-identification-types-list"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-customer-identification-types-list"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        </form>
+
+    <h3>Response</h3>
+    <h4 class="fancy-heading-panel"><b>Response Fields</b></h4>
+    <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>ids</code></b>&nbsp;&nbsp;
+<small>string[]</small>&nbsp;
+ &nbsp;
+<br>
+<p>A list of accepted id types</p>
+        </div>
+                        <h2 id="endpoints-GETapi-policy-policy-list--accountno-">GET api/policy/policy-list/{accountno}</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+<p>The api retrieves a list of policies based on an account number and adds
+additional motor details to each policy.</p>
+<p>The parameter &quot;account_number&quot; is used to filter the policies based on the account
+number. It is passed to the function as an argument. JSON response with the count of policies and the policies themselves.</p>
+
+<span id="example-requests-GETapi-policy-policy-list--accountno-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://127.0.0.1:8000/api/policy/policy-list/nihil" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/policy/policy-list/nihil"
+);
+
+const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="python-example">
+    <pre><code class="language-python">import requests
+import json
+
+url = 'http://127.0.0.1:8000/api/policy/policy-list/nihil'
+headers = {
+  'Authorization': 'Bearer {YOUR_AUTH_KEY}',
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+
+response = requests.request('GET', url, headers=headers)
+response.json()</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://127.0.0.1:8000/api/policy/policy-list/nihil';
+$response = $client-&gt;get(
+    $url,
+    [
+        'headers' =&gt; [
+            'Authorization' =&gt; 'Bearer {YOUR_AUTH_KEY}',
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-policy-policy-list--accountno-">
+            <blockquote>
+            <p>Example response (200, Success):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+&quot;count&quot;: 3,
+&quot;policies&quot;: [
+  {
+ &quot;policyNumber&quot;: &quot;ABC123&quot;,
+ &quot;coverageType&quot;: &quot;Auto Insurance&quot;,
+&quot;premium&quot;: 500.00,
+&quot;deductible&quot;: 1000.00
+  },
+  {
+ &quot;policyNumber&quot;: &quot;ABC123&quot;,
+ &quot;coverageType&quot;: &quot;Auto Insurance&quot;,
+&quot;premium&quot;: 500.00,
+&quot;deductible&quot;: 1000.00
+  },
+  {
+ &quot;policyNumber&quot;: &quot;ABC123&quot;,
+ &quot;coverageType&quot;: &quot;Auto Insurance&quot;,
+&quot;premium&quot;: 500.00,
+&quot;deductible&quot;: 1000.00
+  },
+]
+
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-policy-policy-list--accountno-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-policy-policy-list--accountno-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-policy-policy-list--accountno-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-policy-policy-list--accountno-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-policy-policy-list--accountno-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-policy-policy-list--accountno-" data-method="GET"
+      data-path="api/policy/policy-list/{accountno}"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-policy-policy-list--accountno-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-policy-policy-list--accountno-"
+                    onclick="tryItOut('GETapi-policy-policy-list--accountno-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-policy-policy-list--accountno-"
+                    onclick="cancelTryOut('GETapi-policy-policy-list--accountno-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-policy-policy-list--accountno-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/policy/policy-list/{accountno}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="GETapi-policy-policy-list--accountno-"
+               value="Bearer {YOUR_AUTH_KEY}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {YOUR_AUTH_KEY}</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-policy-policy-list--accountno-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-policy-policy-list--accountno-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>accountno</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="accountno"                data-endpoint="GETapi-policy-policy-list--accountno-"
+               value="nihil"
+               data-component="url">
+    <br>
+<p>Example: <code>nihil</code></p>
+            </div>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>account_number</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="account_number"                data-endpoint="GETapi-policy-policy-list--accountno-"
+               value="223241984"
+               data-component="url">
+    <br>
+<p>Example: <code>223241984</code></p>
+            </div>
+                    </form>
+
+                    <h2 id="endpoints-GETapi-policy-motor-details-list--regNumber-">GET api/policy/motor-details-list/{regNumber}</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+<p>The endpoint retrieves motor details based on a given vehicle registration number
+and returns them in JSON format.</p>
+
+<span id="example-requests-GETapi-policy-motor-details-list--regNumber-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://127.0.0.1:8000/api/policy/motor-details-list/0" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/policy/motor-details-list/0"
+);
+
+const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="python-example">
+    <pre><code class="language-python">import requests
+import json
+
+url = 'http://127.0.0.1:8000/api/policy/motor-details-list/0'
+headers = {
+  'Authorization': 'Bearer {YOUR_AUTH_KEY}',
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+
+response = requests.request('GET', url, headers=headers)
+response.json()</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://127.0.0.1:8000/api/policy/motor-details-list/0';
+$response = $client-&gt;get(
+    $url,
+    [
+        'headers' =&gt; [
+            'Authorization' =&gt; 'Bearer {YOUR_AUTH_KEY}',
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-policy-motor-details-list--regNumber-">
+            <blockquote>
+            <p>Example response (200, Successful):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;policy_number&quot;: &quot;POL123456789&quot;,
+    &quot;endorsement_number&quot;: &quot;EN123456&quot;,
+    &quot;vehicle_registration_number&quot;: &quot;ABC123&quot;,
+    &quot;vehicle_make&quot;: &quot;Toyota&quot;,
+    &quot;vehicle_model&quot;: &quot;Camry&quot;,
+    &quot;vehicle_body_type&quot;: &quot;Sedan&quot;,
+    &quot;Vehicle_cubic_capacity&quot;: &quot;2000 cc&quot;,
+    &quot;vehicle_make_year&quot;: &quot;2022&quot;,
+    &quot;vehicle_engine_number&quot;: &quot;ENG789012345&quot;,
+    &quot;vehicle_chassis_number&quot;: &quot;CHS678901234&quot;,
+    &quot;vehicle_seating_capacity&quot;: &quot;5&quot;,
+    &quot;location_of_vehicle&quot;: &quot;City XYZ&quot;,
+    &quot;owner_details&quot;: &quot;John Doe&quot;,
+    &quot;agency_code&quot;: &quot;AGC567&quot;,
+    &quot;vehicle_use&quot;: &quot;Private&quot;,
+    &quot;vehicle_cover&quot;: &quot;Comprehensive&quot;,
+    &quot;vehicle_risk&quot;: &quot;High&quot;,
+    &quot;vehicle_value&quot;: &quot;25000 USD&quot;,
+    &quot;annual_premium&quot;: &quot;1200 USD&quot;,
+    &quot;netpremium&quot;: &quot;1000 USD&quot;,
+    &quot;premium_due&quot;: &quot;Due on January 15, 2025&quot;,
+    &quot;vehicle_currency&quot;: &quot;USD&quot;,
+    &quot;vehicle_buy_back_excess&quot;: &quot;Voluntary Excess Applicable&quot;,
+    &quot;voluntary_status&quot;: &quot;10%&quot;,
+    &quot;vehicle_tppdl_value&quot;: &quot;30000 USD&quot;,
+    &quot;vehicle_fleet_discount&quot;: &quot;5%&quot;,
+    &quot;vehicle_ncd&quot;: &quot;10%&quot;,
+    &quot;ref_number&quot;: &quot;REF987654&quot;,
+    &quot;vehicle_tppdl_standard&quot;: &quot;28000 USD&quot;,
+    &quot;period_from&quot;: &quot;2024-01-01&quot;,
+    &quot;period_to&quot;: &quot;2022-01-15&quot;,
+    &quot;vehicle_colour&quot;: &quot;Blue&quot;,
+    &quot;vehicle_register_date&quot;: &quot;2022-01-15&quot;,
+    &quot;certificate_number&quot;: &quot;CERT456789&quot;,
+    &quot;brown_card_number&quot;: &quot;BROWN123456&quot;,
+    &quot;base_premium&quot;: &quot;800 USD&quot;,
+    &quot;own_damage_premium&quot;: &quot;300 USD&quot;,
+    &quot;cc_age&quot;: &quot;50 USD&quot;,
+    &quot;office_premium&quot;: &quot;50 USD&quot;,
+    &quot;ncd_charge&quot;: &quot;100 USD&quot;,
+    &quot;fleet_charge&quot;: &quot;50 USD&quot;,
+    &quot;loading_applied&quot;: &quot;15%&quot;,
+    &quot;contributions&quot;: &quot;25 USD&quot;,
+    &quot;documentation_fee&quot;: &quot;20 USD&quot;,
+    &quot;excess_charge_rate&quot;: &quot;5%&quot;,
+    &quot;excess_bought&quot;: &quot;150 USD&quot;,
+    &quot;scheme&quot;: &quot;New&quot;,
+    &quot;customer_number&quot;: &quot;CUST78901234&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-policy-motor-details-list--regNumber-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-policy-motor-details-list--regNumber-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-policy-motor-details-list--regNumber-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-policy-motor-details-list--regNumber-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-policy-motor-details-list--regNumber-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-policy-motor-details-list--regNumber-" data-method="GET"
+      data-path="api/policy/motor-details-list/{regNumber}"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-policy-motor-details-list--regNumber-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-policy-motor-details-list--regNumber-"
+                    onclick="tryItOut('GETapi-policy-motor-details-list--regNumber-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-policy-motor-details-list--regNumber-"
+                    onclick="cancelTryOut('GETapi-policy-motor-details-list--regNumber-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-policy-motor-details-list--regNumber-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/policy/motor-details-list/{regNumber}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="GETapi-policy-motor-details-list--regNumber-"
+               value="Bearer {YOUR_AUTH_KEY}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {YOUR_AUTH_KEY}</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-policy-motor-details-list--regNumber-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-policy-motor-details-list--regNumber-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>regNumber</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="regNumber"                data-endpoint="GETapi-policy-motor-details-list--regNumber-"
+               value="0"
+               data-component="url">
+    <br>
+<p>string The account number assigned to an insurer. Example: <code>0</code></p>
+            </div>
+                    </form>
+
+    <h3>Response</h3>
+    <h4 class="fancy-heading-panel"><b>Response Fields</b></h4>
+    <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>endorsement_number</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+<br>
+<p>A unique number assigned to the vehicle for each endorsement made on it.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>vehicle_registration_number</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+<br>
+<p>The car number assigned to the policy.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>vehicle_make</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+<br>
+<p>The make of the car.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>vehicle_model</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+<br>
+<p>The model of the car.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>vehicle_body_type</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+<br>
+<p>The body type of the car.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>Vehicle_cubic_capacity</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+<br>
+<p>Vehicle cubic capacity of the car.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>vehicle_make_year</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+<br>
+<p>The year of manufacture of the car.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>vehicle_engine_number</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+<br>
+<p>Engine number of the car.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>vehicle_chassis_number</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+<br>
+<p>Chassis number of the car.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>vehicle_seating_capacity</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+<br>
+<p>The number of seats the car has.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>location_of_vehicle</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+<br>
+<p>Place where the vehicle is usually situated.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>owner_details</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+<br>
+<p>Name of the vehicle owner.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>agency_code</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+<br>
+<p>The intermediary code for the policy.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>vehicle_use</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+<br>
+<p>Usage of the vehicle. For private or commercial purposes.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>vehicle_cover</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+<br>
+<p>Coverage of the vehicle. E.g., Third party, Comprehensive, Third party, fire &amp; theft.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>vehicle_risk</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+<br>
+<p>The risk of the vehicle.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>vehicle_value</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+<br>
+<p>Value of the vehicle. This is zero for third parties. Other coverages require the vehicle value which should be above zero.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>annual_premium</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+<br>
+<p>Premium to be paid annually.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>netpremium</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+<br>
+<p>Net premium on the policy.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>premium_due</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+<br>
+<p>Premium client is expected to pay.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>vehicle_currency</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+<br>
+<p>The currency in which the policy was captured.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>vehicle_buy_back_excess</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+<br>
+<p>Excess status on the vehicle (Excess Is Applicable, Excess Is Not Applicable, Voluntary Excess Applicable)</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>voluntary_status</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+<br>
+<p>Percentage of voluntary excess bought.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>vehicle_tppdl_value</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+<br>
+<p>The tppdl value of the vehicle including additional tppdl bought.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>vehicle_fleet_discount</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+<br>
+<p>Fleet discount given to the vehicle.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>vehicle_ncd</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+<br>
+<p>NCD discount given to the vehicle.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>ref_number</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+<br>
+<p>A unique number given to the vehicle as a reference number.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>vehicle_tppdl_standard</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+<br>
+<p>The standard tppdl value given to the vehicle. This changes annually.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>period_from</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+<br>
+<p>The commencement date of the policy.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>period_to</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+<br>
+<p>The expiry date of the policy.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>vehicle_colour</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+<br>
+<p>The color of the vehicle.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>vehicle_register_date</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+<br>
+<p>The date the vehicle was registered.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>certificate_number</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+<br>
+<p>Certificate number given to the vehicle.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>brown_card_number</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+<br>
+<p>Brown card number given to the vehicle.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>base_premium</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+<br>
+<p>Base premium on the policy.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>own_damage_premium</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+<br>
+<p>Own damage premium on the policy.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>cc_age</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+<br>
+<p>Amount charged for cc age on the vehicle.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>office_premium</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+<br>
+<p>Office premium charged on the policy.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>ncd_charge</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+<br>
+<p>Amount of ncd discount given to the policy.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>fleet_charge</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+<br>
+<p>Amount of fleet charge given to the policy.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>loading_applied</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+<br>
+<p>Loadings charged on the policy.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>contributions</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+<br>
+<p>Contributions such as sticker fee charged on the policy.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>documentation_fee</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+<br>
+<p>Fee charged as documentation on the policy</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>excess_charge_rate</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+<br>
+<p>The percentage at which excess was bought if excess is applicable on the policy.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>excess_bought</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+<br>
+<p>Amount at which excess was bought if excess is applicable on the policy.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>scheme</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+<br>
+<p>The rating of the vehicle, whether New or Old rating.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>customer_number</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+<br>
+<p>Account number associated with the policy holder.</p>
+        </div>
+                        <h2 id="endpoints-GETapi-policy-get-risk-types">GET api/policy/get-risk-types</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-GETapi-policy-get-risk-types">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://127.0.0.1:8000/api/policy/get-risk-types" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/policy/get-risk-types"
+);
+
+const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="python-example">
+    <pre><code class="language-python">import requests
+import json
+
+url = 'http://127.0.0.1:8000/api/policy/get-risk-types'
+headers = {
+  'Authorization': 'Bearer {YOUR_AUTH_KEY}',
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+
+response = requests.request('GET', url, headers=headers)
+response.json()</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://127.0.0.1:8000/api/policy/get-risk-types';
+$response = $client-&gt;get(
+    $url,
+    [
+        'headers' =&gt; [
+            'Authorization' =&gt; 'Bearer {YOUR_AUTH_KEY}',
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-policy-get-risk-types">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Unauthenticated.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-policy-get-risk-types" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-policy-get-risk-types"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-policy-get-risk-types"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-policy-get-risk-types" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-policy-get-risk-types">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-policy-get-risk-types" data-method="GET"
+      data-path="api/policy/get-risk-types"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-policy-get-risk-types', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-policy-get-risk-types"
+                    onclick="tryItOut('GETapi-policy-get-risk-types');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-policy-get-risk-types"
+                    onclick="cancelTryOut('GETapi-policy-get-risk-types');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-policy-get-risk-types"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/policy/get-risk-types</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="GETapi-policy-get-risk-types"
+               value="Bearer {YOUR_AUTH_KEY}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {YOUR_AUTH_KEY}</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-policy-get-risk-types"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-policy-get-risk-types"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        </form>
+
+                    <h2 id="endpoints-GETapi-policy-get-exchange-rate">GET api/policy/get-exchange-rate</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-GETapi-policy-get-exchange-rate">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://127.0.0.1:8000/api/policy/get-exchange-rate" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/policy/get-exchange-rate"
+);
+
+const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="python-example">
+    <pre><code class="language-python">import requests
+import json
+
+url = 'http://127.0.0.1:8000/api/policy/get-exchange-rate'
+headers = {
+  'Authorization': 'Bearer {YOUR_AUTH_KEY}',
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+
+response = requests.request('GET', url, headers=headers)
+response.json()</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://127.0.0.1:8000/api/policy/get-exchange-rate';
+$response = $client-&gt;get(
+    $url,
+    [
+        'headers' =&gt; [
+            'Authorization' =&gt; 'Bearer {YOUR_AUTH_KEY}',
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-policy-get-exchange-rate">
+            <blockquote>
+            <p>Example response (200, scenario):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+ &quot;exchangeRate&quot; : {
+     type: &quot;GHS/USD&quot;,
+     rate: &quot;11&quot;,
+    }
+  }</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-policy-get-exchange-rate" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-policy-get-exchange-rate"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-policy-get-exchange-rate"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-policy-get-exchange-rate" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-policy-get-exchange-rate">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-policy-get-exchange-rate" data-method="GET"
+      data-path="api/policy/get-exchange-rate"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-policy-get-exchange-rate', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-policy-get-exchange-rate"
+                    onclick="tryItOut('GETapi-policy-get-exchange-rate');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-policy-get-exchange-rate"
+                    onclick="cancelTryOut('GETapi-policy-get-exchange-rate');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-policy-get-exchange-rate"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/policy/get-exchange-rate</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="GETapi-policy-get-exchange-rate"
+               value="Bearer {YOUR_AUTH_KEY}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {YOUR_AUTH_KEY}</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-policy-get-exchange-rate"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-policy-get-exchange-rate"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        </form>
+
+    <h3>Response</h3>
+    <h4 class="fancy-heading-panel"><b>Response Fields</b></h4>
+    <div style=" padding-left: 28px;  clear: unset;">
+        <details>
+            <summary style="padding-bottom: 10px;">
+                <b style="line-height: 2;"><code>exchangeRate</code></b>&nbsp;&nbsp;
+<small>object</small>&nbsp;
+ &nbsp;
+<br>
+
+            </summary>
+                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>type</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+<br>
+<p>The type of currency.</p>
+                    </div>
+                                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>rate</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+<br>
+<p>The current rate of the currency.</p>
+                    </div>
+                                    </details>
+        </div>
+                        <h2 id="endpoints-POSTapi-policy-getVehicleRating">POST api/policy/getVehicleRating</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+<p>The endpoint takes a vehicle registration number as parameter and returns the
+rating status of the vehicle (either &quot;New Rating&quot; or &quot;Old Rating&quot;) based on the registration year.</p>
+
+<span id="example-requests-POSTapi-policy-getVehicleRating">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://127.0.0.1:8000/api/policy/getVehicleRating" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"vehicle_registration_number\": \"id\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/policy/getVehicleRating"
+);
+
+const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "vehicle_registration_number": "id"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="python-example">
+    <pre><code class="language-python">import requests
+import json
+
+url = 'http://127.0.0.1:8000/api/policy/getVehicleRating'
+payload = {
+    "vehicle_registration_number": "id"
+}
+headers = {
+  'Authorization': 'Bearer {YOUR_AUTH_KEY}',
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+
+response = requests.request('POST', url, headers=headers, json=payload)
+response.json()</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://127.0.0.1:8000/api/policy/getVehicleRating';
+$response = $client-&gt;post(
+    $url,
+    [
+        'headers' =&gt; [
+            'Authorization' =&gt; 'Bearer {YOUR_AUTH_KEY}',
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'vehicle_registration_number' =&gt; 'id',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-policy-getVehicleRating">
+            <blockquote>
+            <p>Example response (200, Success):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;getVehicleRating&quot;: &quot;New Rating&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-policy-getVehicleRating" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-policy-getVehicleRating"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-policy-getVehicleRating"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-policy-getVehicleRating" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-policy-getVehicleRating">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-policy-getVehicleRating" data-method="POST"
+      data-path="api/policy/getVehicleRating"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-policy-getVehicleRating', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-policy-getVehicleRating"
+                    onclick="tryItOut('POSTapi-policy-getVehicleRating');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-policy-getVehicleRating"
+                    onclick="cancelTryOut('POSTapi-policy-getVehicleRating');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-policy-getVehicleRating"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/policy/getVehicleRating</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="POSTapi-policy-getVehicleRating"
+               value="Bearer {YOUR_AUTH_KEY}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {YOUR_AUTH_KEY}</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-policy-getVehicleRating"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-policy-getVehicleRating"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>vehicle_registration_number</code></b>&nbsp;&nbsp;
+<small>required</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="vehicle_registration_number"                data-endpoint="POSTapi-policy-getVehicleRating"
+               value="id"
+               data-component="body">
+    <br>
+<p>string The account number assigned to an insurer Example: <code>id</code></p>
+        </div>
+        </form>
+
+    <h3>Response</h3>
+    <h4 class="fancy-heading-panel"><b>Response Fields</b></h4>
+    <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>vehicle_registration_number</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+<br>
+<p>Status of the vehicle. Whether New Rating or Old Rating.</p>
+        </div>
+                        <h2 id="endpoints-POSTapi-policy-getVehicleUse">POST api/policy/getVehicleUse</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-POSTapi-policy-getVehicleUse">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://127.0.0.1:8000/api/policy/getVehicleUse" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"vehicle_risk\": \"illum\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/policy/getVehicleUse"
+);
+
+const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "vehicle_risk": "illum"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="python-example">
+    <pre><code class="language-python">import requests
+import json
+
+url = 'http://127.0.0.1:8000/api/policy/getVehicleUse'
+payload = {
+    "vehicle_risk": "illum"
+}
+headers = {
+  'Authorization': 'Bearer {YOUR_AUTH_KEY}',
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+
+response = requests.request('POST', url, headers=headers, json=payload)
+response.json()</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://127.0.0.1:8000/api/policy/getVehicleUse';
+$response = $client-&gt;post(
+    $url,
+    [
+        'headers' =&gt; [
+            'Authorization' =&gt; 'Bearer {YOUR_AUTH_KEY}',
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'vehicle_risk' =&gt; 'illum',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-policy-getVehicleUse">
+            <blockquote>
+            <p>Example response (200, Success):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+   &quot;period&quot; = [&quot;Pro Rata&quot;, &quot;Elevite&quot;, &quot;Leviathan&quot;, &quot;Console&quot;]
+  }</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-policy-getVehicleUse" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-policy-getVehicleUse"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-policy-getVehicleUse"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-policy-getVehicleUse" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-policy-getVehicleUse">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-policy-getVehicleUse" data-method="POST"
+      data-path="api/policy/getVehicleUse"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-policy-getVehicleUse', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-policy-getVehicleUse"
+                    onclick="tryItOut('POSTapi-policy-getVehicleUse');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-policy-getVehicleUse"
+                    onclick="cancelTryOut('POSTapi-policy-getVehicleUse');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-policy-getVehicleUse"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/policy/getVehicleUse</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="POSTapi-policy-getVehicleUse"
+               value="Bearer {YOUR_AUTH_KEY}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {YOUR_AUTH_KEY}</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-policy-getVehicleUse"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-policy-getVehicleUse"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>vehicle_risk</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="vehicle_risk"                data-endpoint="POSTapi-policy-getVehicleUse"
+               value="illum"
+               data-component="body">
+    <br>
+<p>The vehicle risk of the car. Example: <code>illum</code></p>
+        </div>
+        </form>
+
+    <h3>Response</h3>
+    <h4 class="fancy-heading-panel"><b>Response Fields</b></h4>
+    <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>period</code></b>&nbsp;&nbsp;
+<small>string[]</small>&nbsp;
+ &nbsp;
+<br>
+<p>A list of accepted rating factors for insurance cover period</p>
+        </div>
+                        <h2 id="endpoints-POSTapi-policy-get-policy-phone-number">POST api/policy/get-policy-phone-number</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+<p>The endpoint searches for policies based on a given phone number and
+returns the policies and related motor details if applicable.</p>
+
+<span id="example-requests-POSTapi-policy-get-policy-phone-number">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://127.0.0.1:8000/api/policy/get-policy-phone-number" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"phoneNumber\": \"0557693112\",
+    \"itemid\": \"nbjhyt654esdr78uyhgfd\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/policy/get-policy-phone-number"
+);
+
+const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "phoneNumber": "0557693112",
+    "itemid": "nbjhyt654esdr78uyhgfd"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="python-example">
+    <pre><code class="language-python">import requests
+import json
+
+url = 'http://127.0.0.1:8000/api/policy/get-policy-phone-number'
+payload = {
+    "phoneNumber": "0557693112",
+    "itemid": "nbjhyt654esdr78uyhgfd"
+}
+headers = {
+  'Authorization': 'Bearer {YOUR_AUTH_KEY}',
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+
+response = requests.request('POST', url, headers=headers, json=payload)
+response.json()</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://127.0.0.1:8000/api/policy/get-policy-phone-number';
+$response = $client-&gt;post(
+    $url,
+    [
+        'headers' =&gt; [
+            'Authorization' =&gt; 'Bearer {YOUR_AUTH_KEY}',
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'phoneNumber' =&gt; '0557693112',
+            'itemid' =&gt; 'nbjhyt654esdr78uyhgfd',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-policy-get-policy-phone-number">
+            <blockquote>
+            <p>Example response (200, Successful):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+&quot;message&quot; : &quot; policy found&quot;,
+&quot;Policies&quot;: {
+&quot;itemid&quot;: &quot;ABC123&quot;,
+&quot;account_number&quot;: &quot;Xyz789&quot;,
+&quot;fullname&quot;: &quot;John Doe&quot;,
+&quot;policy_number&quot;: &quot;P123456&quot;,
+&quot;master_policy_number&quot;: &quot;MPN98765&quot;,
+&quot;endorsement_number&quot;: &quot;EN54321&quot;,
+&quot;ref_number&quot;: &quot;REF987&quot;,
+&quot;policy_source&quot;: &quot;Third Party Inc.&quot;,
+&quot;policy_product&quot;: &quot;Auto Insurance&quot;,
+&quot;coverage&quot;: &quot;Comprehensive&quot;,
+&quot;policy_currency&quot;: &quot;USD&quot;,
+&quot;agency&quot;: &quot;ABC123&quot;,
+&quot;policy_branch&quot;: &quot;Main Branch&quot;,
+&quot;policy_status&quot;: &quot;In Force&quot;,
+&quot;endorsement_status&quot;: &quot;Renewal&quot;,
+&quot;endorsement_date&quot;: &quot;2024-02-01&quot;,
+&quot;insurance_period_from&quot;: &quot;2024-01-01&quot;,
+&quot;insurance_period_to&quot;: &quot;2025-01-01&quot;,
+&quot;managed_by&quot;: &quot;John Doe&quot;,
+&quot;created_by&quot;: &quot;John Smith&quot;,
+&quot;created_on&quot;: &quot;2024-01-15&quot;,
+&quot;policy_sales_channel&quot;: &quot;Online&quot;,
+&quot;policy_sales_type&quot;: &quot;Direct&quot;,
+&quot;first_issue_date&quot;: &quot;2024-01-15&quot;,
+&quot;acceptance_date&quot;: &quot;2024-01-20&quot;,
+&quot;policy_clause&quot;: &quot;Clause A, Clause B&quot;,
+&quot;policy_interest&quot;: &quot;Company XYZ&quot;,
+&quot;policy_upper_text&quot;: &quot;This policy covers...&quot;,
+&quot;policy_lower_text&quot;: &quot;In case of loss, contact...&quot;,
+&quot;policy_end_text&quot;: &quot;Thank you for choosing our services.&quot;,
+&quot;policy_renewal_text&quot;: &quot;Renewal instructions:...&quot;,
+&quot;policy_endorsement_text&quot;: &quot;This policy has been endorsed to include additional coverage for...&quot;,
+&quot;endorsement_new&quot;: &quot;EN2024001&quot;,
+&quot;rating_factor&quot;: &quot;Pro Rata&quot;,
+&quot;account_type&quot;: &quot;Corporate&quot;,
+&quot;insurance_period_days&quot;: 180,
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (401, Failed Login):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Invalid login credentials&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-policy-get-policy-phone-number" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-policy-get-policy-phone-number"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-policy-get-policy-phone-number"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-policy-get-policy-phone-number" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-policy-get-policy-phone-number">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-policy-get-policy-phone-number" data-method="POST"
+      data-path="api/policy/get-policy-phone-number"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-policy-get-policy-phone-number', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-policy-get-policy-phone-number"
+                    onclick="tryItOut('POSTapi-policy-get-policy-phone-number');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-policy-get-policy-phone-number"
+                    onclick="cancelTryOut('POSTapi-policy-get-policy-phone-number');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-policy-get-policy-phone-number"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/policy/get-policy-phone-number</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="POSTapi-policy-get-policy-phone-number"
+               value="Bearer {YOUR_AUTH_KEY}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {YOUR_AUTH_KEY}</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-policy-get-policy-phone-number"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-policy-get-policy-phone-number"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>phoneNumber</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="phoneNumber"                data-endpoint="POSTapi-policy-get-policy-phone-number"
+               value="0557693112"
+               data-component="body">
+    <br>
+<p>The insurer’s phone number. The phone number should be in the format 0542231674 Example: <code>0557693112</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>itemid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="itemid"                data-endpoint="POSTapi-policy-get-policy-phone-number"
+               value="nbjhyt654esdr78uyhgfd"
+               data-component="body">
+    <br>
+<p>The vehicle registration number of the car owned by the insurer. Example: <code>nbjhyt654esdr78uyhgfd</code></p>
+        </div>
+        </form>
+
+    <h3>Response</h3>
+    <h4 class="fancy-heading-panel"><b>Response Fields</b></h4>
+    <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>Message</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+<br>
+<p>The description of response received from the endpoint that is related to whether the policy is found or not.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+        <details>
+            <summary style="padding-bottom: 10px;">
+                <b style="line-height: 2;"><code>policies</code></b>&nbsp;&nbsp;
+<small>object</small>&nbsp;
+ &nbsp;
+<br>
+
+            </summary>
+                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>itemid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+<br>
+<p>The vehicle registration number of insured vehicle.</p>
+                    </div>
+                                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>account_number</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+<br>
+<p>Insurer’s account number created upon registration.</p>
+                    </div>
+                                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>fullname</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+<br>
+<p>Full name associated with the insurer.</p>
+                    </div>
+                                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>policy_number</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+<br>
+<p>Policy number attributed per single policy.</p>
+                    </div>
+                                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>master_policy_number</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+<br>
+<p>This is the policy number that holds all policies for pertaining to the insured vehicle.</p>
+                    </div>
+                                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>endorsement_number</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+<br>
+<p>This is the endorsement number given to a policy after endorsement has been made on it.</p>
+                    </div>
+                                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>ref_number</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+<br>
+<p>This references the item (E.g., Motor) associated with the policy</p>
+                    </div>
+                                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>policy_source</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+<br>
+<p>The intermediary through which the business came.</p>
+                    </div>
+                                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>policy_product</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+<br>
+<p>The type of policy product for the policy</p>
+                    </div>
+                                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>coverage</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+<br>
+<p>The type of cover the policy is for. Whether third party, comprehensive, third party fire &amp; theft, etc.</p>
+                    </div>
+                                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>policy_currency</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+<br>
+<p>The currency in which the policy was underwritten. Currencies should be in the format (GH¢, USD, EUR)</p>
+                    </div>
+                                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>agency</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+<br>
+<p>The intermediary source code for which the business is from</p>
+                    </div>
+                                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>policy_branch</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+<br>
+<p>The branch the policy is coming from. Default is “Accra (Head Office)”</p>
+                    </div>
+                                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>policy_status</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+<br>
+<p>The status of the policy. Policies are put in draft state until approval. Then it Is set to In Force</p>
+                    </div>
+                                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>endorsement_status</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+<br>
+<p>Endorsement status of the policy. E.g., Renewal, Suspension.</p>
+                    </div>
+                                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>endorsement_date</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+<br>
+<p>The date for which an endorsement was passed onto the policy</p>
+                    </div>
+                                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>insurance_period_from</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+<br>
+<p>The commencement date for the policy.</p>
+                    </div>
+                                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>insurance_period_to</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+<br>
+<p>The expiring date for the policy.</p>
+                    </div>
+                                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>managed_by</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+<br>
+<p>The staff managing the business.</p>
+                    </div>
+                                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>created_by</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+<br>
+<p>The user who created the policy.</p>
+                    </div>
+                                    </details>
+        </div>
+                        <h2 id="endpoints-GETapi-policy-verify-policy-number--policyNumber-">GET api/policy/verify-policy-number/{policyNumber}</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+<p>The endpoint checks if a given policy number exists in the database and
+returns a JSON response with the status.</p>
+
+<span id="example-requests-GETapi-policy-verify-policy-number--policyNumber-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://127.0.0.1:8000/api/policy/verify-policy-number/earum" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/policy/verify-policy-number/earum"
+);
+
+const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="python-example">
+    <pre><code class="language-python">import requests
+import json
+
+url = 'http://127.0.0.1:8000/api/policy/verify-policy-number/earum'
+headers = {
+  'Authorization': 'Bearer {YOUR_AUTH_KEY}',
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+
+response = requests.request('GET', url, headers=headers)
+response.json()</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://127.0.0.1:8000/api/policy/verify-policy-number/earum';
+$response = $client-&gt;get(
+    $url,
+    [
+        'headers' =&gt; [
+            'Authorization' =&gt; 'Bearer {YOUR_AUTH_KEY}',
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-policy-verify-policy-number--policyNumber-">
+            <blockquote>
+            <p>Example response (200, Success):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: 1
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-policy-verify-policy-number--policyNumber-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-policy-verify-policy-number--policyNumber-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-policy-verify-policy-number--policyNumber-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-policy-verify-policy-number--policyNumber-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-policy-verify-policy-number--policyNumber-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-policy-verify-policy-number--policyNumber-" data-method="GET"
+      data-path="api/policy/verify-policy-number/{policyNumber}"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-policy-verify-policy-number--policyNumber-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-policy-verify-policy-number--policyNumber-"
+                    onclick="tryItOut('GETapi-policy-verify-policy-number--policyNumber-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-policy-verify-policy-number--policyNumber-"
+                    onclick="cancelTryOut('GETapi-policy-verify-policy-number--policyNumber-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-policy-verify-policy-number--policyNumber-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/policy/verify-policy-number/{policyNumber}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="GETapi-policy-verify-policy-number--policyNumber-"
+               value="Bearer {YOUR_AUTH_KEY}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {YOUR_AUTH_KEY}</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-policy-verify-policy-number--policyNumber-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-policy-verify-policy-number--policyNumber-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>policyNumber</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="policyNumber"                data-endpoint="GETapi-policy-verify-policy-number--policyNumber-"
+               value="earum"
+               data-component="url">
+    <br>
+<p>Example: <code>earum</code></p>
+            </div>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>policy_number</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="policy_number"                data-endpoint="GETapi-policy-verify-policy-number--policyNumber-"
+               value="23sddgsa1984"
+               data-component="url">
+    <br>
+<p>The policy number assigned to a policy. Example: <code>23sddgsa1984</code></p>
+            </div>
+                    </form>
+
+    <h3>Response</h3>
+    <h4 class="fancy-heading-panel"><b>Response Fields</b></h4>
+    <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+<br>
+<p>1 to show policy number exists and 2 to show policy number does not exist.</p>
+        </div>
+                        <h2 id="endpoints-POSTapi-policy-computeMotorPremiumAllRating">POST api/policy/computeMotorPremiumAllRating</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+<p>The endpoint computes the motor premium based on the rating status
+provided in the request.</p>
+
+<span id="example-requests-POSTapi-policy-computeMotorPremiumAllRating">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://127.0.0.1:8000/api/policy/computeMotorPremiumAllRating" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"rating_status\": \"debitis\",
+    \"vehicle_risk\": \"consequatur\",
+    \"vehicle_use\": \"illum\",
+    \"preferedcover\": \"possimus\",
+    \"policy_sales_type\": \"et\",
+    \"vehicle_value\": \"nesciunt\",
+    \"vehicle_seating_capacity\": \"voluptatem\",
+    \"vehicle_tppdl_value\": \"recusandae\",
+    \"vehicle_ncd\": \"quia\",
+    \"vehicle_currency\": \"qui\",
+    \"vehicle_buy_back_excess\": \"possimus\",
+    \"charge_cc_status\": \"voluptatibus\",
+    \"vehicle_fleet_discount\": \"necessitatibus\",
+    \"commence_date\": \"consequatur\",
+    \"expiry_date\": \"et\",
+    \"rating_factor\": \"eaque\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/policy/computeMotorPremiumAllRating"
+);
+
+const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "rating_status": "debitis",
+    "vehicle_risk": "consequatur",
+    "vehicle_use": "illum",
+    "preferedcover": "possimus",
+    "policy_sales_type": "et",
+    "vehicle_value": "nesciunt",
+    "vehicle_seating_capacity": "voluptatem",
+    "vehicle_tppdl_value": "recusandae",
+    "vehicle_ncd": "quia",
+    "vehicle_currency": "qui",
+    "vehicle_buy_back_excess": "possimus",
+    "charge_cc_status": "voluptatibus",
+    "vehicle_fleet_discount": "necessitatibus",
+    "commence_date": "consequatur",
+    "expiry_date": "et",
+    "rating_factor": "eaque"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="python-example">
+    <pre><code class="language-python">import requests
+import json
+
+url = 'http://127.0.0.1:8000/api/policy/computeMotorPremiumAllRating'
+payload = {
+    "rating_status": "debitis",
+    "vehicle_risk": "consequatur",
+    "vehicle_use": "illum",
+    "preferedcover": "possimus",
+    "policy_sales_type": "et",
+    "vehicle_value": "nesciunt",
+    "vehicle_seating_capacity": "voluptatem",
+    "vehicle_tppdl_value": "recusandae",
+    "vehicle_ncd": "quia",
+    "vehicle_currency": "qui",
+    "vehicle_buy_back_excess": "possimus",
+    "charge_cc_status": "voluptatibus",
+    "vehicle_fleet_discount": "necessitatibus",
+    "commence_date": "consequatur",
+    "expiry_date": "et",
+    "rating_factor": "eaque"
+}
+headers = {
+  'Authorization': 'Bearer {YOUR_AUTH_KEY}',
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+
+response = requests.request('POST', url, headers=headers, json=payload)
+response.json()</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://127.0.0.1:8000/api/policy/computeMotorPremiumAllRating';
+$response = $client-&gt;post(
+    $url,
+    [
+        'headers' =&gt; [
+            'Authorization' =&gt; 'Bearer {YOUR_AUTH_KEY}',
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'rating_status' =&gt; 'debitis',
+            'vehicle_risk' =&gt; 'consequatur',
+            'vehicle_use' =&gt; 'illum',
+            'preferedcover' =&gt; 'possimus',
+            'policy_sales_type' =&gt; 'et',
+            'vehicle_value' =&gt; 'nesciunt',
+            'vehicle_seating_capacity' =&gt; 'voluptatem',
+            'vehicle_tppdl_value' =&gt; 'recusandae',
+            'vehicle_ncd' =&gt; 'quia',
+            'vehicle_currency' =&gt; 'qui',
+            'vehicle_buy_back_excess' =&gt; 'possimus',
+            'charge_cc_status' =&gt; 'voluptatibus',
+            'vehicle_fleet_discount' =&gt; 'necessitatibus',
+            'commence_date' =&gt; 'consequatur',
+            'expiry_date' =&gt; 'et',
+            'rating_factor' =&gt; 'eaque',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-policy-computeMotorPremiumAllRating">
+            <blockquote>
+            <p>Example response (200, {):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;rating_status&quot;: &quot;Old Rating&quot;,
+    &quot;vehicle_risk&quot;: &quot;X1 Private Individual&quot;,
+    &quot;vehicle_use&quot;: &quot;Private&quot;,
+    &quot;preferedcover&quot;: &quot;Third party&quot;,
+    &quot;policy_sales_type&quot;: &quot;Direct&quot;,
+    &quot;vehicle_value&quot;: &quot;0&quot;,
+    &quot;vehicle_seating_capacity&quot;: &quot;5&quot;,
+    &quot;vehicle_tppdl_value&quot;: &quot;6000&quot;,
+    &quot;vehicle_ncd&quot;: &quot;None&quot;,
+    &quot;vehicle_currency&quot;: &quot;GH&cent;&quot;,
+    &quot;vehicle_buy_back_excess&quot;: &quot;0&quot;,
+    &quot;charge_cc_status&quot;: &quot;false&quot;,
+    &quot;charge_age_status&quot;: &quot;false&quot;,
+    &quot;vehicle_fleet_discount&quot;: &quot;No Fleet&quot;,
+    &quot;commence_date&quot;: &quot;2023-01-01&quot;,
+    &quot;expiry_date&quot;: &quot;2024-01-01&quot;,
+    &quot;rating_factor&quot;: &quot;Full Year&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-policy-computeMotorPremiumAllRating" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-policy-computeMotorPremiumAllRating"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-policy-computeMotorPremiumAllRating"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-policy-computeMotorPremiumAllRating" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-policy-computeMotorPremiumAllRating">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-policy-computeMotorPremiumAllRating" data-method="POST"
+      data-path="api/policy/computeMotorPremiumAllRating"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-policy-computeMotorPremiumAllRating', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-policy-computeMotorPremiumAllRating"
+                    onclick="tryItOut('POSTapi-policy-computeMotorPremiumAllRating');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-policy-computeMotorPremiumAllRating"
+                    onclick="cancelTryOut('POSTapi-policy-computeMotorPremiumAllRating');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-policy-computeMotorPremiumAllRating"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/policy/computeMotorPremiumAllRating</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="POSTapi-policy-computeMotorPremiumAllRating"
+               value="Bearer {YOUR_AUTH_KEY}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {YOUR_AUTH_KEY}</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-policy-computeMotorPremiumAllRating"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-policy-computeMotorPremiumAllRating"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>rating_status</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="rating_status"                data-endpoint="POSTapi-policy-computeMotorPremiumAllRating"
+               value="debitis"
+               data-component="body">
+    <br>
+<p>rating status of the vehicle (either &quot;New Rating&quot; or &quot;Old Rating&quot;) based on the registration year. Example: <code>debitis</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>vehicle_risk</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="vehicle_risk"                data-endpoint="POSTapi-policy-computeMotorPremiumAllRating"
+               value="consequatur"
+               data-component="body">
+    <br>
+<p>The vehicle registration number of the car owned by the insurer. Example: <code>consequatur</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>vehicle_use</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="vehicle_use"                data-endpoint="POSTapi-policy-computeMotorPremiumAllRating"
+               value="illum"
+               data-component="body">
+    <br>
+<p>Usage of the vehicle. For private or commercial purposes. Example: <code>illum</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>preferedcover</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="preferedcover"                data-endpoint="POSTapi-policy-computeMotorPremiumAllRating"
+               value="possimus"
+               data-component="body">
+    <br>
+<p>Coverage of the vehicle. E.g., Third party, Comprehensive, Third party, fire &amp; theft. Example: <code>possimus</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>policy_sales_type</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="policy_sales_type"                data-endpoint="POSTapi-policy-computeMotorPremiumAllRating"
+               value="et"
+               data-component="body">
+    <br>
+<p>The intermediary source of the policy. (Agent, Direct, Broker). Example: <code>et</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>vehicle_value</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="vehicle_value"                data-endpoint="POSTapi-policy-computeMotorPremiumAllRating"
+               value="nesciunt"
+               data-component="body">
+    <br>
+<p>Value of the vehicle. This is zero for third parties. Other coverages require the vehicle value which should be above zero. Example: <code>nesciunt</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>vehicle_seating_capacity</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="vehicle_seating_capacity"                data-endpoint="POSTapi-policy-computeMotorPremiumAllRating"
+               value="voluptatem"
+               data-component="body">
+    <br>
+<p>The number of seats the car has. Example: <code>voluptatem</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>vehicle_tppdl_value</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="vehicle_tppdl_value"                data-endpoint="POSTapi-policy-computeMotorPremiumAllRating"
+               value="recusandae"
+               data-component="body">
+    <br>
+<p>The tppdl value of the vehicle including additional tppdl bought. Example: <code>recusandae</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>vehicle_ncd</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="vehicle_ncd"                data-endpoint="POSTapi-policy-computeMotorPremiumAllRating"
+               value="quia"
+               data-component="body">
+    <br>
+<p>NCD discount given to the vehicle. Example: <code>quia</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>vehicle_currency</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="vehicle_currency"                data-endpoint="POSTapi-policy-computeMotorPremiumAllRating"
+               value="qui"
+               data-component="body">
+    <br>
+<p>The currency in which the policy was captured. Example: <code>qui</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>vehicle_buy_back_excess</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="vehicle_buy_back_excess"                data-endpoint="POSTapi-policy-computeMotorPremiumAllRating"
+               value="possimus"
+               data-component="body">
+    <br>
+<p>Excess status on the vehicle (Excess Is Applicable, Excess Is Not Applicable, Voluntary Excess Applicable) Example: <code>possimus</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>charge_cc_status</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="charge_cc_status"                data-endpoint="POSTapi-policy-computeMotorPremiumAllRating"
+               value="voluptatibus"
+               data-component="body">
+    <br>
+<p>Charge cc or not. True/False Example: <code>voluptatibus</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>vehicle_fleet_discount</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="vehicle_fleet_discount"                data-endpoint="POSTapi-policy-computeMotorPremiumAllRating"
+               value="necessitatibus"
+               data-component="body">
+    <br>
+<p>Fleet discount given to the vehicle. (E.g., No Fleet). Example: <code>necessitatibus</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>commence_date</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="commence_date"                data-endpoint="POSTapi-policy-computeMotorPremiumAllRating"
+               value="consequatur"
+               data-component="body">
+    <br>
+<p>The start date of the policy (format YYYY- mm-dd). Example: <code>consequatur</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>expiry_date</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="expiry_date"                data-endpoint="POSTapi-policy-computeMotorPremiumAllRating"
+               value="et"
+               data-component="body">
+    <br>
+<p>The expiry date of the policy (format YYYY- mm-dd). Example: <code>et</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>rating_factor</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="rating_factor"                data-endpoint="POSTapi-policy-computeMotorPremiumAllRating"
+               value="eaque"
+               data-component="body">
+    <br>
+<p>The duration for which the policy is running for. (1- 8 months, Pro Rata, Full Year). Example: <code>eaque</code></p>
+        </div>
+        </form>
+
+    <h3>Response</h3>
+    <h4 class="fancy-heading-panel"><b>Response Fields</b></h4>
+    <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>premium</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+<br>
+<p>The premium charged.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>excessbought</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+ &nbsp;
+<br>
+<p>Amount charged for excess.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>excess_charge_rate</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+<br>
+<p>The rate of excess charged in percentage.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>suminsured</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+<br>
+<p>The value of the vehicle.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>gross_premium</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+ &nbsp;
+<br>
+<p>Gross premium charged.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>contribution</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+ &nbsp;
+<br>
+<p>Contribution such as sticker fee charged.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>loading</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+ &nbsp;
+<br>
+<p>loadings charged.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>netpremium</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+ &nbsp;
+<br>
+<p>Premium after deducting loadings and contributions.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>ncd</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+<br>
+<p>Amount charged for NCD discount.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>fleet</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+ &nbsp;
+<br>
+<p>Amount charged for fleet discount.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>ccage</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+ &nbsp;
+<br>
+<p>Amount charged for cc.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>commission</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+ &nbsp;
+<br>
+<p>Amount charged for office commission.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>officepremium</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+ &nbsp;
+<br>
+<p>Amount charged for office premium.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>tpbasic</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+ &nbsp;
+<br>
+<p>Third party basic component of the premium.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>owndamage</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+ &nbsp;
+<br>
+<p>Amount charged for own damage.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>tppdl_value</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+ &nbsp;
+<br>
+<p>Tppdl value of the vehicle.</p>
+        </div>
+                        <h2 id="endpoints-GETapi-invoices-payments-list--accountno-">GET api/invoices/payments-list/{accountno}</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-GETapi-invoices-payments-list--accountno-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://127.0.0.1:8000/api/invoices/payments-list/ad" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/invoices/payments-list/ad"
+);
+
+const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+
+<div class="python-example">
+    <pre><code class="language-python">import requests
+import json
+
+url = 'http://127.0.0.1:8000/api/invoices/payments-list/ad'
+headers = {
+  'Authorization': 'Bearer {YOUR_AUTH_KEY}',
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+
+response = requests.request('GET', url, headers=headers)
+response.json()</code></pre></div>
+
+
+<div class="php-example">
+    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://127.0.0.1:8000/api/invoices/payments-list/ad';
+$response = $client-&gt;get(
+    $url,
+    [
+        'headers' =&gt; [
+            'Authorization' =&gt; 'Bearer {YOUR_AUTH_KEY}',
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-invoices-payments-list--accountno-">
+            <blockquote>
+            <p>Example response (200, Success):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;count&quot;: 1,
+    &quot;payments&quot;: {
+        &quot;receipt_type&quot;: &quot;Credit Card&quot;,
+        &quot;receipt_number&quot;: &quot;RC12345&quot;,
+        &quot;invoice_number&quot;: &quot;INV98765&quot;,
+        &quot;receipt_date&quot;: &quot;2024-01-27&quot;,
+        &quot;debit_date&quot;: &quot;2024-01-15&quot;,
+        &quot;currency&quot;: &quot;USD&quot;,
+        &quot;amount_payable&quot;: &quot;500.00&quot;,
+        &quot;amount_paid&quot;: &quot;450.00&quot;,
+        &quot;over_payment&quot;: &quot;50.00&quot;,
+        &quot;collection_mode&quot;: &quot;Online Transfer&quot;,
+        &quot;reference_number&quot;: &quot;123456789&quot;,
+        &quot;paid_by&quot;: &quot;John Doe&quot;,
+        &quot;branch&quot;: &quot;Main Branch&quot;,
+        &quot;risk_type&quot;: &quot;Auto Insurance&quot;,
+        &quot;transaction_type&quot;: &quot;Premium Payment&quot;,
+        &quot;status&quot;: &quot;Cleared&quot;,
+        &quot;flag&quot;: &quot;Active&quot;,
+        &quot;master_policy_number&quot;: &quot;MPN123456&quot;,
+        &quot;period_from&quot;: &quot;2024-01-01&quot;,
+        &quot;period_to&quot;: &quot;2024-12-31&quot;,
+        &quot;agency&quot;: &quot;AGT789&quot;,
+        &quot;intermediary_source&quot;: &quot;Online Broker&quot;,
+        &quot;policy_product&quot;: &quot;Comprehensive Coverage&quot;,
+        &quot;account_number&quot;: &quot;ACCT987654321&quot;,
+        &quot;insured&quot;: &quot;Jane Smith&quot;,
+        &quot;exchange_rate&quot;: &quot;1.20&quot;,
+        &quot;reg_number&quot;: &quot;XYZ123&quot;,
+        &quot;debit_currency&quot;: &quot;USD&quot;,
+        &quot;post_dated_date&quot;: &quot;2024-02-15&quot;,
+        &quot;cheque_cleared_date&quot;: &quot;2024-01-28&quot;
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-invoices-payments-list--accountno-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-invoices-payments-list--accountno-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-invoices-payments-list--accountno-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-invoices-payments-list--accountno-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-invoices-payments-list--accountno-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-invoices-payments-list--accountno-" data-method="GET"
+      data-path="api/invoices/payments-list/{accountno}"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-invoices-payments-list--accountno-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-invoices-payments-list--accountno-"
+                    onclick="tryItOut('GETapi-invoices-payments-list--accountno-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-invoices-payments-list--accountno-"
+                    onclick="cancelTryOut('GETapi-invoices-payments-list--accountno-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-invoices-payments-list--accountno-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/invoices/payments-list/{accountno}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="GETapi-invoices-payments-list--accountno-"
+               value="Bearer {YOUR_AUTH_KEY}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {YOUR_AUTH_KEY}</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-invoices-payments-list--accountno-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-invoices-payments-list--accountno-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>accountno</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="accountno"                data-endpoint="GETapi-invoices-payments-list--accountno-"
+               value="ad"
+               data-component="url">
+    <br>
+<p>The account number assigned to an insurer Example: <code>ad</code></p>
+            </div>
+                    </form>
+
+            
+
+        
+    </div>
+    <div class="dark-box">
+                    <div class="lang-selector">
+                                                        <button type="button" class="lang-button" data-language-name="bash">bash</button>
+                                                        <button type="button" class="lang-button" data-language-name="javascript">javascript</button>
+                                                        <button type="button" class="lang-button" data-language-name="python">python</button>
+                                                        <button type="button" class="lang-button" data-language-name="php">php</button>
+                            </div>
+            </div>
+</div>
+</body>
+</html>
