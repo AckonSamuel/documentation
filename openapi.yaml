@@ -7,10 +7,110 @@ servers:
   -
     url: 'http://127.0.0.1:8000'
 paths:
+  /api/customer/create-new-customer:
+    post:
+      summary: 'CREATE CUSTOMER'
+      operationId: cREATECUSTOMER
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "{\n   \"status\" = \"Success\",\n   \"accountNumber\" = \"FG-34323\"\n   }"
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                accountType:
+                  type: string
+                  description: 'The account number assigned to an insured.'
+                  example: Individual
+                firstName:
+                  type: string
+                  description: 'First name of insured'
+                  example: Jonas
+                lastName:
+                  type: string
+                  description: 'Last name of insured'
+                  example: Test
+                mobileNumber:
+                  type: string
+                  description: 'Mobile number of insurer'
+                  example: '0542231674'
+                residential_address:
+                  type: string
+                  description: 'Residential address of insurer'
+                  example: Labone
+                email:
+                  type: string
+                  description: 'Email of insured'
+                  example: test@example.com
+                date_of_birth:
+                  type: string
+                  description: 'Date of birth of insured. Format (YYYY-mm-d)'
+                  example: '1990-01-01'
+                field_of_activity:
+                  type: string
+                  description: 'Field of activity of insured.'
+                  example: Programmer
+                id_type:
+                  type: string
+                  description: 'Identification type used by insured'
+                  example: Passport
+                Id_number:
+                  type: string
+                  description: 'Identification number assigned to the ID Card.'
+                  example: GS-9090-8898
+                gender:
+                  type: string
+                  description: 'Gender of insured. (Male, Female)'
+                  example: Male
+                sales_channel:
+                  type: string
+                  description: 'Field of activity of insured.'
+                  example: Korba
+              required:
+                - accountType
+                - firstName
+                - lastName
+                - mobileNumber
+                - residential_address
+                - email
+                - date_of_birth
+                - field_of_activity
+                - id_type
+                - Id_number
+                - gender
+                - sales_channel
+  /api/customer/account-types-list:
+    get:
+      summary: 'GET ACCOUNT TYPES'
+      operationId: gETACCOUNTTYPES
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: Success
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "{\n   \"type\" = [\"Corporate\", \"Individual\" ]\n   }"
+      tags:
+        - Endpoints
   /api/customer/identification-types-list:
     get:
-      summary: 'GET api/customer/identification-types-list'
-      operationId: gETApicustomeridentificationTypesList
+      summary: 'GET IDENTIFICATION TYPES'
+      operationId: gETIDENTIFICATIONTYPES
       description: ''
       parameters: []
       responses:
@@ -23,10 +123,491 @@ paths:
                 example: "{\n   \"ids\" = [\"national id card\", \"voters id card\", \"passport\" ]\n   }"
       tags:
         - Endpoints
-  '/api/policy/policy-list/{accountno}':
+  /api/policy/computeMotorPremiumAllRating:
+    post:
+      summary: 'COMPUTE MOTOR PREMIUM'
+      operationId: cOMPUTEMOTORPREMIUM
+      description: "The endpoint computes the motor premium based on the rating status\nprovided in the request."
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "{\n\"premium\": \"200,\n\"excessbought\": 123.79,\n\"excess_charge_rate\": 20,\n\"suminsured\": \"4090904\",\n\"gross_premium\": \"12.34\",\n\"contribution\": 12.20,\n\"loading\": 34.56,\n\"netpremium\": 234.23,\n\"ncd\": 37.23,\n\"fleet\": 23.32,\n\"ccage\": 23.39,\n\"commission\": \"78.34\",\n\"officepremium\": 56.34,\n\"tpbasic\": 23.35,\n\"owndamage\": 12.23,\n\"tppdl_value\": 142.89\n}"
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                rating_status:
+                  type: string
+                  description: 'rating status of the vehicle (either "New Rating" or "Old Rating") based on the registration year.'
+                  example: 'Old Rating'
+                vehicle_risk:
+                  type: string
+                  description: 'The vehicle registration number of the car owned by the insurer.'
+                  example: 'X1 Commercial Individual'
+                vehicle_use:
+                  type: string
+                  description: 'Usage of the vehicle. For private or commercial purposes.'
+                  example: Commercial
+                preferedcover:
+                  type: string
+                  description: 'Coverage of the vehicle. E.g., Third party, Comprehensive, Third party, fire & theft.'
+                  example: Comprehensive
+                policy_sales_type:
+                  type: string
+                  description: 'The intermediary source of the policy. (Agent, Direct, Broker).'
+                  example: Agent
+                vehicle_value:
+                  type: string
+                  description: 'Value of the vehicle. This is zero for third parties. Other coverages require the vehicle value which should be above zero.'
+                  example: null
+                vehicle_seating_capacity:
+                  type: string
+                  description: 'The number of seats the car has.'
+                  example: '12'
+                vehicle_tppdl_value:
+                  type: string
+                  description: 'The tppdl value of the vehicle including additional tppdl bought.'
+                  example: '80000000'
+                vehicle_ncd:
+                  type: string
+                  description: 'NCD discount given to the vehicle.'
+                  example: '20'
+                vehicle_currency:
+                  type: string
+                  description: 'The currency in which the policy was captured.'
+                  example: GHc
+                vehicle_buy_back_excess:
+                  type: string
+                  description: 'Excess status on the vehicle (Excess Is Applicable, Excess Is Not Applicable, Voluntary Excess Applicable)'
+                  example: Applicable
+                charge_cc_status:
+                  type: string
+                  description: 'Charge age or not. True/False'
+                  example: 'True'
+                charge_age_status:
+                  type: string
+                  description: 'Charge cc or not. True/False'
+                  example: 'True'
+                vehicle_fleet_discount:
+                  type: string
+                  description: 'Fleet discount given to the vehicle. (E.g., No Fleet).'
+                  example: 'No Fleet'
+                commence_date:
+                  type: string
+                  description: 'The start date of the policy (format YYYY- mm-dd).'
+                  example: '2024-01-01'
+                expiry_date:
+                  type: string
+                  description: 'The expiry date of the policy (format YYYY- mm-dd).'
+                  example: '2030-01-01'
+                rating_factor:
+                  type: string
+                  description: 'The duration for which the policy is running for. (1- 8 months, Pro Rata, Full Year).'
+                  example: 'Pro Rate'
+              required:
+                - rating_status
+                - vehicle_risk
+                - vehicle_use
+                - preferedcover
+                - policy_sales_type
+                - vehicle_seating_capacity
+                - vehicle_tppdl_value
+                - vehicle_ncd
+                - vehicle_currency
+                - vehicle_buy_back_excess
+                - charge_cc_status
+                - charge_age_status
+                - vehicle_fleet_discount
+                - commence_date
+                - expiry_date
+                - rating_factor
+  /api/policy/api/policy/addMotorSchedule:
+    post:
+      summary: 'ADD MOTOR POLICY.'
+      operationId: aDDMOTORPOLICY
+      description: ''
+      parameters: []
+      responses:
+        200:
+          description: ''
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "{\n\"policy_save_status\": \"Success\",\n\"debit_number\": \"DB-349843\",\n\"billid\": \"b-343\",\n\"endorsement_new\": \"EN-343\",\n}"
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                customer_number:
+                  type: string
+                  description: 'The account number assigned to an insurer. If insurer is new, Customer number should be “Draft”.'
+                  example: Draft
+                fullname:
+                  type: string
+                  description: 'Full name of insurer.'
+                  example: 'Korba Test'
+                vehicle_registration_number:
+                  type: string
+                  description: 'The car number assigned to the policy.'
+                  example: 'GT 2929-11'
+                policy_product:
+                  type: string
+                  description: 'Type of product for the policy.'
+                  example: 'Motor Insurance'
+                policy_sales_type:
+                  type: string
+                  description: 'The intermediary source of the policy. (Agent, Direct, Broker).'
+                  example: Agent
+                policy_sales_channel:
+                  type: string
+                  description: 'The channel through which the business was acquired.'
+                  example: Korba
+                policy_currency:
+                  type: string
+                  description: 'The currency in which the policy was underwritten. Currencies should be in the format (GH¢, USD, EUR)'
+                  example: USD
+                policy_status:
+                  type: string
+                  description: 'The status of the policy. Policies are put in draft state until approval. Then it Is set to In Force'
+                  example: 'In Force'
+                transaction_type:
+                  type: string
+                  description: 'The type of transaction for the business. (E.g., First Premium, Renewal Premium).'
+                  example: 'First Premium'
+                policy_branch:
+                  type: string
+                  description: 'The branch the policy is coming from. Default is “Accra (Head Office)”'
+                  example: 'Accra (Head Office)'
+                policy_workgroup:
+                  type: string
+                  description: 'The workgroup to which the policy is going into. Default value should be “E-business workgroup”.'
+                  example: 'E-business workgroup'
+                preferedcover:
+                  type: string
+                  description: 'Coverage of the vehicle. E.g., Third party, Comprehensive, Third party, fire & theft.'
+                  example: Comprehensive
+                commence_date:
+                  type: string
+                  description: 'The start date of the policy (format YYYY-mm-dd).'
+                  example: '2024-08-09'
+                expiry_date:
+                  type: string
+                  description: 'The expiry date of the policy (format YYYY-mm-dd).'
+                  example: '2040-08-09'
+                rating_factor:
+                  type: string
+                  description: 'The duration for which the policy is running for. (1-8 months, Pro Rata, Full Year).'
+                  example: 'Pro Rata'
+                vehicle_value:
+                  type: string
+                  description: 'Value of the vehicle. This is zero for third parties. Other coverages require the vehicle value which should be above zero.'
+                  example: '0'
+                vehicle_buy_back_excess:
+                  type: string
+                  description: 'Excess status on the vehicle (Excess Is Applicable, Excess Is Not Applicable, Voluntary Excess Applicable)'
+                  example: 'Excess Is Not Applicable'
+                vehicle_tppdl_value:
+                  type: string
+                  description: 'The tppdl value of the vehicle including additional tppdl bought.'
+                  example: '2343'
+                vehicle_body_type:
+                  type: string
+                  description: 'The body type of the car.'
+                  example: Saloon
+                vehicle_make:
+                  type: string
+                  description: 'The make of the car.'
+                  example: Toyota
+                vehicle_model:
+                  type: string
+                  description: 'The model of the car'
+                  example: Camry
+                vehicle_use:
+                  type: string
+                  description: 'Usage of the vehicle. For private or commercial purposes.'
+                  example: Private
+                vehicle_make_year:
+                  type: string
+                  description: 'The year of manufacture of the car.'
+                  example: '2023'
+                vehicle_cubic_capacity:
+                  type: string
+                  description: 'Vehicle cubic capacity of the car.'
+                  example: '7000'
+                vehicle_seating_capacity:
+                  type: string
+                  description: 'The number of seats the car has.'
+                  example: '5'
+                vehicle_risk:
+                  type: string
+                  description: 'The risk of the vehicle.'
+                  example: 'X1 Private Individual'
+                vehicle_ncd:
+                  type: string
+                  description: 'NCD discount given to the vehicle. (E.g., None)'
+                  example: None
+                vehicle_fleet_discount:
+                  type: string
+                  description: 'Fleet discount given to the vehicle. (E.g., No Fleet).'
+                  example: 'No Fleet'
+                vehicle_owner_name:
+                  type: string
+                  description: 'Name of the vehicle owner.'
+                  example: 'Korba Test'
+                charge_type:
+                  type: string
+                  description: 'The rating of the vehicle, whether New or Old rating.'
+                  example: 'Old Rating'
+                motor_documentation:
+                  type: string
+                  description: 'Documentation fee charged for motor businesses. Default value is 0.'
+                  example: '0'
+                gross_premium:
+                  type: string
+                  description: 'Gross premium charged.'
+                  example: '456'
+                vehicle_colour:
+                  type: string
+                  description: 'The color of the vehicle.'
+                  example: Blue
+                execessbought:
+                  type: string
+                  description: 'Amount charged for excess.'
+                  example: '0'
+                excess_charge_rate:
+                  type: string
+                  description: 'The percentage at which excess was bought if excess is applicable on the policy.'
+                  example: '0'
+                tpbasic:
+                  type: string
+                  description: 'Third party basic component of the premium.'
+                  example: '350'
+                owndamage:
+                  type: string
+                  description: 'Amount charged for own damage.'
+                  example: '0'
+                ccage:
+                  type: string
+                  description: 'Amount charged for cc.'
+                  example: '0'
+                officepremium:
+                  type: string
+                  description: 'Amount charged for office premium.'
+                  example: '350'
+                ncd:
+                  type: string
+                  description: 'Amount of ncd discount given to the policy.'
+                  example: '0'
+                fleet:
+                  type: string
+                  description: 'Amount of fleet charge given to the policy.'
+                  example: '0'
+                loading:
+                  type: string
+                  description: 'Loadings charged on the policy.'
+                  example: '78'
+                contribution:
+                  type: string
+                  description: 'Contributions such as sticker fee charged on the policy.'
+                  example: '30'
+                commission_rate:
+                  type: string
+                  description: ''
+                  example: '7.50000'
+                netpremium:
+                  type: string
+                  description: 'Net premium on the policy.'
+                  example: '423'
+                transaction_date:
+                  type: string
+                  description: 'The date the policy was captured.'
+                  example: '2024-08-09'
+                agency:
+                  type: string
+                  description: 'The intermediary code on the policy.'
+                  example: Kor-89
+                policy_interest:
+                  type: string
+                  description: 'Any other parties that have interest in the policy. Usually known as loss payee.'
+                  example: 'Ajei Daniel'
+                account_manager:
+                  type: string
+                  description: 'The staff managing the insurer.'
+                  example: 'Agyako El'
+                vehicle_chassis_number:
+                  type: string
+                  description: 'Chassis number of the car.'
+                  example: '209234'
+                vehicle_register_date:
+                  type: string
+                  description: 'The date the vehicle was registered.'
+                  example: '2022-09-08'
+                accountType:
+                  type: string
+                  description: 'The account type of the policy holder. (Individual, Corporate, Joint, Related Parties). Mandatory only if insurer is new.'
+                  example: Individual
+                firstName:
+                  type: string
+                  description: 'First name of insurer. Mandatory only if insurer is new.'
+                  example: Korba
+                lastName:
+                  type: string
+                  description: 'Last name of the insurer. Mandatory only if insurer is new.'
+                  example: Test
+                mobileNumber:
+                  type: string
+                  description: 'Mobile number of the insurer. Format: 054XXXXXXXX or 23354XXXXXXX. Mandatory only if insurer is new.'
+                  example: '0542231010'
+                residential_address:
+                  type: string
+                  description: 'Residential address of the insurer. Mandatory only if insurer is new.'
+                  example: Labone
+                email:
+                  type: string
+                  description: 'Email of the insurer. Mandatory only if insurer is new.'
+                  example: korba@yahoo.com
+                date_of_birth:
+                  type: string
+                  description: 'Date of birth of the insurer. Mandatory only if insurer is new.'
+                  example: '1990-01-01'
+                field_of_activity:
+                  type: string
+                  description: 'Occupation of the insurer. Mandatory only if insurer is new.'
+                  example: 'Programmer Analyst'
+                id_type:
+                  type: string
+                  description: 'Identification type of the insurer. List of identification types can be found in Api reference – GET IDENTIFICATION TYPES LIST. Mandatory only if insurer is new.'
+                  example: 'National ID'
+                id_number:
+                  type: string
+                  description: 'Identification number on the identification type. Mandatory only if insurer is new.'
+                  example: GHA-192000-12
+                gender:
+                  type: string
+                  description: 'Gender of the insurer (Male, Female, Others). Mandatory only if insurer is new.'
+                  example: Male
+                sales_channel:
+                  type: string
+                  description: 'The channel through which the business was acquired.'
+                  example: Korba
+              required:
+                - customer_number
+                - fullname
+                - vehicle_registration_number
+                - policy_product
+                - policy_sales_type
+                - policy_sales_channel
+                - policy_currency
+                - policy_status
+                - transaction_type
+                - policy_branch
+                - policy_workgroup
+                - preferedcover
+                - commence_date
+                - expiry_date
+                - rating_factor
+                - vehicle_value
+                - vehicle_buy_back_excess
+                - vehicle_tppdl_value
+                - vehicle_body_type
+                - vehicle_make
+                - vehicle_model
+                - vehicle_use
+                - vehicle_make_year
+                - vehicle_cubic_capacity
+                - vehicle_seating_capacity
+                - vehicle_risk
+                - vehicle_ncd
+                - vehicle_fleet_discount
+                - vehicle_owner_name
+                - charge_type
+                - motor_documentation
+                - gross_premium
+                - vehicle_colour
+                - execessbought
+                - excess_charge_rate
+                - tpbasic
+                - owndamage
+                - ccage
+                - officepremium
+                - ncd
+                - fleet
+                - loading
+                - contribution
+                - commission_rate
+                - netpremium
+                - transaction_date
+                - agency
+                - policy_interest
+                - account_manager
+                - vehicle_chassis_number
+                - vehicle_register_date
+                - accountType
+                - firstName
+                - lastName
+                - mobileNumber
+                - residential_address
+                - email
+                - date_of_birth
+                - field_of_activity
+                - id_type
+                - id_number
+                - gender
+                - sales_channel
+  /api/policy/get-policy-phone-number:
+    post:
+      summary: 'GET POLICY DETAILS '
+      operationId: gETPOLICYDETAILS
+      description: "The endpoint searches for policies based on a given phone number and\nreturns the policies and related motor details if applicable."
+      parameters: []
+      responses:
+        200:
+          description: Successful
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "{\n\"message\" : \" policy found\",\n\"Policies\": {\n\"itemid\": \"ABC123\",\n\"account_number\": \"Xyz789\",\n\"fullname\": \"John Doe\",\n\"policy_number\": \"P123456\",\n\"master_policy_number\": \"MPN98765\",\n\"endorsement_number\": \"EN54321\",\n\"ref_number\": \"REF987\",\n\"policy_source\": \"Third Party Inc.\",\n\"policy_product\": \"Auto Insurance\",\n\"coverage\": \"Comprehensive\",\n\"policy_currency\": \"USD\",\n\"agency\": \"ABC123\",\n\"policy_branch\": \"Main Branch\",\n\"policy_status\": \"In Force\",\n\"endorsement_status\": \"Renewal\",\n\"endorsement_date\": \"2024-02-01\",\n\"insurance_period_from\": \"2024-01-01\",\n\"insurance_period_to\": \"2025-01-01\",\n\"managed_by\": \"John Doe\",\n\"created_by\": \"John Smith\",\n\"created_on\": \"2024-01-15\",\n\"policy_sales_channel\": \"Online\",\n\"policy_sales_type\": \"Direct\",\n\"first_issue_date\": \"2024-01-15\",\n\"acceptance_date\": \"2024-01-20\",\n\"policy_clause\": \"Clause A, Clause B\",\n\"policy_interest\": \"Company XYZ\",\n\"policy_upper_text\": \"This policy covers...\",\n\"policy_lower_text\": \"In case of loss, contact...\",\n\"policy_end_text\": \"Thank you for choosing our services.\",\n\"policy_renewal_text\": \"Renewal instructions:...\",\n\"policy_endorsement_text\": \"This policy has been endorsed to include additional coverage for...\",\n\"endorsement_new\": \"EN2024001\",\n\"rating_factor\": \"Pro Rata\",\n\"account_type\": \"Corporate\",\n\"insurance_period_days\": 180,\n}"
+      tags:
+        - Endpoints
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                phoneNumber:
+                  type: string
+                  description: 'The insurer’s phone number. The phone number should be in the format 0542231674'
+                  example: '0557693112'
+                itemid:
+                  type: string
+                  description: 'The vehicle registration number of the car owned by the insurer.'
+                  example: nbjhyt654esdr78uyhgfd
+              required:
+                - phoneNumber
+                - itemid
+  '/api/policy/policy-list/{account_number}':
     get:
-      summary: 'GET api/policy/policy-list/{accountno}'
-      operationId: gETApipolicypolicyListaccountno
+      summary: 'GET INSURER’S POLICY LIST'
+      operationId: gETINSURERSPOLICYLIST
       description: "The api retrieves a list of policies based on an account number and adds\nadditional motor details to each policy.\n\nThe parameter \"account_number\" is used to filter the policies based on the account\nnumber. It is passed to the function as an argument. JSON response with the count of policies and the policies themselves."
       parameters: []
       responses:
@@ -42,24 +623,16 @@ paths:
     parameters:
       -
         in: path
-        name: accountno
-        description: ''
-        example: nihil
-        required: true
-        schema:
-          type: string
-      -
-        in: path
         name: account_number
         description: ''
         example: '223241984'
         required: true
         schema:
           type: string
-  '/api/policy/motor-details-list/{regNumber}':
+  '/api/policy/motor-details-list/{vehicle_registration_number}':
     get:
-      summary: 'GET api/policy/motor-details-list/{regNumber}'
-      operationId: gETApipolicymotorDetailsListregNumber
+      summary: 'GET MOTOR DETAILS USING CAR NUMBER'
+      operationId: gETMOTORDETAILSUSINGCARNUMBER
       description: "The endpoint retrieves motor details based on a given vehicle registration number\nand returns them in JSON format."
       parameters: []
       responses:
@@ -315,37 +888,16 @@ paths:
     parameters:
       -
         in: path
-        name: regNumber
+        name: vehicle_registration_number
         description: 'string The account number assigned to an insurer.'
         example: 0
         required: true
         schema:
           type: integer
-  /api/policy/get-risk-types:
-    get:
-      summary: ''
-      operationId: getApiPolicyGetRiskTypes
-      description: ''
-      parameters: []
-      responses:
-        401:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  message: Unauthenticated.
-                properties:
-                  message:
-                    type: string
-                    example: Unauthenticated.
-      tags:
-        - Endpoints
   /api/policy/get-exchange-rate:
     get:
-      summary: ''
-      operationId: getApiPolicyGetExchangeRate
+      summary: 'GET EXCHANGE RATE'
+      operationId: gETEXCHANGERATE
       description: ''
       parameters: []
       responses:
@@ -360,8 +912,8 @@ paths:
         - Endpoints
   /api/policy/getVehicleRating:
     post:
-      summary: 'POST api/policy/getVehicleRating'
-      operationId: pOSTApipolicygetVehicleRating
+      summary: 'GET VEHICLE RATING STATUS'
+      operationId: gETVEHICLERATINGSTATUS
       description: "The endpoint takes a vehicle registration number as parameter and returns the\nrating status of the vehicle (either \"New Rating\" or \"Old Rating\") based on the registration year."
       parameters: []
       responses:
@@ -392,8 +944,8 @@ paths:
                   example: id
   /api/policy/getVehicleUse:
     post:
-      summary: ''
-      operationId: postApiPolicyGetVehicleUse
+      summary: 'GET VEHICLE USE.'
+      operationId: gETVEHICLEUSE
       description: ''
       parameters: []
       responses:
@@ -419,32 +971,34 @@ paths:
                   example: illum
               required:
                 - vehicle_risk
-  /api/policy/get-policy-phone-number:
-    post:
-      summary: 'POST api/policy/get-policy-phone-number'
-      operationId: pOSTApipolicygetPolicyPhoneNumber
-      description: "The endpoint searches for policies based on a given phone number and\nreturns the policies and related motor details if applicable."
+  /api/policy/get-risk-types:
+    get:
+      summary: 'GET VEHICLE RISK LIST.'
+      operationId: gETVEHICLERISKLIST
+      description: ''
       parameters: []
       responses:
-        200:
-          description: Successful
-          content:
-            text/plain:
-              schema:
-                type: string
-                example: "{\n\"message\" : \" policy found\",\n\"Policies\": {\n\"itemid\": \"ABC123\",\n\"account_number\": \"Xyz789\",\n\"fullname\": \"John Doe\",\n\"policy_number\": \"P123456\",\n\"master_policy_number\": \"MPN98765\",\n\"endorsement_number\": \"EN54321\",\n\"ref_number\": \"REF987\",\n\"policy_source\": \"Third Party Inc.\",\n\"policy_product\": \"Auto Insurance\",\n\"coverage\": \"Comprehensive\",\n\"policy_currency\": \"USD\",\n\"agency\": \"ABC123\",\n\"policy_branch\": \"Main Branch\",\n\"policy_status\": \"In Force\",\n\"endorsement_status\": \"Renewal\",\n\"endorsement_date\": \"2024-02-01\",\n\"insurance_period_from\": \"2024-01-01\",\n\"insurance_period_to\": \"2025-01-01\",\n\"managed_by\": \"John Doe\",\n\"created_by\": \"John Smith\",\n\"created_on\": \"2024-01-15\",\n\"policy_sales_channel\": \"Online\",\n\"policy_sales_type\": \"Direct\",\n\"first_issue_date\": \"2024-01-15\",\n\"acceptance_date\": \"2024-01-20\",\n\"policy_clause\": \"Clause A, Clause B\",\n\"policy_interest\": \"Company XYZ\",\n\"policy_upper_text\": \"This policy covers...\",\n\"policy_lower_text\": \"In case of loss, contact...\",\n\"policy_end_text\": \"Thank you for choosing our services.\",\n\"policy_renewal_text\": \"Renewal instructions:...\",\n\"policy_endorsement_text\": \"This policy has been endorsed to include additional coverage for...\",\n\"endorsement_new\": \"EN2024001\",\n\"rating_factor\": \"Pro Rata\",\n\"account_type\": \"Corporate\",\n\"insurance_period_days\": 180,\n}"
         401:
-          description: 'Failed Login'
+          description: ''
           content:
             application/json:
               schema:
                 type: object
                 example:
-                  message: 'Invalid login credentials'
+                  message: Unauthenticated.
                 properties:
                   message:
                     type: string
-                    example: 'Invalid login credentials'
+                    example: Unauthenticated.
+      tags:
+        - Endpoints
+  /api/invoices/do-payment:
+    post:
+      summary: 'ADD PAYMENT'
+      operationId: aDDPAYMENT
+      description: ''
+      parameters: []
+      responses: {  }
       tags:
         - Endpoints
       requestBody:
@@ -454,21 +1008,65 @@ paths:
             schema:
               type: object
               properties:
-                phoneNumber:
+                amountreceived:
                   type: string
-                  description: 'The insurer’s phone number. The phone number should be in the format 0542231674'
-                  example: '0557693112'
-                itemid:
+                  description: 'The converted amount being paid.'
+                  example: '40'
+                convert_amount:
                   type: string
-                  description: 'The vehicle registration number of the car owned by the insurer.'
-                  example: nbjhyt654esdr78uyhgfd
+                  description: 'The flag to identify difference in payment currency to policy currency.'
+                  example: 'false'
+                payable:
+                  type: integer
+                  description: 'The premium due.'
+                  example: aperiam
+                billid:
+                  type: integer
+                  description: 'The id of the transaction after policy creation.'
+                  example: 586994
+                invoice_number:
+                  type: string
+                  description: 'The invoice number of the debit.'
+                  example: DN/202306/01/777/777/17662
+                receipt_type:
+                  type: string
+                  description: 'The tranasaction type (Premium).'
+                  example: Premium
+                paymentmethod:
+                  type: string
+                  description: 'The medium of payment (Korba Payment).'
+                  example: 'Korba Transfer'
+                referencenumber:
+                  type: integer
+                  description: 'The phone number from which payment is made.'
+                  example: '0542231674'
+                fullname_paid:
+                  type: String
+                  description: 'The name of the person making payment.'
+                  example: 'Jonas Kankam'
+                channel:
+                  type: String
+                  description: 'The particular service medium (Korba Buy Insurance) '
+                  example: 'Korba Buy Insurance'
+                ClientReference:
+                  type: String
+                  description: 'The reference from the payment integration platform. '
+                  example: 09eUZP49ud10O9
               required:
-                - phoneNumber
-                - itemid
-  '/api/policy/verify-policy-number/{policyNumber}':
+                - amountreceived
+                - convert_amount
+                - payable
+                - billid
+                - invoice_number
+                - receipt_type
+                - paymentmethod
+                - referencenumber
+                - fullname_paid
+                - channel
+  '/api/policy/verify-policy-number/{policy_number}':
     get:
-      summary: 'GET api/policy/verify-policy-number/{policyNumber}'
-      operationId: gETApipolicyverifyPolicyNumberpolicyNumber
+      summary: 'VERIFY POLICY NUMBER.'
+      operationId: vERIFYPOLICYNUMBER
       description: "The endpoint checks if a given policy number exists in the database and\nreturns a JSON response with the status."
       parameters: []
       responses:
@@ -490,193 +1088,12 @@ paths:
     parameters:
       -
         in: path
-        name: policyNumber
-        description: ''
-        example: earum
-        required: true
-        schema:
-          type: string
-      -
-        in: path
         name: policy_number
         description: 'The policy number assigned to a policy.'
         example: 23sddgsa1984
         required: true
         schema:
           type: string
-  /api/policy/computeMotorPremiumAllRating:
-    post:
-      summary: 'POST api/policy/computeMotorPremiumAllRating'
-      operationId: pOSTApipolicycomputeMotorPremiumAllRating
-      description: "The endpoint computes the motor premium based on the rating status\nprovided in the request."
-      parameters: []
-      responses:
-        200:
-          description: '{'
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  rating_status: 'Old Rating'
-                  vehicle_risk: 'X1 Private Individual'
-                  vehicle_use: Private
-                  preferedcover: 'Third party'
-                  policy_sales_type: Direct
-                  vehicle_value: '0'
-                  vehicle_seating_capacity: '5'
-                  vehicle_tppdl_value: '6000'
-                  vehicle_ncd: None
-                  vehicle_currency: GH¢
-                  vehicle_buy_back_excess: '0'
-                  charge_cc_status: 'false'
-                  charge_age_status: 'false'
-                  vehicle_fleet_discount: 'No Fleet'
-                  commence_date: '2023-01-01'
-                  expiry_date: '2024-01-01'
-                  rating_factor: 'Full Year'
-                properties:
-                  rating_status:
-                    type: string
-                    example: 'Old Rating'
-                  vehicle_risk:
-                    type: string
-                    example: 'X1 Private Individual'
-                  vehicle_use:
-                    type: string
-                    example: Private
-                  preferedcover:
-                    type: string
-                    example: 'Third party'
-                  policy_sales_type:
-                    type: string
-                    example: Direct
-                  vehicle_value:
-                    type: string
-                    example: '0'
-                  vehicle_seating_capacity:
-                    type: string
-                    example: '5'
-                  vehicle_tppdl_value:
-                    type: string
-                    example: '6000'
-                  vehicle_ncd:
-                    type: string
-                    example: None
-                  vehicle_currency:
-                    type: string
-                    example: GH¢
-                  vehicle_buy_back_excess:
-                    type: string
-                    example: '0'
-                  charge_cc_status:
-                    type: string
-                    example: 'false'
-                  charge_age_status:
-                    type: string
-                    example: 'false'
-                  vehicle_fleet_discount:
-                    type: string
-                    example: 'No Fleet'
-                  commence_date:
-                    type: string
-                    example: '2023-01-01'
-                  expiry_date:
-                    type: string
-                    example: '2024-01-01'
-                  rating_factor:
-                    type: string
-                    example: 'Full Year'
-      tags:
-        - Endpoints
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                rating_status:
-                  type: string
-                  description: 'rating status of the vehicle (either "New Rating" or "Old Rating") based on the registration year.'
-                  example: debitis
-                vehicle_risk:
-                  type: string
-                  description: 'The vehicle registration number of the car owned by the insurer.'
-                  example: consequatur
-                vehicle_use:
-                  type: string
-                  description: 'Usage of the vehicle. For private or commercial purposes.'
-                  example: illum
-                preferedcover:
-                  type: string
-                  description: 'Coverage of the vehicle. E.g., Third party, Comprehensive, Third party, fire & theft.'
-                  example: possimus
-                policy_sales_type:
-                  type: string
-                  description: 'The intermediary source of the policy. (Agent, Direct, Broker).'
-                  example: et
-                vehicle_value:
-                  type: string
-                  description: 'Value of the vehicle. This is zero for third parties. Other coverages require the vehicle value which should be above zero.'
-                  example: nesciunt
-                vehicle_seating_capacity:
-                  type: string
-                  description: 'The number of seats the car has.'
-                  example: voluptatem
-                vehicle_tppdl_value:
-                  type: string
-                  description: 'The tppdl value of the vehicle including additional tppdl bought.'
-                  example: recusandae
-                vehicle_ncd:
-                  type: string
-                  description: 'NCD discount given to the vehicle.'
-                  example: quia
-                vehicle_currency:
-                  type: string
-                  description: 'The currency in which the policy was captured.'
-                  example: qui
-                vehicle_buy_back_excess:
-                  type: string
-                  description: 'Excess status on the vehicle (Excess Is Applicable, Excess Is Not Applicable, Voluntary Excess Applicable)'
-                  example: possimus
-                charge_cc_status:
-                  type: string
-                  description: 'Charge cc or not. True/False'
-                  example: voluptatibus
-                vehicle_fleet_discount:
-                  type: string
-                  description: 'Fleet discount given to the vehicle. (E.g., No Fleet).'
-                  example: necessitatibus
-                commence_date:
-                  type: string
-                  description: 'The start date of the policy (format YYYY- mm-dd).'
-                  example: consequatur
-                expiry_date:
-                  type: string
-                  description: 'The expiry date of the policy (format YYYY- mm-dd).'
-                  example: et
-                rating_factor:
-                  type: string
-                  description: 'The duration for which the policy is running for. (1- 8 months, Pro Rata, Full Year).'
-                  example: eaque
-              required:
-                - rating_status
-                - vehicle_risk
-                - vehicle_use
-                - preferedcover
-                - policy_sales_type
-                - vehicle_value
-                - vehicle_seating_capacity
-                - vehicle_tppdl_value
-                - vehicle_ncd
-                - vehicle_currency
-                - vehicle_buy_back_excess
-                - charge_cc_status
-                - vehicle_fleet_discount
-                - commence_date
-                - expiry_date
-                - rating_factor
   '/api/invoices/payments-list/{accountno}':
     get:
       summary: ''
