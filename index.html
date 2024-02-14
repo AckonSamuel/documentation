@@ -39,7 +39,7 @@
     </style>
 
     <script>
-        var tryItOutBaseUrl = "https://insure.imperialgeneral.com";
+        var tryItOutBaseUrl = "http://137.184.185.215";
         var useCsrf = Boolean();
         var csrfUrl = "/sanctum/csrf-cookie";
     </script>
@@ -157,7 +157,7 @@
         <div class="content">
             <h1 id="introduction">Introduction</h1>
             <aside>
-                <strong>Base URL</strong>: <code>http://137.184.185.215/</code>
+                <strong>Base URL</strong>: <code>http://137.184.185.215</code>
             </aside>
             <p>This set of APIs provides a comprehensive range of functionalities for interacting with the core system
                 for motor insurance policies:</p>
@@ -211,7 +211,7 @@
 
                 <div class="bash-example">
                     <pre><code class="language-bash">curl --request POST \
-    "https://insure.imperialgeneral.com/api/customer/create-new-customer" \
+    "http://137.184.185.215/api/customer/create-new-customer" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -235,7 +235,7 @@
 
                 <div class="javascript-example">
                     <pre><code class="language-javascript">const url = new URL(
-    "https://insure.imperialgeneral.com/api/customer/create-new-customer"
+    "http://137.184.185.215/api/customer/create-new-customer"
 );
 
 const headers = {
@@ -271,7 +271,7 @@ fetch(url, {
                     <pre><code class="language-python">import requests
 import json
 
-url = 'https://insure.imperialgeneral.com/api/customer/create-new-customer'
+url = 'http://137.184.185.215/api/customer/create-new-customer'
 payload = {
     "accountType": "Individual",
     "firstName": "Jonas",
@@ -299,7 +299,7 @@ response.json()</code></pre>
 
                 <div class="php-example">
                     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://insure.imperialgeneral.com/api/customer/create-new-customer';
+$url = 'http://137.184.185.215/api/customer/create-new-customer';
 $response = $client-&gt;post(
     $url,
     [
@@ -558,7 +558,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
                 <div class="bash-example">
                     <pre><code class="language-bash">curl --request GET \
-    --get "https://insure.imperialgeneral.com/api/customer/account-types-list" \
+    --get "http://137.184.185.215/api/customer/account-types-list" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>
@@ -567,7 +567,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
                 <div class="javascript-example">
                     <pre><code class="language-javascript">const url = new URL(
-    "https://insure.imperialgeneral.com/api/customer/account-types-list"
+    "http://137.184.185.215/api/customer/account-types-list"
 );
 
 const headers = {
@@ -587,7 +587,7 @@ fetch(url, {
                     <pre><code class="language-python">import requests
 import json
 
-url = 'https://insure.imperialgeneral.com/api/customer/account-types-list'
+url = 'http://137.184.185.215/api/customer/account-types-list'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -601,7 +601,7 @@ response.json()</code></pre>
 
                 <div class="php-example">
                     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://insure.imperialgeneral.com/api/customer/account-types-list';
+$url = 'http://137.184.185.215/api/customer/account-types-list';
 $response = $client-&gt;get(
     $url,
     [
@@ -726,7 +726,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
                 <div class="bash-example">
                     <pre><code class="language-bash">curl --request GET \
-    --get "https://insure.imperialgeneral.com/api/customer/identification-types-list" \
+    --get "http://137.184.185.215/api/customer/identification-types-list" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>
@@ -735,7 +735,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
                 <div class="javascript-example">
                     <pre><code class="language-javascript">const url = new URL(
-    "https://insure.imperialgeneral.com/api/customer/identification-types-list"
+    "http://137.184.185.215/api/customer/identification-types-list"
 );
 
 const headers = {
@@ -755,7 +755,7 @@ fetch(url, {
                     <pre><code class="language-python">import requests
 import json
 
-url = 'https://insure.imperialgeneral.com/api/customer/identification-types-list'
+url = 'http://137.184.185.215/api/customer/identification-types-list'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -769,7 +769,7 @@ response.json()</code></pre>
 
                 <div class="php-example">
                     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://insure.imperialgeneral.com/api/customer/identification-types-list';
+$url = 'http://137.184.185.215/api/customer/identification-types-list';
 $response = $client-&gt;get(
     $url,
     [
@@ -895,7 +895,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
                 <div class="bash-example">
                     <pre><code class="language-bash">curl --request POST \
-    "https://insure.imperialgeneral.com/api/policy/computeMotorPremiumAllRating" \
+    "http://137.184.185.215/api/policy/computeMotorPremiumAllRating" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -924,7 +924,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
                 <div class="javascript-example">
                     <pre><code class="language-javascript">const url = new URL(
-    "https://insure.imperialgeneral.com/api/policy/computeMotorPremiumAllRating"
+    "http://137.184.185.215/api/policy/computeMotorPremiumAllRating"
 );
 
 const headers = {
@@ -965,7 +965,7 @@ fetch(url, {
                     <pre><code class="language-python">import requests
 import json
 
-url = 'https://insure.imperialgeneral.com/api/policy/computeMotorPremiumAllRating'
+url = 'http://137.184.185.215/api/policy/computeMotorPremiumAllRating'
 payload = {
     "rating_status": "Old Rating",
     "vehicle_risk": "X1 Commercial Individual",
@@ -998,7 +998,7 @@ response.json()</code></pre>
 
                 <div class="php-example">
                     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://insure.imperialgeneral.com/api/policy/computeMotorPremiumAllRating';
+$url = 'http://137.184.185.215/api/policy/computeMotorPremiumAllRating';
 $response = $client-&gt;post(
     $url,
     [
@@ -1433,7 +1433,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
                 <div class="bash-example">
                     <pre><code class="language-bash">curl --request POST \
-    "https://insure.imperialgeneral.com/api/policy/api/policy/addMotorSchedule" \
+    "http://137.184.185.215/api/policy/api/policy/addMotorSchedule" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -1508,7 +1508,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
                 <div class="javascript-example">
                     <pre><code class="language-javascript">const url = new URL(
-    "https://insure.imperialgeneral.com/api/policy/api/policy/addMotorSchedule"
+    "http://137.184.185.215/api/policy/api/policy/addMotorSchedule"
 );
 
 const headers = {
@@ -1595,7 +1595,7 @@ fetch(url, {
                     <pre><code class="language-python">import requests
 import json
 
-url = 'https://insure.imperialgeneral.com/api/policy/api/policy/addMotorSchedule'
+url = 'http://137.184.185.215/api/policy/api/policy/addMotorSchedule'
 payload = {
     "customer_number": "Draft",
     "fullname": "Korba Test",
@@ -1674,7 +1674,7 @@ response.json()</code></pre>
 
                 <div class="php-example">
                     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://insure.imperialgeneral.com/api/policy/api/policy/addMotorSchedule';
+$url = 'http://137.184.185.215/api/policy/api/policy/addMotorSchedule';
 $response = $client-&gt;post(
     $url,
     [
@@ -2507,7 +2507,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
                 <div class="bash-example">
                     <pre><code class="language-bash">curl --request POST \
-    "https://insure.imperialgeneral.com/api/policy/get-policy-phone-number" \
+    "http://137.184.185.215/api/policy/get-policy-phone-number" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -2521,7 +2521,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
                 <div class="javascript-example">
                     <pre><code class="language-javascript">const url = new URL(
-    "https://insure.imperialgeneral.com/api/policy/get-policy-phone-number"
+    "http://137.184.185.215/api/policy/get-policy-phone-number"
 );
 
 const headers = {
@@ -2547,7 +2547,7 @@ fetch(url, {
                     <pre><code class="language-python">import requests
 import json
 
-url = 'https://insure.imperialgeneral.com/api/policy/get-policy-phone-number'
+url = 'http://137.184.185.215/api/policy/get-policy-phone-number'
 payload = {
     "phoneNumber": "0557693112",
     "itemid": "nbjhyt654esdr78uyhgfd"
@@ -2565,7 +2565,7 @@ response.json()</code></pre>
 
                 <div class="php-example">
                     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://insure.imperialgeneral.com/api/policy/get-policy-phone-number';
+$url = 'http://137.184.185.215/api/policy/get-policy-phone-number';
 $response = $client-&gt;post(
     $url,
     [
@@ -2912,7 +2912,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
                 <div class="bash-example">
                     <pre><code class="language-bash">curl --request GET \
-    --get "https://insure.imperialgeneral.com/api/policy/policy-list/223241984" \
+    --get "http://137.184.185.215/api/policy/policy-list/223241984" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>
@@ -2921,7 +2921,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
                 <div class="javascript-example">
                     <pre><code class="language-javascript">const url = new URL(
-    "https://insure.imperialgeneral.com/api/policy/policy-list/223241984"
+    "http://137.184.185.215/api/policy/policy-list/223241984"
 );
 
 const headers = {
@@ -2941,7 +2941,7 @@ fetch(url, {
                     <pre><code class="language-python">import requests
 import json
 
-url = 'https://insure.imperialgeneral.com/api/policy/policy-list/223241984'
+url = 'http://137.184.185.215/api/policy/policy-list/223241984'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -2955,7 +2955,7 @@ response.json()</code></pre>
 
                 <div class="php-example">
                     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://insure.imperialgeneral.com/api/policy/policy-list/223241984';
+$url = 'http://137.184.185.215/api/policy/policy-list/223241984';
 $response = $client-&gt;get(
     $url,
     [
@@ -3105,7 +3105,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
                 <div class="bash-example">
                     <pre><code class="language-bash">curl --request GET \
-    --get "https://insure.imperialgeneral.com/api/policy/motor-details-list/0" \
+    --get "http://137.184.185.215/api/policy/motor-details-list/0" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>
@@ -3114,7 +3114,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
                 <div class="javascript-example">
                     <pre><code class="language-javascript">const url = new URL(
-    "https://insure.imperialgeneral.com/api/policy/motor-details-list/0"
+    "http://137.184.185.215/api/policy/motor-details-list/0"
 );
 
 const headers = {
@@ -3134,7 +3134,7 @@ fetch(url, {
                     <pre><code class="language-python">import requests
 import json
 
-url = 'https://insure.imperialgeneral.com/api/policy/motor-details-list/0'
+url = 'http://137.184.185.215/api/policy/motor-details-list/0'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -3148,7 +3148,7 @@ response.json()</code></pre>
 
                 <div class="php-example">
                     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://insure.imperialgeneral.com/api/policy/motor-details-list/0';
+$url = 'http://137.184.185.215/api/policy/motor-details-list/0';
 $response = $client-&gt;get(
     $url,
     [
@@ -3657,7 +3657,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
                 <div class="bash-example">
                     <pre><code class="language-bash">curl --request GET \
-    --get "https://insure.imperialgeneral.com/api/policy/get-exchange-rate" \
+    --get "http://137.184.185.215/api/policy/get-exchange-rate" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>
@@ -3666,7 +3666,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
                 <div class="javascript-example">
                     <pre><code class="language-javascript">const url = new URL(
-    "https://insure.imperialgeneral.com/api/policy/get-exchange-rate"
+    "http://137.184.185.215/api/policy/get-exchange-rate"
 );
 
 const headers = {
@@ -3686,7 +3686,7 @@ fetch(url, {
                     <pre><code class="language-python">import requests
 import json
 
-url = 'https://insure.imperialgeneral.com/api/policy/get-exchange-rate'
+url = 'http://137.184.185.215/api/policy/get-exchange-rate'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -3700,7 +3700,7 @@ response.json()</code></pre>
 
                 <div class="php-example">
                     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://insure.imperialgeneral.com/api/policy/get-exchange-rate';
+$url = 'http://137.184.185.215/api/policy/get-exchange-rate';
 $response = $client-&gt;get(
     $url,
     [
@@ -3847,7 +3847,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
                 <div class="bash-example">
                     <pre><code class="language-bash">curl --request POST \
-    "https://insure.imperialgeneral.com/api/policy/getVehicleRating" \
+    "http://137.184.185.215/api/policy/getVehicleRating" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -3860,7 +3860,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
                 <div class="javascript-example">
                     <pre><code class="language-javascript">const url = new URL(
-    "https://insure.imperialgeneral.com/api/policy/getVehicleRating"
+    "http://137.184.185.215/api/policy/getVehicleRating"
 );
 
 const headers = {
@@ -3885,7 +3885,7 @@ fetch(url, {
                     <pre><code class="language-python">import requests
 import json
 
-url = 'https://insure.imperialgeneral.com/api/policy/getVehicleRating'
+url = 'http://137.184.185.215/api/policy/getVehicleRating'
 payload = {
     "vehicle_registration_number": "id"
 }
@@ -3902,7 +3902,7 @@ response.json()</code></pre>
 
                 <div class="php-example">
                     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://insure.imperialgeneral.com/api/policy/getVehicleRating';
+$url = 'http://137.184.185.215/api/policy/getVehicleRating';
 $response = $client-&gt;post(
     $url,
     [
@@ -4039,7 +4039,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
                 <div class="bash-example">
                     <pre><code class="language-bash">curl --request POST \
-    "https://insure.imperialgeneral.com/api/policy/getVehicleUse" \
+    "http://137.184.185.215/api/policy/getVehicleUse" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -4052,7 +4052,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
                 <div class="javascript-example">
                     <pre><code class="language-javascript">const url = new URL(
-    "https://insure.imperialgeneral.com/api/policy/getVehicleUse"
+    "http://137.184.185.215/api/policy/getVehicleUse"
 );
 
 const headers = {
@@ -4077,7 +4077,7 @@ fetch(url, {
                     <pre><code class="language-python">import requests
 import json
 
-url = 'https://insure.imperialgeneral.com/api/policy/getVehicleUse'
+url = 'http://137.184.185.215/api/policy/getVehicleUse'
 payload = {
     "vehicle_risk": "illum"
 }
@@ -4094,7 +4094,7 @@ response.json()</code></pre>
 
                 <div class="php-example">
                     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://insure.imperialgeneral.com/api/policy/getVehicleUse';
+$url = 'http://137.184.185.215/api/policy/getVehicleUse';
 $response = $client-&gt;post(
     $url,
     [
@@ -4228,7 +4228,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
                 <div class="bash-example">
                     <pre><code class="language-bash">curl --request GET \
-    --get "https://insure.imperialgeneral.com/api/policy/get-risk-types" \
+    --get "http://137.184.185.215/api/policy/get-risk-types" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>
@@ -4237,7 +4237,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
                 <div class="javascript-example">
                     <pre><code class="language-javascript">const url = new URL(
-    "https://insure.imperialgeneral.com/api/policy/get-risk-types"
+    "http://137.184.185.215/api/policy/get-risk-types"
 );
 
 const headers = {
@@ -4257,7 +4257,7 @@ fetch(url, {
                     <pre><code class="language-python">import requests
 import json
 
-url = 'https://insure.imperialgeneral.com/api/policy/get-risk-types'
+url = 'http://137.184.185.215/api/policy/get-risk-types'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -4271,7 +4271,7 @@ response.json()</code></pre>
 
                 <div class="php-example">
                     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://insure.imperialgeneral.com/api/policy/get-risk-types';
+$url = 'http://137.184.185.215/api/policy/get-risk-types';
 $response = $client-&gt;get(
     $url,
     [
@@ -4393,7 +4393,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
                 <div class="bash-example">
                     <pre><code class="language-bash">curl --request POST \
-    "https://insure.imperialgeneral.com/api/invoices/do-payment" \
+    "http://137.184.185.215/api/invoices/do-payment" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
@@ -4416,7 +4416,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
                 <div class="javascript-example">
                     <pre><code class="language-javascript">const url = new URL(
-    "https://insure.imperialgeneral.com/api/invoices/do-payment"
+    "http://137.184.185.215/api/invoices/do-payment"
 );
 
 const headers = {
@@ -4451,7 +4451,7 @@ fetch(url, {
                     <pre><code class="language-python">import requests
 import json
 
-url = 'https://insure.imperialgeneral.com/api/invoices/do-payment'
+url = 'http://137.184.185.215/api/invoices/do-payment'
 payload = {
     "amountreceived": "40",
     "convert_amount": "false",
@@ -4478,7 +4478,7 @@ response.json()</code></pre>
 
                 <div class="php-example">
                     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://insure.imperialgeneral.com/api/invoices/do-payment';
+$url = 'http://137.184.185.215/api/invoices/do-payment';
 $response = $client-&gt;post(
     $url,
     [
@@ -4697,7 +4697,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
                 <div class="bash-example">
                     <pre><code class="language-bash">curl --request GET \
-    --get "https://insure.imperialgeneral.com/api/policy/verify-policy-number/23sddgsa1984" \
+    --get "http://137.184.185.215/api/policy/verify-policy-number/23sddgsa1984" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>
@@ -4706,7 +4706,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
                 <div class="javascript-example">
                     <pre><code class="language-javascript">const url = new URL(
-    "https://insure.imperialgeneral.com/api/policy/verify-policy-number/23sddgsa1984"
+    "http://137.184.185.215/api/policy/verify-policy-number/23sddgsa1984"
 );
 
 const headers = {
@@ -4726,7 +4726,7 @@ fetch(url, {
                     <pre><code class="language-python">import requests
 import json
 
-url = 'https://insure.imperialgeneral.com/api/policy/verify-policy-number/23sddgsa1984'
+url = 'http://137.184.185.215/api/policy/verify-policy-number/23sddgsa1984'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -4740,7 +4740,7 @@ response.json()</code></pre>
 
                 <div class="php-example">
                     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://insure.imperialgeneral.com/api/policy/verify-policy-number/23sddgsa1984';
+$url = 'http://137.184.185.215/api/policy/verify-policy-number/23sddgsa1984';
 $response = $client-&gt;get(
     $url,
     [
@@ -4876,7 +4876,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
                 <div class="bash-example">
                     <pre><code class="language-bash">curl --request GET \
-    --get "https://insure.imperialgeneral.com/api/invoices/payments-list/ad" \
+    --get "http://137.184.185.215/api/invoices/payments-list/ad" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre>
@@ -4885,7 +4885,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
                 <div class="javascript-example">
                     <pre><code class="language-javascript">const url = new URL(
-    "https://insure.imperialgeneral.com/api/invoices/payments-list/ad"
+    "http://137.184.185.215/api/invoices/payments-list/ad"
 );
 
 const headers = {
@@ -4905,7 +4905,7 @@ fetch(url, {
                     <pre><code class="language-python">import requests
 import json
 
-url = 'https://insure.imperialgeneral.com/api/invoices/payments-list/ad'
+url = 'http://137.184.185.215/api/invoices/payments-list/ad'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -4919,7 +4919,7 @@ response.json()</code></pre>
 
                 <div class="php-example">
                     <pre><code class="language-php">$client = new \GuzzleHttp\Client();
-$url = 'https://insure.imperialgeneral.com/api/invoices/payments-list/ad';
+$url = 'http://137.184.185.215/api/invoices/payments-list/ad';
 $response = $client-&gt;get(
     $url,
     [
