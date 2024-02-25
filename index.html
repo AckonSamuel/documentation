@@ -125,17 +125,55 @@
                     <li class="tocify-item level-2" data-unique="endpoints-GETapi-policy-get-risk-types">
                         <a href="#endpoints-GETapi-policy-get-risk-types">GET VEHICLE RISK LIST.</a>
                     </li>
+                    <li class="tocify-item level-2" data-unique="endpoints-GETapi-invoices-payments-list--accountno-">
+                        <a href="#endpoints-GETapi-invoices-payments-list--accountno-">Payment History List</a>
+                    </li>
                     <li class="tocify-item level-2" data-unique="endpoints-POSTapi-invoices-do-payment">
                         <a href="#endpoints-POSTapi-invoices-do-payment">ADD PAYMENT</a>
                     </li>
-                    <li class="tocify-item level-2"
-                        data-unique="endpoints-GETapi-policy-verify-policy-number--policy_number-">
-                        <a href="#endpoints-GETapi-policy-verify-policy-number--policy_number-">VERIFY POLICY
-                            NUMBER.</a>
+                    <li class="tocify-item level-2" data-unique="endpoints-POSTapi-policy-getVehicleStatus">
+                        <a href="#endpoints-POSTapi-policy-getVehicleStatus">GET VEHICLE EXISTENCE STATUS</a>
                     </li>
-                    <li class="tocify-item level-2" data-unique="endpoints-GETapi-invoices-payments-list--accountno-">
-                        <a href="#endpoints-GETapi-invoices-payments-list--accountno-">GET
-                            api/invoices/payments-list/{accountno}</a>
+                    <li class="tocify-item level-2"
+                        data-unique="endpoints-GETapi-verify-seating-capacity--seating_capacity-">
+                        <a href="#endpoints-GETapi-verify-seating-capacity--seating_capacity-">GET SEATING CAPACITY</a>
+                    </li>
+                    <li class="tocify-item level-2" data-unique="endpoints-GETapi-get-value">
+                        <a href="#endpoints-GETapi-get-value">GET VALUE.</a>
+                    </li>
+                    <li class="tocify-item level-2" data-unique="endpoints-GETapi-policy-verify-start-date">
+                        <a href="#endpoints-GETapi-policy-verify-start-date">VERIFY START DATE OF COVER PERIOD</a>
+                    </li>
+                    <li class="tocify-item level-2" data-unique="endpoints-GETapi-get-expiry">
+                        <a href="#endpoints-GETapi-get-expiry">GET EXPIRY DATE</a>
+                    </li>
+                    <li class="tocify-item level-2"
+                        data-unique="endpoints-POSTapi-verify-year-@-vehicle_production_year-">
+                        <a href="#endpoints-POSTapi-verify-year-@-vehicle_production_year-">VERIFY VEHICLE PRODUCTION
+                            YEAR</a>
+                    </li>
+                    <li class="tocify-item level-2"
+                        data-unique="endpoints-GETapi-verify-cubic-capacity-@-vehicle_cubic_capacity-">
+                        <a href="#endpoints-GETapi-verify-cubic-capacity-@-vehicle_cubic_capacity-">VERIFY CUBIC
+                            CAPACITY</a>
+                    </li>
+                    <li class="tocify-item level-2" data-unique="endpoints-GETapi-verify-date">
+                        <a href="#endpoints-GETapi-verify-date">VERIFY DATE</a>
+                    </li>
+                    <li class="tocify-item level-2"
+                        data-unique="endpoints-GETapi-validate-mobile-number-@-customer_phone_number-">
+                        <a href="#endpoints-GETapi-validate-mobile-number-@-customer_phone_number-">VALIDATE MOBILE
+                            NUMBER</a>
+                    </li>
+                    <li class="tocify-item level-2" data-unique="endpoints-POSTapi-customer-search-customer-phone">
+                        <a href="#endpoints-POSTapi-customer-search-customer-phone">CUSTOMER EXISTENCE</a>
+                    </li>
+                    <li class="tocify-item level-2" data-unique="endpoints-POSTapi-policy-validate-sticker">
+                        <a href="#endpoints-POSTapi-policy-validate-sticker">Validate Sticker</a>
+                    </li>
+                    <li class="tocify-item level-2"
+                        data-unique="endpoints-POST-api-invocies-korba-phrontlyne-app-payment">
+                        <a href="#endpoints-POST-api-invocies-korba-phrontlyne-app-payment">Payment into Phrontlyne</a>
                     </li>
                 </ul>
             </ul>
@@ -188,7 +226,8 @@
                 <code>support@phrontlyne.xyz</code>
             </aside>
             <p>To authenticate requests, include an <strong><code>Authorization</code></strong> header with the value
-                <strong><code>"Bearer {YOUR_AUTH_KEY}"</code></strong>.</p>
+                <strong><code>"Bearer {YOUR_AUTH_KEY}"</code></strong>.
+            </p>
             <p>All authenticated endpoints are marked with a <code>requires authentication</code> badge in the
                 documentation below.</p>
             <p>You can retrieve your token by visiting your dashboard and clicking <b>Generate API token</b>.</p>
@@ -1153,7 +1192,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
                         data-component="body">
                     <br>
                     <p>The vehicle registration number of the car owned by the insurer. Example:
-                        <code>X1 Commercial Individual</code></p>
+                        <code>X1 Commercial Individual</code>
+                    </p>
                 </div>
                 <div style=" padding-left: 28px;  clear: unset;">
                     <b style="line-height: 2;"><code>vehicle_use</code></b>&nbsp;&nbsp;
@@ -1301,7 +1341,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
                         data-component="body">
                     <br>
                     <p>The duration for which the policy is running for. (1- 8 months, Pro Rata, Full Year). Example:
-                        <code>Pro Rate</code></p>
+                        <code>Pro Rate</code>
+                    </p>
                 </div>
             </form>
 
@@ -1931,7 +1972,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
                         data-component="body">
                     <br>
                     <p>The type of transaction for the business. (E.g., First Premium, Renewal Premium). Example:
-                        <code>First Premium</code></p>
+                        <code>First Premium</code>
+                    </p>
                 </div>
                 <div style=" padding-left: 28px;  clear: unset;">
                     <b style="line-height: 2;"><code>policy_branch</code></b>&nbsp;&nbsp;
@@ -1942,7 +1984,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
                         data-component="body">
                     <br>
                     <p>The branch the policy is coming from. Default is “Accra (Head Office)” Example:
-                        <code>Accra (Head Office)</code></p>
+                        <code>Accra (Head Office)</code>
+                    </p>
                 </div>
                 <div style=" padding-left: 28px;  clear: unset;">
                     <b style="line-height: 2;"><code>policy_workgroup</code></b>&nbsp;&nbsp;
@@ -1995,7 +2038,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
                         data-component="body">
                     <br>
                     <p>The duration for which the policy is running for. (1-8 months, Pro Rata, Full Year). Example:
-                        <code>Pro Rata</code></p>
+                        <code>Pro Rata</code>
+                    </p>
                 </div>
                 <div style=" padding-left: 28px;  clear: unset;">
                     <b style="line-height: 2;"><code>vehicle_value</code></b>&nbsp;&nbsp;
@@ -2184,7 +2228,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
                         data-endpoint="POSTapi-policy-api-policy-addMotorSchedule" value="0" data-component="body">
                     <br>
                     <p>The percentage at which excess was bought if excess is applicable on the policy. Example:
-                        <code>0</code></p>
+                        <code>0</code>
+                    </p>
                 </div>
                 <div style=" padding-left: 28px;  clear: unset;">
                     <b style="line-height: 2;"><code>tpbasic</code></b>&nbsp;&nbsp;
@@ -2305,7 +2350,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
                         data-component="body">
                     <br>
                     <p>Any other parties that have interest in the policy. Usually known as loss payee. Example:
-                        <code>Ajei Daniel</code></p>
+                        <code>Ajei Daniel</code>
+                    </p>
                 </div>
                 <div style=" padding-left: 28px;  clear: unset;">
                     <b style="line-height: 2;"><code>account_manager</code></b>&nbsp;&nbsp;
@@ -2384,7 +2430,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
                         data-endpoint="POSTapi-policy-api-policy-addMotorSchedule" value="Labone" data-component="body">
                     <br>
                     <p>Residential address of the insurer. Mandatory only if insurer is new. Example:
-                        <code>Labone</code></p>
+                        <code>Labone</code>
+                    </p>
                 </div>
                 <div style=" padding-left: 28px;  clear: unset;">
                     <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -2416,7 +2463,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
                         data-component="body">
                     <br>
                     <p>Occupation of the insurer. Mandatory only if insurer is new. Example:
-                        <code>Programmer Analyst</code></p>
+                        <code>Programmer Analyst</code>
+                    </p>
                 </div>
                 <div style=" padding-left: 28px;  clear: unset;">
                     <b style="line-height: 2;"><code>id_type</code></b>&nbsp;&nbsp;
@@ -2428,7 +2476,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
                     <br>
                     <p>Identification type of the insurer. List of identification types can be found in Api reference –
                         GET IDENTIFICATION TYPES LIST. Mandatory only if insurer is new. Example:
-                        <code>National ID</code></p>
+                        <code>National ID</code>
+                    </p>
                 </div>
                 <div style=" padding-left: 28px;  clear: unset;">
                     <b style="line-height: 2;"><code>id_number</code></b>&nbsp;&nbsp;
@@ -2439,7 +2488,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
                         data-component="body">
                     <br>
                     <p>Identification number on the identification type. Mandatory only if insurer is new. Example:
-                        <code>GHA-192000-12</code></p>
+                        <code>GHA-192000-12</code>
+                    </p>
                 </div>
                 <div style=" padding-left: 28px;  clear: unset;">
                     <b style="line-height: 2;"><code>gender</code></b>&nbsp;&nbsp;
@@ -2449,7 +2499,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
                         data-endpoint="POSTapi-policy-api-policy-addMotorSchedule" value="Male" data-component="body">
                     <br>
                     <p>Gender of the insurer (Male, Female, Others). Mandatory only if insurer is new. Example:
-                        <code>Male</code></p>
+                        <code>Male</code>
+                    </p>
                 </div>
                 <div style=" padding-left: 28px;  clear: unset;">
                     <b style="line-height: 2;"><code>sales_channel</code></b>&nbsp;&nbsp;
@@ -2715,7 +2766,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
                         data-endpoint="POSTapi-policy-get-policy-phone-number" value="0557693112" data-component="body">
                     <br>
                     <p>The insurer’s phone number. The phone number should be in the format 0542231674 Example:
-                        <code>0557693112</code></p>
+                        <code>0557693112</code>
+                    </p>
                 </div>
                 <div style=" padding-left: 28px;  clear: unset;">
                     <b style="line-height: 2;"><code>itemid</code></b>&nbsp;&nbsp;
@@ -2726,7 +2778,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
                         data-component="body">
                     <br>
                     <p>The vehicle registration number of the car owned by the insurer. Example:
-                        <code>nbjhyt654esdr78uyhgfd</code></p>
+                        <code>nbjhyt654esdr78uyhgfd</code>
+                    </p>
                 </div>
             </form>
 
@@ -4596,7 +4649,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
                         data-endpoint="POSTapi-invoices-do-payment" value="false" data-component="body">
                     <br>
                     <p>The flag to identify difference in payment currency to policy currency. Example:
-                        <code>false</code></p>
+                        <code>false</code>
+                    </p>
                 </div>
                 <div style=" padding-left: 28px;  clear: unset;">
                     <b style="line-height: 2;"><code>payable</code></b>&nbsp;&nbsp;
@@ -5062,9 +5116,2837 @@ You can check the Dev Tools console for debugging information.</code></pre>
                     <p>The account number assigned to an insurer Example: <code>ad</code></p>
                 </div>
             </form>
+            <h2 id="endpoints-POSTapi-invoices-do-payment">ADD PAYMENT</h2>
+
+            <p>
+                <small class="badge badge-darkred">requires authentication</small>
+            </p>
 
 
 
+            <span id="example-requests-POSTapi-invoices-do-payment">
+                <blockquote>Example request:</blockquote>
+
+
+                <div class="bash-example">
+                    <pre><code class="language-bash">curl --request POST \
+    "http://127.0.0.1:8000/api/invoices/do-payment" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"amountreceived\": \"40\",
+    \"convert_amount\": \"false\",
+    \"payable\": \"aperiam\",
+    \"billid\": 586994,
+    \"invoice_number\": \"DN\\/202306\\/01\\/777\\/777\\/17662\",
+    \"receipt_type\": \"Premium\",
+    \"paymentmethod\": \"Korba Transfer\",
+    \"referencenumber\": \"0542231674\",
+    \"fullname_paid\": \"Jonas Kankam\",
+    \"channel\": \"Korba Buy Insurance\",
+    \"ClientReference\": \"09eUZP49ud10O9\"
+}"
+</code></pre>
+                </div>
+
+
+                <div class="javascript-example">
+                    <pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/invoices/do-payment"
+);
+
+const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "amountreceived": "40",
+    "convert_amount": "false",
+    "payable": "aperiam",
+    "billid": 586994,
+    "invoice_number": "DN\/202306\/01\/777\/777\/17662",
+    "receipt_type": "Premium",
+    "paymentmethod": "Korba Transfer",
+    "referencenumber": "0542231674",
+    "fullname_paid": "Jonas Kankam",
+    "channel": "Korba Buy Insurance",
+    "ClientReference": "09eUZP49ud10O9"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+                </div>
+
+
+                <div class="python-example">
+                    <pre><code class="language-python">import requests
+import json
+
+url = 'http://127.0.0.1:8000/api/invoices/do-payment'
+payload = {
+    "amountreceived": "40",
+    "convert_amount": "false",
+    "payable": "aperiam",
+    "billid": 586994,
+    "invoice_number": "DN\/202306\/01\/777\/777\/17662",
+    "receipt_type": "Premium",
+    "paymentmethod": "Korba Transfer",
+    "referencenumber": "0542231674",
+    "fullname_paid": "Jonas Kankam",
+    "channel": "Korba Buy Insurance",
+    "ClientReference": "09eUZP49ud10O9"
+}
+headers = {
+  'Authorization': 'Bearer {YOUR_AUTH_KEY}',
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+
+response = requests.request('POST', url, headers=headers, json=payload)
+response.json()</code></pre>
+                </div>
+
+
+                <div class="php-example">
+                    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://127.0.0.1:8000/api/invoices/do-payment';
+$response = $client-&gt;post(
+    $url,
+    [
+        'headers' =&gt; [
+            'Authorization' =&gt; 'Bearer {YOUR_AUTH_KEY}',
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'amountreceived' =&gt; '40',
+            'convert_amount' =&gt; 'false',
+            'payable' =&gt; 'aperiam',
+            'billid' =&gt; 586994,
+            'invoice_number' =&gt; 'DN/202306/01/777/777/17662',
+            'receipt_type' =&gt; 'Premium',
+            'paymentmethod' =&gt; 'Korba Transfer',
+            'referencenumber' =&gt; '0542231674',
+            'fullname_paid' =&gt; 'Jonas Kankam',
+            'channel' =&gt; 'Korba Buy Insurance',
+            'ClientReference' =&gt; '09eUZP49ud10O9',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
+                </div>
+
+            </span>
+
+            <span id="example-responses-POSTapi-invoices-do-payment">
+            </span>
+            <span id="execution-results-POSTapi-invoices-do-payment" hidden>
+                <blockquote>Received response<span id="execution-response-status-POSTapi-invoices-do-payment"></span>:
+                </blockquote>
+                <pre class="json"><code id="execution-response-content-POSTapi-invoices-do-payment"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+            </span>
+            <span id="execution-error-POSTapi-invoices-do-payment" hidden>
+                <blockquote>Request failed with error:</blockquote>
+                <pre><code id="execution-error-message-POSTapi-invoices-do-payment">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+            </span>
+            <form id="form-POSTapi-invoices-do-payment" data-method="POST" data-path="api/invoices/do-payment"
+                data-authed="1" data-hasfiles="0" data-isarraybody="0" autocomplete="off"
+                onsubmit="event.preventDefault(); executeTryOut('POSTapi-invoices-do-payment', this);">
+                <h3>
+                    Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                        style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-tryout-POSTapi-invoices-do-payment"
+                        onclick="tryItOut('POSTapi-invoices-do-payment');">Try it out ⚡
+                    </button>
+                    <button type="button"
+                        style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-canceltryout-POSTapi-invoices-do-payment"
+                        onclick="cancelTryOut('POSTapi-invoices-do-payment');" hidden>Cancel 🛑
+                    </button>&nbsp;&nbsp;
+                    <button type="submit"
+                        style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-executetryout-POSTapi-invoices-do-payment" data-initial-text="Send Request 💥"
+                        data-loading-text="⏱ Sending..." hidden>Send Request 💥
+                    </button>
+                </h3>
+                <p>
+                    <small class="badge badge-black">POST</small>
+                    <b><code>api/invoices/do-payment</code></b>
+                </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                <div style="padding-left: 28px; clear: unset;">
+                    <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+                    &nbsp;
+                    &nbsp;
+                    <input type="text" style="display: none" name="Authorization" class="auth-value"
+                        data-endpoint="POSTapi-invoices-do-payment" value="Bearer {YOUR_AUTH_KEY}"
+                        data-component="header">
+                    <br>
+                    <p>Example: <code>Bearer {YOUR_AUTH_KEY}</code></p>
+                </div>
+                <div style="padding-left: 28px; clear: unset;">
+                    <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+                    &nbsp;
+                    &nbsp;
+                    <input type="text" style="display: none" name="Content-Type"
+                        data-endpoint="POSTapi-invoices-do-payment" value="application/json" data-component="header">
+                    <br>
+                    <p>Example: <code>application/json</code></p>
+                </div>
+                <div style="padding-left: 28px; clear: unset;">
+                    <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+                    &nbsp;
+                    &nbsp;
+                    <input type="text" style="display: none" name="Accept" data-endpoint="POSTapi-invoices-do-payment"
+                        value="application/json" data-component="header">
+                    <br>
+                    <p>Example: <code>application/json</code></p>
+                </div>
+                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+                <div style=" padding-left: 28px;  clear: unset;">
+                    <b style="line-height: 2;"><code>amountreceived</code></b>&nbsp;&nbsp;
+                    <small>string</small>&nbsp;
+                    &nbsp;
+                    <input type="text" style="display: none" name="amountreceived"
+                        data-endpoint="POSTapi-invoices-do-payment" value="40" data-component="body">
+                    <br>
+                    <p>The converted amount being paid. Example: <code>40</code></p>
+                </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+                    <b style="line-height: 2;"><code>convert_amount</code></b>&nbsp;&nbsp;
+                    <small>string</small>&nbsp;
+                    &nbsp;
+                    <input type="text" style="display: none" name="convert_amount"
+                        data-endpoint="POSTapi-invoices-do-payment" value="false" data-component="body">
+                    <br>
+                    <p>The flag to identify difference in payment currency to policy currency. Example:
+                        <code>false</code>
+                    </p>
+                </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+                    <b style="line-height: 2;"><code>payable</code></b>&nbsp;&nbsp;
+                    <small>int</small>&nbsp;
+                    &nbsp;
+                    <input type="text" style="display: none" name="payable" data-endpoint="POSTapi-invoices-do-payment"
+                        value="aperiam" data-component="body">
+                    <br>
+                    <p>The premium due. Example: <code>aperiam</code></p>
+                </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+                    <b style="line-height: 2;"><code>billid</code></b>&nbsp;&nbsp;
+                    <small>int</small>&nbsp;
+                    &nbsp;
+                    <input type="text" style="display: none" name="billid" data-endpoint="POSTapi-invoices-do-payment"
+                        value="586994" data-component="body">
+                    <br>
+                    <p>The id of the transaction after policy creation. Example: <code>586994</code></p>
+                </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+                    <b style="line-height: 2;"><code>invoice_number</code></b>&nbsp;&nbsp;
+                    <small>string</small>&nbsp;
+                    &nbsp;
+                    <input type="text" style="display: none" name="invoice_number"
+                        data-endpoint="POSTapi-invoices-do-payment" value="DN/202306/01/777/777/17662"
+                        data-component="body">
+                    <br>
+                    <p>The invoice number of the debit. Example: <code>DN/202306/01/777/777/17662</code></p>
+                </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+                    <b style="line-height: 2;"><code>receipt_type</code></b>&nbsp;&nbsp;
+                    <small>string</small>&nbsp;
+                    &nbsp;
+                    <input type="text" style="display: none" name="receipt_type"
+                        data-endpoint="POSTapi-invoices-do-payment" value="Premium" data-component="body">
+                    <br>
+                    <p>The tranasaction type (Premium). Example: <code>Premium</code></p>
+                </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+                    <b style="line-height: 2;"><code>paymentmethod</code></b>&nbsp;&nbsp;
+                    <small>string</small>&nbsp;
+                    &nbsp;
+                    <input type="text" style="display: none" name="paymentmethod"
+                        data-endpoint="POSTapi-invoices-do-payment" value="Korba Transfer" data-component="body">
+                    <br>
+                    <p>The medium of payment (Korba Payment). Example: <code>Korba Transfer</code></p>
+                </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+                    <b style="line-height: 2;"><code>referencenumber</code></b>&nbsp;&nbsp;
+                    <small>int</small>&nbsp;
+                    &nbsp;
+                    <input type="text" style="display: none" name="referencenumber"
+                        data-endpoint="POSTapi-invoices-do-payment" value="0542231674" data-component="body">
+                    <br>
+                    <p>The phone number from which payment is made. Example: <code>0542231674</code></p>
+                </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+                    <b style="line-height: 2;"><code>fullname_paid</code></b>&nbsp;&nbsp;
+                    <small>String</small>&nbsp;
+                    &nbsp;
+                    <input type="text" style="display: none" name="fullname_paid"
+                        data-endpoint="POSTapi-invoices-do-payment" value="Jonas Kankam" data-component="body">
+                    <br>
+                    <p>The name of the person making payment. Example: <code>Jonas Kankam</code></p>
+                </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+                    <b style="line-height: 2;"><code>channel</code></b>&nbsp;&nbsp;
+                    <small>String</small>&nbsp;
+                    &nbsp;
+                    <input type="text" style="display: none" name="channel" data-endpoint="POSTapi-invoices-do-payment"
+                        value="Korba Buy Insurance" data-component="body">
+                    <br>
+                    <p>The particular service medium (Korba Buy Insurance) Example: <code>Korba Buy Insurance</code></p>
+                </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+                    <b style="line-height: 2;"><code>ClientReference</code></b>&nbsp;&nbsp;
+                    <small>String</small>&nbsp;
+                    <i>optional</i> &nbsp;
+                    <input type="text" style="display: none" name="ClientReference"
+                        data-endpoint="POSTapi-invoices-do-payment" value="09eUZP49ud10O9" data-component="body">
+                    <br>
+                    <p>The reference from the payment integration platform. Example: <code>09eUZP49ud10O9</code></p>
+                </div>
+            </form>
+
+            <h3>Response</h3>
+            <h4 class="fancy-heading-panel"><b>Response Fields</b></h4>
+            <div style=" padding-left: 28px;  clear: unset;">
+                <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
+                <small>string[]</small>&nbsp;
+                &nbsp;
+                <br>
+                <p>The status message of the transaction. &quot;Payment Successful&quot; for a success, &quot;Payment
+                    Failed&quot; for a failure. &quot;Partially Paid&quot; for an outstanding after payment.</p>
+            </div>
+            <div style=" padding-left: 28px;  clear: unset;">
+                <b style="line-height: 2;"><code>ReferenceNumber</code></b>&nbsp;&nbsp;
+                <small>string[]</small>&nbsp;
+                &nbsp;
+                <br>
+                <p>The reference number tagging the particular transaction.</p>
+            </div>
+            <div style=" padding-left: 28px;  clear: unset;">
+                <b style="line-height: 2;"><code>ReceiptNumber</code></b>&nbsp;&nbsp;
+                <small>string[]</small>&nbsp;
+                &nbsp;
+                <br>
+                <p>The receipt number of the payment.</p>
+            </div>
+            <h2 id="endpoints-POSTapi-policy-getVehicleStatus">GET VEHICLE EXISTENCE STATUS</h2>
+
+            <p>
+                <small class="badge badge-darkred">requires authentication</small>
+            </p>
+
+
+
+            <span id="example-requests-POSTapi-policy-getVehicleStatus">
+                <blockquote>Example request:</blockquote>
+
+
+                <div class="bash-example">
+                    <pre><code class="language-bash">curl --request POST \
+    "http://127.0.0.1:8000/api/policy/getVehicleStatus" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"vehicle_registration_number\": \"GM 2274-14\"
+}"
+</code></pre>
+                </div>
+
+
+                <div class="javascript-example">
+                    <pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/policy/getVehicleStatus"
+);
+
+const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "vehicle_registration_number": "GM 2274-14"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+                </div>
+
+
+                <div class="python-example">
+                    <pre><code class="language-python">import requests
+import json
+
+url = 'http://127.0.0.1:8000/api/policy/getVehicleStatus'
+payload = {
+    "vehicle_registration_number": "GM 2274-14"
+}
+headers = {
+  'Authorization': 'Bearer {YOUR_AUTH_KEY}',
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+
+response = requests.request('POST', url, headers=headers, json=payload)
+response.json()</code></pre>
+                </div>
+
+
+                <div class="php-example">
+                    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://127.0.0.1:8000/api/policy/getVehicleStatus';
+$response = $client-&gt;post(
+    $url,
+    [
+        'headers' =&gt; [
+            'Authorization' =&gt; 'Bearer {YOUR_AUTH_KEY}',
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'vehicle_registration_number' =&gt; 'GM 2274-14',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
+                </div>
+
+            </span>
+
+            <span id="example-responses-POSTapi-policy-getVehicleStatus">
+                <blockquote>
+                    <p>Example response (200, Successful Login):</p>
+                </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+  &quot;status&quot;: &quot;Present&quot;,
+}</code>
+ </pre>
+            </span>
+            <span id="execution-results-POSTapi-policy-getVehicleStatus" hidden>
+                <blockquote>Received response<span
+                        id="execution-response-status-POSTapi-policy-getVehicleStatus"></span>:
+                </blockquote>
+                <pre class="json"><code id="execution-response-content-POSTapi-policy-getVehicleStatus"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+            </span>
+            <span id="execution-error-POSTapi-policy-getVehicleStatus" hidden>
+                <blockquote>Request failed with error:</blockquote>
+                <pre><code id="execution-error-message-POSTapi-policy-getVehicleStatus">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+            </span>
+            <form id="form-POSTapi-policy-getVehicleStatus" data-method="POST" data-path="api/policy/getVehicleStatus"
+                data-authed="1" data-hasfiles="0" data-isarraybody="0" autocomplete="off"
+                onsubmit="event.preventDefault(); executeTryOut('POSTapi-policy-getVehicleStatus', this);">
+                <h3>
+                    Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                        style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-tryout-POSTapi-policy-getVehicleStatus"
+                        onclick="tryItOut('POSTapi-policy-getVehicleStatus');">Try it out ⚡
+                    </button>
+                    <button type="button"
+                        style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-canceltryout-POSTapi-policy-getVehicleStatus"
+                        onclick="cancelTryOut('POSTapi-policy-getVehicleStatus');" hidden>Cancel 🛑
+                    </button>&nbsp;&nbsp;
+                    <button type="submit"
+                        style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-executetryout-POSTapi-policy-getVehicleStatus" data-initial-text="Send Request 💥"
+                        data-loading-text="⏱ Sending..." hidden>Send Request 💥
+                    </button>
+                </h3>
+                <p>
+                    <small class="badge badge-black">POST</small>
+                    <b><code>api/policy/getVehicleStatus</code></b>
+                </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                <div style="padding-left: 28px; clear: unset;">
+                    <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+                    &nbsp;
+                    &nbsp;
+                    <input type="text" style="display: none" name="Authorization" class="auth-value"
+                        data-endpoint="POSTapi-policy-getVehicleStatus" value="Bearer {YOUR_AUTH_KEY}"
+                        data-component="header">
+                    <br>
+                    <p>Example: <code>Bearer {YOUR_AUTH_KEY}</code></p>
+                </div>
+                <div style="padding-left: 28px; clear: unset;">
+                    <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+                    &nbsp;
+                    &nbsp;
+                    <input type="text" style="display: none" name="Content-Type"
+                        data-endpoint="POSTapi-policy-getVehicleStatus" value="application/json"
+                        data-component="header">
+                    <br>
+                    <p>Example: <code>application/json</code></p>
+                </div>
+                <div style="padding-left: 28px; clear: unset;">
+                    <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+                    &nbsp;
+                    &nbsp;
+                    <input type="text" style="display: none" name="Accept"
+                        data-endpoint="POSTapi-policy-getVehicleStatus" value="application/json"
+                        data-component="header">
+                    <br>
+                    <p>Example: <code>application/json</code></p>
+                </div>
+                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+                <div style=" padding-left: 28px;  clear: unset;">
+                    <b style="line-height: 2;"><code>vehicle_registration_number</code></b>&nbsp;&nbsp;
+                    <small>string</small>&nbsp;
+                    &nbsp;
+                    <input type="text" style="display: none" name="vehicle_registration_number"
+                        data-endpoint="POSTapi-policy-getVehicleStatus" value="GM 2274-14" data-component="body">
+                    <br>
+                    <p>DVLA Motor registration number Example: <code>GM 2274-14</code></p>
+                </div>
+            </form>
+
+            <h3>Response</h3>
+            <h4 class="fancy-heading-panel"><b>Response Fields</b></h4>
+            <div style=" padding-left: 28px;  clear: unset;">
+                <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
+                <small>string</small>&nbsp;
+                &nbsp;
+                <br>
+                <p>A check for the vehicle’s existence in the system.</p>
+            </div>
+            <h2 id="endpoints-GETapi-verify-seating-capacity--seating_capacity-">GET SEATING CAPACITY</h2>
+
+            <p>
+                <small class="badge badge-darkred">requires authentication</small>
+            </p>
+
+
+
+            <span id="example-requests-GETapi-verify-seating-capacity--seating_capacity-">
+                <blockquote>Example request:</blockquote>
+
+
+                <div class="bash-example">
+                    <pre><code class="language-bash">curl --request GET \
+    --get "http://127.0.0.1:8000/api/verify-seating-capacity/5" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre>
+                </div>
+
+
+                <div class="javascript-example">
+                    <pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/verify-seating-capacity/5"
+);
+
+const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+                </div>
+
+
+                <div class="python-example">
+                    <pre><code class="language-python">import requests
+import json
+
+url = 'http://127.0.0.1:8000/api/verify-seating-capacity/5'
+headers = {
+  'Authorization': 'Bearer {YOUR_AUTH_KEY}',
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+
+response = requests.request('GET', url, headers=headers)
+response.json()</code></pre>
+                </div>
+
+
+                <div class="php-example">
+                    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://127.0.0.1:8000/api/verify-seating-capacity/5';
+$response = $client-&gt;get(
+    $url,
+    [
+        'headers' =&gt; [
+            'Authorization' =&gt; 'Bearer {YOUR_AUTH_KEY}',
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
+                </div>
+
+            </span>
+
+            <span id="example-responses-GETapi-verify-seating-capacity--seating_capacity-">
+                <blockquote>
+                    <p>Example response (200, Successful Login):</p>
+                </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+  &quot;status&quot;: &quot;Present&quot;,
+  &quot;message&quot;: &quot;N/A&quot;,
+}</code>
+ </pre>
+            </span>
+            <span id="execution-results-GETapi-verify-seating-capacity--seating_capacity-" hidden>
+                <blockquote>Received response<span
+                        id="execution-response-status-GETapi-verify-seating-capacity--seating_capacity-"></span>:
+                </blockquote>
+                <pre class="json"><code id="execution-response-content-GETapi-verify-seating-capacity--seating_capacity-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+            </span>
+            <span id="execution-error-GETapi-verify-seating-capacity--seating_capacity-" hidden>
+                <blockquote>Request failed with error:</blockquote>
+                <pre><code id="execution-error-message-GETapi-verify-seating-capacity--seating_capacity-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+            </span>
+            <form id="form-GETapi-verify-seating-capacity--seating_capacity-" data-method="GET"
+                data-path="api/verify-seating-capacity/{seating_capacity}" data-authed="1" data-hasfiles="0"
+                data-isarraybody="0" autocomplete="off"
+                onsubmit="event.preventDefault(); executeTryOut('GETapi-verify-seating-capacity--seating_capacity-', this);">
+                <h3>
+                    Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                        style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-tryout-GETapi-verify-seating-capacity--seating_capacity-"
+                        onclick="tryItOut('GETapi-verify-seating-capacity--seating_capacity-');">Try it out ⚡
+                    </button>
+                    <button type="button"
+                        style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-canceltryout-GETapi-verify-seating-capacity--seating_capacity-"
+                        onclick="cancelTryOut('GETapi-verify-seating-capacity--seating_capacity-');" hidden>Cancel 🛑
+                    </button>&nbsp;&nbsp;
+                    <button type="submit"
+                        style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-executetryout-GETapi-verify-seating-capacity--seating_capacity-"
+                        data-initial-text="Send Request 💥" data-loading-text="⏱ Sending..." hidden>Send Request 💥
+                    </button>
+                </h3>
+                <p>
+                    <small class="badge badge-green">GET</small>
+                    <b><code>api/verify-seating-capacity/{seating_capacity}</code></b>
+                </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                <div style="padding-left: 28px; clear: unset;">
+                    <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+                    &nbsp;
+                    &nbsp;
+                    <input type="text" style="display: none" name="Authorization" class="auth-value"
+                        data-endpoint="GETapi-verify-seating-capacity--seating_capacity-" value="Bearer {YOUR_AUTH_KEY}"
+                        data-component="header">
+                    <br>
+                    <p>Example: <code>Bearer {YOUR_AUTH_KEY}</code></p>
+                </div>
+                <div style="padding-left: 28px; clear: unset;">
+                    <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+                    &nbsp;
+                    &nbsp;
+                    <input type="text" style="display: none" name="Content-Type"
+                        data-endpoint="GETapi-verify-seating-capacity--seating_capacity-" value="application/json"
+                        data-component="header">
+                    <br>
+                    <p>Example: <code>application/json</code></p>
+                </div>
+                <div style="padding-left: 28px; clear: unset;">
+                    <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+                    &nbsp;
+                    &nbsp;
+                    <input type="text" style="display: none" name="Accept"
+                        data-endpoint="GETapi-verify-seating-capacity--seating_capacity-" value="application/json"
+                        data-component="header">
+                    <br>
+                    <p>Example: <code>application/json</code></p>
+                </div>
+                <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                <div style="padding-left: 28px; clear: unset;">
+                    <b style="line-height: 2;"><code>seating_capacity</code></b>&nbsp;&nbsp;
+                    <small>integer</small>&nbsp;
+                    &nbsp;
+                    <input type="number" style="display: none" step="any" name="seating_capacity"
+                        data-endpoint="GETapi-verify-seating-capacity--seating_capacity-" value="5"
+                        data-component="url">
+                    <br>
+                    <p>Number of seats available on the motor Example: <code>5</code></p>
+                </div>
+            </form>
+
+            <h3>Response</h3>
+            <h4 class="fancy-heading-panel"><b>Response Fields</b></h4>
+            <div style=" padding-left: 28px;  clear: unset;">
+                <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
+                <small>string</small>&nbsp;
+                &nbsp;
+                <br>
+                <p>A check to see vehicle seating capacity.</p>
+            </div>
+            <div style=" padding-left: 28px;  clear: unset;">
+                <b style="line-height: 2;"><code>message</code></b>&nbsp;&nbsp;
+                <small>string</small>&nbsp;
+                &nbsp;
+                <br>
+                <p>N/A</p>
+            </div>
+            <h2 id="endpoints-GETapi-get-value">GET VALUE.</h2>
+
+            <p>
+                <small class="badge badge-darkred">requires authentication</small>
+            </p>
+
+
+
+            <span id="example-requests-GETapi-get-value">
+                <blockquote>Example request:</blockquote>
+
+
+                <div class="bash-example">
+                    <pre><code class="language-bash">curl --request GET \
+    --get "http://127.0.0.1:8000/api/get-value" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"type\": \"endorsement_type\",
+    \"number\": 1
+}"
+</code></pre>
+                </div>
+
+
+                <div class="javascript-example">
+                    <pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/get-value"
+);
+
+const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "type": "endorsement_type",
+    "number": 1
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+                </div>
+
+
+                <div class="python-example">
+                    <pre><code class="language-python">import requests
+import json
+
+url = 'http://127.0.0.1:8000/api/get-value'
+payload = {
+    "type": "endorsement_type",
+    "number": 1
+}
+headers = {
+  'Authorization': 'Bearer {YOUR_AUTH_KEY}',
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+
+response = requests.request('GET', url, headers=headers, json=payload)
+response.json()</code></pre>
+                </div>
+
+
+                <div class="php-example">
+                    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://127.0.0.1:8000/api/get-value';
+$response = $client-&gt;get(
+    $url,
+    [
+        'headers' =&gt; [
+            'Authorization' =&gt; 'Bearer {YOUR_AUTH_KEY}',
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'type' =&gt; 'endorsement_type',
+            'number' =&gt; 1,
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
+                </div>
+
+            </span>
+
+            <span id="example-responses-GETapi-get-value">
+                <blockquote>
+                    <p>Example response (200):</p>
+                </blockquote>
+                <details class="annotation">
+                    <summary style="cursor: pointer;">
+                        <small
+                            onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show
+                            headers</small>
+                    </summary>
+                    <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+ </code></pre>
+                </details>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;OK&quot;: &quot;OK&quot;,
+    &quot;value&quot;: &quot;pro rata&quot;
+}</code>
+ </pre>
+            </span>
+            <span id="execution-results-GETapi-get-value" hidden>
+                <blockquote>Received response<span id="execution-response-status-GETapi-get-value"></span>:
+                </blockquote>
+                <pre class="json"><code id="execution-response-content-GETapi-get-value"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+            </span>
+            <span id="execution-error-GETapi-get-value" hidden>
+                <blockquote>Request failed with error:</blockquote>
+                <pre><code id="execution-error-message-GETapi-get-value">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+            </span>
+            <form id="form-GETapi-get-value" data-method="GET" data-path="api/get-value" data-authed="1"
+                data-hasfiles="0" data-isarraybody="0" autocomplete="off"
+                onsubmit="event.preventDefault(); executeTryOut('GETapi-get-value', this);">
+                <h3>
+                    Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                        style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-tryout-GETapi-get-value" onclick="tryItOut('GETapi-get-value');">Try it out ⚡
+                    </button>
+                    <button type="button"
+                        style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-canceltryout-GETapi-get-value" onclick="cancelTryOut('GETapi-get-value');" hidden>Cancel
+                        🛑
+                    </button>&nbsp;&nbsp;
+                    <button type="submit"
+                        style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-executetryout-GETapi-get-value" data-initial-text="Send Request 💥"
+                        data-loading-text="⏱ Sending..." hidden>Send Request 💥
+                    </button>
+                </h3>
+                <p>
+                    <small class="badge badge-green">GET</small>
+                    <b><code>api/get-value</code></b>
+                </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                <div style="padding-left: 28px; clear: unset;">
+                    <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+                    &nbsp;
+                    &nbsp;
+                    <input type="text" style="display: none" name="Authorization" class="auth-value"
+                        data-endpoint="GETapi-get-value" value="Bearer {YOUR_AUTH_KEY}" data-component="header">
+                    <br>
+                    <p>Example: <code>Bearer {YOUR_AUTH_KEY}</code></p>
+                </div>
+                <div style="padding-left: 28px; clear: unset;">
+                    <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+                    &nbsp;
+                    &nbsp;
+                    <input type="text" style="display: none" name="Content-Type" data-endpoint="GETapi-get-value"
+                        value="application/json" data-component="header">
+                    <br>
+                    <p>Example: <code>application/json</code></p>
+                </div>
+                <div style="padding-left: 28px; clear: unset;">
+                    <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+                    &nbsp;
+                    &nbsp;
+                    <input type="text" style="display: none" name="Accept" data-endpoint="GETapi-get-value"
+                        value="application/json" data-component="header">
+                    <br>
+                    <p>Example: <code>application/json</code></p>
+                </div>
+                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+                <div style=" padding-left: 28px;  clear: unset;">
+                    <b style="line-height: 2;"><code>type</code></b>&nbsp;&nbsp;
+                    <small>string</small>&nbsp;
+                    &nbsp;
+                    <input type="text" style="display: none" name="type" data-endpoint="GETapi-get-value"
+                        value="endorsement_type" data-component="body">
+                    <br>
+                    <p>The option being chosen (endorsement_type, vehicle_body, cover_period, vehicle_color,
+                        gender_type, id_card_type) Example: <code>endorsement_type</code></p>
+                </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+                    <b style="line-height: 2;"><code>number</code></b>&nbsp;&nbsp;
+                    <small>integer</small>&nbsp;
+                    &nbsp;
+                    <input type="number" style="display: none" step="any" name="number" data-endpoint="GETapi-get-value"
+                        value="1" data-component="body">
+                    <br>
+                    <p>The assigned number of the option to be chosen Example: <code>1</code></p>
+                </div>
+            </form>
+
+            <h3>Response</h3>
+            <h4 class="fancy-heading-panel"><b>Response Fields</b></h4>
+            <div style=" padding-left: 28px;  clear: unset;">
+                <b style="line-height: 2;"><code>OK</code></b>&nbsp;&nbsp;
+                <small>string</small>&nbsp;
+                &nbsp;
+                <br>
+                <p>OK for success.</p>
+            </div>
+            <div style=" padding-left: 28px;  clear: unset;">
+                <b style="line-height: 2;"><code>value</code></b>&nbsp;&nbsp;
+                <small>string</small>&nbsp;
+                &nbsp;
+                <br>
+                <p>The string value of the chosen option</p>
+            </div>
+            <h2 id="endpoints-GETapi-policy-verify-start-date">VERIFY START DATE OF COVER PERIOD</h2>
+
+            <p>
+                <small class="badge badge-darkred">requires authentication</small>
+            </p>
+
+
+
+            <span id="example-requests-GETapi-policy-verify-start-date">
+                <blockquote>Example request:</blockquote>
+
+
+                <div class="bash-example">
+                    <pre><code class="language-bash">curl --request GET \
+    --get "http://127.0.0.1:8000/api/policy/verify-start-date" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"date\": \"12\\/10\\/2022\"
+}"
+</code></pre>
+                </div>
+
+
+                <div class="javascript-example">
+                    <pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/policy/verify-start-date"
+);
+
+const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "date": "12\/10\/2022"
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+                </div>
+
+
+                <div class="python-example">
+                    <pre><code class="language-python">import requests
+import json
+
+url = 'http://127.0.0.1:8000/api/policy/verify-start-date'
+payload = {
+    "date": "12\/10\/2022"
+}
+headers = {
+  'Authorization': 'Bearer {YOUR_AUTH_KEY}',
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+
+response = requests.request('GET', url, headers=headers, json=payload)
+response.json()</code></pre>
+                </div>
+
+
+                <div class="php-example">
+                    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://127.0.0.1:8000/api/policy/verify-start-date';
+$response = $client-&gt;get(
+    $url,
+    [
+        'headers' =&gt; [
+            'Authorization' =&gt; 'Bearer {YOUR_AUTH_KEY}',
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'date' =&gt; '12/10/2022',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
+                </div>
+
+            </span>
+
+            <span id="example-responses-GETapi-policy-verify-start-date">
+                <blockquote>
+                    <p>Example response (200):</p>
+                </blockquote>
+                <details class="annotation">
+                    <summary style="cursor: pointer;">
+                        <small
+                            onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show
+                            headers</small>
+                    </summary>
+                    <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+ </code></pre>
+                </details>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: &quot;Verified&quot;
+}</code>
+ </pre>
+            </span>
+            <span id="execution-results-GETapi-policy-verify-start-date" hidden>
+                <blockquote>Received response<span
+                        id="execution-response-status-GETapi-policy-verify-start-date"></span>:
+                </blockquote>
+                <pre class="json"><code id="execution-response-content-GETapi-policy-verify-start-date"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+            </span>
+            <span id="execution-error-GETapi-policy-verify-start-date" hidden>
+                <blockquote>Request failed with error:</blockquote>
+                <pre><code id="execution-error-message-GETapi-policy-verify-start-date">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+            </span>
+            <form id="form-GETapi-policy-verify-start-date" data-method="GET" data-path="api/policy/verify-start-date"
+                data-authed="1" data-hasfiles="0" data-isarraybody="0" autocomplete="off"
+                onsubmit="event.preventDefault(); executeTryOut('GETapi-policy-verify-start-date', this);">
+                <h3>
+                    Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                        style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-tryout-GETapi-policy-verify-start-date"
+                        onclick="tryItOut('GETapi-policy-verify-start-date');">Try it out ⚡
+                    </button>
+                    <button type="button"
+                        style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-canceltryout-GETapi-policy-verify-start-date"
+                        onclick="cancelTryOut('GETapi-policy-verify-start-date');" hidden>Cancel 🛑
+                    </button>&nbsp;&nbsp;
+                    <button type="submit"
+                        style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-executetryout-GETapi-policy-verify-start-date" data-initial-text="Send Request 💥"
+                        data-loading-text="⏱ Sending..." hidden>Send Request 💥
+                    </button>
+                </h3>
+                <p>
+                    <small class="badge badge-green">GET</small>
+                    <b><code>api/policy/verify-start-date</code></b>
+                </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                <div style="padding-left: 28px; clear: unset;">
+                    <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+                    &nbsp;
+                    &nbsp;
+                    <input type="text" style="display: none" name="Authorization" class="auth-value"
+                        data-endpoint="GETapi-policy-verify-start-date" value="Bearer {YOUR_AUTH_KEY}"
+                        data-component="header">
+                    <br>
+                    <p>Example: <code>Bearer {YOUR_AUTH_KEY}</code></p>
+                </div>
+                <div style="padding-left: 28px; clear: unset;">
+                    <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+                    &nbsp;
+                    &nbsp;
+                    <input type="text" style="display: none" name="Content-Type"
+                        data-endpoint="GETapi-policy-verify-start-date" value="application/json"
+                        data-component="header">
+                    <br>
+                    <p>Example: <code>application/json</code></p>
+                </div>
+                <div style="padding-left: 28px; clear: unset;">
+                    <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+                    &nbsp;
+                    &nbsp;
+                    <input type="text" style="display: none" name="Accept"
+                        data-endpoint="GETapi-policy-verify-start-date" value="application/json"
+                        data-component="header">
+                    <br>
+                    <p>Example: <code>application/json</code></p>
+                </div>
+                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+                <div style=" padding-left: 28px;  clear: unset;">
+                    <b style="line-height: 2;"><code>date</code></b>&nbsp;&nbsp;
+                    <small>string</small>&nbsp;
+                    &nbsp;
+                    <input type="text" style="display: none" name="date" data-endpoint="GETapi-policy-verify-start-date"
+                        value="12/10/2022" data-component="body">
+                    <br>
+                    <p>The start date for the when the policy takes effect. Example: <code>12/10/2022</code></p>
+                </div>
+            </form>
+
+            <h3>Response</h3>
+            <h4 class="fancy-heading-panel"><b>Response Fields</b></h4>
+            <div style=" padding-left: 28px;  clear: unset;">
+                <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
+                <small>string</small>&nbsp;
+                &nbsp;
+                <br>
+                <p>Verified date.</p>
+            </div>
+            <h2 id="endpoints-GETapi-get-expiry">GET EXPIRY DATE</h2>
+
+            <p>
+                <small class="badge badge-darkred">requires authentication</small>
+            </p>
+
+
+
+            <span id="example-requests-GETapi-get-expiry">
+                <blockquote>Example request:</blockquote>
+
+
+                <div class="bash-example">
+                    <pre><code class="language-bash">curl --request GET \
+    --get "http://127.0.0.1:8000/api/get-expiry" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"cover_period\": \"2 months\"
+}"
+</code></pre>
+                </div>
+
+
+                <div class="javascript-example">
+                    <pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/get-expiry"
+);
+
+const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "cover_period": "2 months"
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+                </div>
+
+
+                <div class="python-example">
+                    <pre><code class="language-python">import requests
+import json
+
+url = 'http://127.0.0.1:8000/api/get-expiry'
+payload = {
+    "cover_period": "2 months"
+}
+headers = {
+  'Authorization': 'Bearer {YOUR_AUTH_KEY}',
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+
+response = requests.request('GET', url, headers=headers, json=payload)
+response.json()</code></pre>
+                </div>
+
+
+                <div class="php-example">
+                    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://127.0.0.1:8000/api/get-expiry';
+$response = $client-&gt;get(
+    $url,
+    [
+        'headers' =&gt; [
+            'Authorization' =&gt; 'Bearer {YOUR_AUTH_KEY}',
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'cover_period' =&gt; '2 months',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
+                </div>
+
+            </span>
+
+            <span id="example-responses-GETapi-get-expiry">
+                <blockquote>
+                    <p>Example response (200):</p>
+                </blockquote>
+                <details class="annotation">
+                    <summary style="cursor: pointer;">
+                        <small
+                            onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show
+                            headers</small>
+                    </summary>
+                    <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+ </code></pre>
+                </details>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;OK&quot;: &quot;OK&quot;,
+    &quot;period_from&quot;: &quot;12/03/2001&quot;,
+    &quot;period_to&quot;: &quot;12/03/2030&quot;
+}</code>
+ </pre>
+            </span>
+            <span id="execution-results-GETapi-get-expiry" hidden>
+                <blockquote>Received response<span id="execution-response-status-GETapi-get-expiry"></span>:
+                </blockquote>
+                <pre class="json"><code id="execution-response-content-GETapi-get-expiry"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+            </span>
+            <span id="execution-error-GETapi-get-expiry" hidden>
+                <blockquote>Request failed with error:</blockquote>
+                <pre><code id="execution-error-message-GETapi-get-expiry">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+            </span>
+            <form id="form-GETapi-get-expiry" data-method="GET" data-path="api/get-expiry" data-authed="1"
+                data-hasfiles="0" data-isarraybody="0" autocomplete="off"
+                onsubmit="event.preventDefault(); executeTryOut('GETapi-get-expiry', this);">
+                <h3>
+                    Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                        style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-tryout-GETapi-get-expiry" onclick="tryItOut('GETapi-get-expiry');">Try it out ⚡
+                    </button>
+                    <button type="button"
+                        style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-canceltryout-GETapi-get-expiry" onclick="cancelTryOut('GETapi-get-expiry');"
+                        hidden>Cancel 🛑
+                    </button>&nbsp;&nbsp;
+                    <button type="submit"
+                        style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-executetryout-GETapi-get-expiry" data-initial-text="Send Request 💥"
+                        data-loading-text="⏱ Sending..." hidden>Send Request 💥
+                    </button>
+                </h3>
+                <p>
+                    <small class="badge badge-green">GET</small>
+                    <b><code>api/get-expiry</code></b>
+                </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                <div style="padding-left: 28px; clear: unset;">
+                    <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+                    &nbsp;
+                    &nbsp;
+                    <input type="text" style="display: none" name="Authorization" class="auth-value"
+                        data-endpoint="GETapi-get-expiry" value="Bearer {YOUR_AUTH_KEY}" data-component="header">
+                    <br>
+                    <p>Example: <code>Bearer {YOUR_AUTH_KEY}</code></p>
+                </div>
+                <div style="padding-left: 28px; clear: unset;">
+                    <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+                    &nbsp;
+                    &nbsp;
+                    <input type="text" style="display: none" name="Content-Type" data-endpoint="GETapi-get-expiry"
+                        value="application/json" data-component="header">
+                    <br>
+                    <p>Example: <code>application/json</code></p>
+                </div>
+                <div style="padding-left: 28px; clear: unset;">
+                    <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+                    &nbsp;
+                    &nbsp;
+                    <input type="text" style="display: none" name="Accept" data-endpoint="GETapi-get-expiry"
+                        value="application/json" data-component="header">
+                    <br>
+                    <p>Example: <code>application/json</code></p>
+                </div>
+                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+                <div style=" padding-left: 28px;  clear: unset;">
+                    <b style="line-height: 2;"><code>cover_period</code></b>&nbsp;&nbsp;
+                    <small>string</small>&nbsp;
+                    &nbsp;
+                    <input type="text" style="display: none" name="cover_period" data-endpoint="GETapi-get-expiry"
+                        value="2 months" data-component="body">
+                    <br>
+                    <p>The period for which the policy bought should be active Example: <code>2 months</code></p>
+                </div>
+            </form>
+
+            <h3>Response</h3>
+            <h4 class="fancy-heading-panel"><b>Response Fields</b></h4>
+            <div style=" padding-left: 28px;  clear: unset;">
+                <b style="line-height: 2;"><code>OK</code></b>&nbsp;&nbsp;
+                <small>string</small>&nbsp;
+                &nbsp;
+                <br>
+                <p>OK for success.</p>
+            </div>
+            <div style=" padding-left: 28px;  clear: unset;">
+                <b style="line-height: 2;"><code>period_from</code></b>&nbsp;&nbsp;
+                <small>string</small>&nbsp;
+                &nbsp;
+                <br>
+                <p>The start date of the policy</p>
+            </div>
+            <div style=" padding-left: 28px;  clear: unset;">
+                <b style="line-height: 2;"><code>period_to</code></b>&nbsp;&nbsp;
+                <small>string</small>&nbsp;
+                &nbsp;
+                <br>
+                <p>The expiry date of the policy</p>
+            </div>
+            <h2 id="endpoints-POSTapi-verify-year-@-vehicle_production_year-">VERIFY VEHICLE PRODUCTION YEAR</h2>
+
+            <p>
+                <small class="badge badge-darkred">requires authentication</small>
+            </p>
+
+
+
+            <span id="example-requests-POSTapi-verify-year-@-vehicle_production_year-">
+                <blockquote>Example request:</blockquote>
+
+
+                <div class="bash-example">
+                    <pre><code class="language-bash">curl --request POST \
+    "http://127.0.0.1:8000/api/verify-year/@{vehicle_production_year}" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"vehicle_production_year\": \"2022\"
+}"
+</code></pre>
+                </div>
+
+
+                <div class="javascript-example">
+                    <pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/verify-year/@{vehicle_production_year}"
+);
+
+const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "vehicle_production_year": "2022"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+                </div>
+
+
+                <div class="python-example">
+                    <pre><code class="language-python">import requests
+import json
+
+url = 'http://127.0.0.1:8000/api/verify-year/@{vehicle_production_year}'
+payload = {
+    "vehicle_production_year": "2022"
+}
+headers = {
+  'Authorization': 'Bearer {YOUR_AUTH_KEY}',
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+
+response = requests.request('POST', url, headers=headers, json=payload)
+response.json()</code></pre>
+                </div>
+
+
+                <div class="php-example">
+                    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://127.0.0.1:8000/api/verify-year/@{vehicle_production_year}';
+$response = $client-&gt;post(
+    $url,
+    [
+        'headers' =&gt; [
+            'Authorization' =&gt; 'Bearer {YOUR_AUTH_KEY}',
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'vehicle_production_year' =&gt; '2022',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
+                </div>
+
+            </span>
+
+            <span id="example-responses-POSTapi-verify-year-@-vehicle_production_year-">
+                <blockquote>
+                    <p>Example response (200):</p>
+                </blockquote>
+                <details class="annotation">
+                    <summary style="cursor: pointer;">
+                        <small
+                            onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show
+                            headers</small>
+                    </summary>
+                    <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+ </code></pre>
+                </details>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: &quot;Verified&quot;,
+    &quot;message&quot;: &quot;empty&quot;
+}</code>
+ </pre>
+            </span>
+            <span id="execution-results-POSTapi-verify-year-@-vehicle_production_year-" hidden>
+                <blockquote>Received response<span
+                        id="execution-response-status-POSTapi-verify-year-@-vehicle_production_year-"></span>:
+                </blockquote>
+                <pre class="json"><code id="execution-response-content-POSTapi-verify-year-@-vehicle_production_year-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+            </span>
+            <span id="execution-error-POSTapi-verify-year-@-vehicle_production_year-" hidden>
+                <blockquote>Request failed with error:</blockquote>
+                <pre><code id="execution-error-message-POSTapi-verify-year-@-vehicle_production_year-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+            </span>
+            <form id="form-POSTapi-verify-year-@-vehicle_production_year-" data-method="POST"
+                data-path="api/verify-year/@{vehicle_production_year}" data-authed="1" data-hasfiles="0"
+                data-isarraybody="0" autocomplete="off"
+                onsubmit="event.preventDefault(); executeTryOut('POSTapi-verify-year-@-vehicle_production_year-', this);">
+                <h3>
+                    Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                        style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-tryout-POSTapi-verify-year-@-vehicle_production_year-"
+                        onclick="tryItOut('POSTapi-verify-year-@-vehicle_production_year-');">Try it out ⚡
+                    </button>
+                    <button type="button"
+                        style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-canceltryout-POSTapi-verify-year-@-vehicle_production_year-"
+                        onclick="cancelTryOut('POSTapi-verify-year-@-vehicle_production_year-');" hidden>Cancel 🛑
+                    </button>&nbsp;&nbsp;
+                    <button type="submit"
+                        style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-executetryout-POSTapi-verify-year-@-vehicle_production_year-"
+                        data-initial-text="Send Request 💥" data-loading-text="⏱ Sending..." hidden>Send Request 💥
+                    </button>
+                </h3>
+                <p>
+                    <small class="badge badge-black">POST</small>
+                    <b><code>api/verify-year/@{vehicle_production_year}</code></b>
+                </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                <div style="padding-left: 28px; clear: unset;">
+                    <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+                    &nbsp;
+                    &nbsp;
+                    <input type="text" style="display: none" name="Authorization" class="auth-value"
+                        data-endpoint="POSTapi-verify-year-@-vehicle_production_year-" value="Bearer {YOUR_AUTH_KEY}"
+                        data-component="header">
+                    <br>
+                    <p>Example: <code>Bearer {YOUR_AUTH_KEY}</code></p>
+                </div>
+                <div style="padding-left: 28px; clear: unset;">
+                    <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+                    &nbsp;
+                    &nbsp;
+                    <input type="text" style="display: none" name="Content-Type"
+                        data-endpoint="POSTapi-verify-year-@-vehicle_production_year-" value="application/json"
+                        data-component="header">
+                    <br>
+                    <p>Example: <code>application/json</code></p>
+                </div>
+                <div style="padding-left: 28px; clear: unset;">
+                    <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+                    &nbsp;
+                    &nbsp;
+                    <input type="text" style="display: none" name="Accept"
+                        data-endpoint="POSTapi-verify-year-@-vehicle_production_year-" value="application/json"
+                        data-component="header">
+                    <br>
+                    <p>Example: <code>application/json</code></p>
+                </div>
+                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+                <div style=" padding-left: 28px;  clear: unset;">
+                    <b style="line-height: 2;"><code>vehicle_production_year</code></b>&nbsp;&nbsp;
+                    <small>string</small>&nbsp;
+                    &nbsp;
+                    <input type="text" style="display: none" name="vehicle_production_year"
+                        data-endpoint="POSTapi-verify-year-@-vehicle_production_year-" value="2022"
+                        data-component="body">
+                    <br>
+                    <p>The year in which the model of the make was made. Example: <code>2022</code></p>
+                </div>
+            </form>
+
+            <h3>Response</h3>
+            <h4 class="fancy-heading-panel"><b>Response Fields</b></h4>
+            <div style=" padding-left: 28px;  clear: unset;">
+                <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
+                <small>string</small>&nbsp;
+                &nbsp;
+                <br>
+                <p>Verified year.</p>
+            </div>
+            <div style=" padding-left: 28px;  clear: unset;">
+                <b style="line-height: 2;"><code>message</code></b>&nbsp;&nbsp;
+                <small>string</small>&nbsp;
+                &nbsp;
+                <br>
+                <p>Empty</p>
+            </div>
+            <h2 id="endpoints-GETapi-verify-cubic-capacity-@-vehicle_cubic_capacity-">VERIFY CUBIC CAPACITY</h2>
+
+            <p>
+                <small class="badge badge-darkred">requires authentication</small>
+            </p>
+
+
+
+            <span id="example-requests-GETapi-verify-cubic-capacity-@-vehicle_cubic_capacity-">
+                <blockquote>Example request:</blockquote>
+
+
+                <div class="bash-example">
+                    <pre><code class="language-bash">curl --request GET \
+    --get "http://127.0.0.1:8000/api/verify-cubic-capacity/@{vehicle_cubic_capacity}" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"vehicle_production_year\": \"2022\"
+}"
+</code></pre>
+                </div>
+
+
+                <div class="javascript-example">
+                    <pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/verify-cubic-capacity/@{vehicle_cubic_capacity}"
+);
+
+const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "vehicle_production_year": "2022"
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+                </div>
+
+
+                <div class="python-example">
+                    <pre><code class="language-python">import requests
+import json
+
+url = 'http://127.0.0.1:8000/api/verify-cubic-capacity/@{vehicle_cubic_capacity}'
+payload = {
+    "vehicle_production_year": "2022"
+}
+headers = {
+  'Authorization': 'Bearer {YOUR_AUTH_KEY}',
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+
+response = requests.request('GET', url, headers=headers, json=payload)
+response.json()</code></pre>
+                </div>
+
+
+                <div class="php-example">
+                    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://127.0.0.1:8000/api/verify-cubic-capacity/@{vehicle_cubic_capacity}';
+$response = $client-&gt;get(
+    $url,
+    [
+        'headers' =&gt; [
+            'Authorization' =&gt; 'Bearer {YOUR_AUTH_KEY}',
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'vehicle_production_year' =&gt; '2022',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
+                </div>
+
+            </span>
+
+            <span id="example-responses-GETapi-verify-cubic-capacity-@-vehicle_cubic_capacity-">
+                <blockquote>
+                    <p>Example response (200):</p>
+                </blockquote>
+                <details class="annotation">
+                    <summary style="cursor: pointer;">
+                        <small
+                            onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show
+                            headers</small>
+                    </summary>
+                    <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+ </code></pre>
+                </details>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: &quot;Verified&quot;,
+    &quot;message&quot;: &quot;empty&quot;
+}</code>
+ </pre>
+            </span>
+            <span id="execution-results-GETapi-verify-cubic-capacity-@-vehicle_cubic_capacity-" hidden>
+                <blockquote>Received response<span
+                        id="execution-response-status-GETapi-verify-cubic-capacity-@-vehicle_cubic_capacity-"></span>:
+                </blockquote>
+                <pre class="json"><code id="execution-response-content-GETapi-verify-cubic-capacity-@-vehicle_cubic_capacity-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+            </span>
+            <span id="execution-error-GETapi-verify-cubic-capacity-@-vehicle_cubic_capacity-" hidden>
+                <blockquote>Request failed with error:</blockquote>
+                <pre><code id="execution-error-message-GETapi-verify-cubic-capacity-@-vehicle_cubic_capacity-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+            </span>
+            <form id="form-GETapi-verify-cubic-capacity-@-vehicle_cubic_capacity-" data-method="GET"
+                data-path="api/verify-cubic-capacity/@{vehicle_cubic_capacity}" data-authed="1" data-hasfiles="0"
+                data-isarraybody="0" autocomplete="off"
+                onsubmit="event.preventDefault(); executeTryOut('GETapi-verify-cubic-capacity-@-vehicle_cubic_capacity-', this);">
+                <h3>
+                    Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                        style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-tryout-GETapi-verify-cubic-capacity-@-vehicle_cubic_capacity-"
+                        onclick="tryItOut('GETapi-verify-cubic-capacity-@-vehicle_cubic_capacity-');">Try it out ⚡
+                    </button>
+                    <button type="button"
+                        style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-canceltryout-GETapi-verify-cubic-capacity-@-vehicle_cubic_capacity-"
+                        onclick="cancelTryOut('GETapi-verify-cubic-capacity-@-vehicle_cubic_capacity-');" hidden>Cancel
+                        🛑
+                    </button>&nbsp;&nbsp;
+                    <button type="submit"
+                        style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-executetryout-GETapi-verify-cubic-capacity-@-vehicle_cubic_capacity-"
+                        data-initial-text="Send Request 💥" data-loading-text="⏱ Sending..." hidden>Send Request 💥
+                    </button>
+                </h3>
+                <p>
+                    <small class="badge badge-green">GET</small>
+                    <b><code>api/verify-cubic-capacity/@{vehicle_cubic_capacity}</code></b>
+                </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                <div style="padding-left: 28px; clear: unset;">
+                    <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+                    &nbsp;
+                    &nbsp;
+                    <input type="text" style="display: none" name="Authorization" class="auth-value"
+                        data-endpoint="GETapi-verify-cubic-capacity-@-vehicle_cubic_capacity-"
+                        value="Bearer {YOUR_AUTH_KEY}" data-component="header">
+                    <br>
+                    <p>Example: <code>Bearer {YOUR_AUTH_KEY}</code></p>
+                </div>
+                <div style="padding-left: 28px; clear: unset;">
+                    <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+                    &nbsp;
+                    &nbsp;
+                    <input type="text" style="display: none" name="Content-Type"
+                        data-endpoint="GETapi-verify-cubic-capacity-@-vehicle_cubic_capacity-" value="application/json"
+                        data-component="header">
+                    <br>
+                    <p>Example: <code>application/json</code></p>
+                </div>
+                <div style="padding-left: 28px; clear: unset;">
+                    <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+                    &nbsp;
+                    &nbsp;
+                    <input type="text" style="display: none" name="Accept"
+                        data-endpoint="GETapi-verify-cubic-capacity-@-vehicle_cubic_capacity-" value="application/json"
+                        data-component="header">
+                    <br>
+                    <p>Example: <code>application/json</code></p>
+                </div>
+                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+                <div style=" padding-left: 28px;  clear: unset;">
+                    <b style="line-height: 2;"><code>vehicle_production_year</code></b>&nbsp;&nbsp;
+                    <small>string</small>&nbsp;
+                    &nbsp;
+                    <input type="text" style="display: none" name="vehicle_production_year"
+                        data-endpoint="GETapi-verify-cubic-capacity-@-vehicle_cubic_capacity-" value="2022"
+                        data-component="body">
+                    <br>
+                    <p>The year in which the model of the make was made. Example: <code>2022</code></p>
+                </div>
+            </form>
+
+            <h3>Response</h3>
+            <h4 class="fancy-heading-panel"><b>Response Fields</b></h4>
+            <div style=" padding-left: 28px;  clear: unset;">
+                <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
+                <small>string</small>&nbsp;
+                &nbsp;
+                <br>
+                <p>Verified year.</p>
+            </div>
+            <div style=" padding-left: 28px;  clear: unset;">
+                <b style="line-height: 2;"><code>message</code></b>&nbsp;&nbsp;
+                <small>string</small>&nbsp;
+                &nbsp;
+                <br>
+                <p>Empty</p>
+            </div>
+            <h2 id="endpoints-GETapi-verify-date">VERIFY DATE</h2>
+
+            <p>
+                <small class="badge badge-darkred">requires authentication</small>
+            </p>
+
+
+
+            <span id="example-requests-GETapi-verify-date">
+                <blockquote>Example request:</blockquote>
+
+
+                <div class="bash-example">
+                    <pre><code class="language-bash">curl --request GET \
+    --get "http://127.0.0.1:8000/api/verify-date" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"date\": \"12\\/05\\/2023\"
+}"
+</code></pre>
+                </div>
+
+
+                <div class="javascript-example">
+                    <pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/verify-date"
+);
+
+const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "date": "12\/05\/2023"
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+                </div>
+
+
+                <div class="python-example">
+                    <pre><code class="language-python">import requests
+import json
+
+url = 'http://127.0.0.1:8000/api/verify-date'
+payload = {
+    "date": "12\/05\/2023"
+}
+headers = {
+  'Authorization': 'Bearer {YOUR_AUTH_KEY}',
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+
+response = requests.request('GET', url, headers=headers, json=payload)
+response.json()</code></pre>
+                </div>
+
+
+                <div class="php-example">
+                    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://127.0.0.1:8000/api/verify-date';
+$response = $client-&gt;get(
+    $url,
+    [
+        'headers' =&gt; [
+            'Authorization' =&gt; 'Bearer {YOUR_AUTH_KEY}',
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'date' =&gt; '12/05/2023',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
+                </div>
+
+            </span>
+
+            <span id="example-responses-GETapi-verify-date">
+                <blockquote>
+                    <p>Example response (200):</p>
+                </blockquote>
+                <details class="annotation">
+                    <summary style="cursor: pointer;">
+                        <small
+                            onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show
+                            headers</small>
+                    </summary>
+                    <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+ </code></pre>
+                </details>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: &quot;Verified&quot;
+}</code>
+ </pre>
+            </span>
+            <span id="execution-results-GETapi-verify-date" hidden>
+                <blockquote>Received response<span id="execution-response-status-GETapi-verify-date"></span>:
+                </blockquote>
+                <pre class="json"><code id="execution-response-content-GETapi-verify-date"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+            </span>
+            <span id="execution-error-GETapi-verify-date" hidden>
+                <blockquote>Request failed with error:</blockquote>
+                <pre><code id="execution-error-message-GETapi-verify-date">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+            </span>
+            <form id="form-GETapi-verify-date" data-method="GET" data-path="api/verify-date" data-authed="1"
+                data-hasfiles="0" data-isarraybody="0" autocomplete="off"
+                onsubmit="event.preventDefault(); executeTryOut('GETapi-verify-date', this);">
+                <h3>
+                    Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                        style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-tryout-GETapi-verify-date" onclick="tryItOut('GETapi-verify-date');">Try it out ⚡
+                    </button>
+                    <button type="button"
+                        style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-canceltryout-GETapi-verify-date" onclick="cancelTryOut('GETapi-verify-date');"
+                        hidden>Cancel 🛑
+                    </button>&nbsp;&nbsp;
+                    <button type="submit"
+                        style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-executetryout-GETapi-verify-date" data-initial-text="Send Request 💥"
+                        data-loading-text="⏱ Sending..." hidden>Send Request 💥
+                    </button>
+                </h3>
+                <p>
+                    <small class="badge badge-green">GET</small>
+                    <b><code>api/verify-date</code></b>
+                </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                <div style="padding-left: 28px; clear: unset;">
+                    <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+                    &nbsp;
+                    &nbsp;
+                    <input type="text" style="display: none" name="Authorization" class="auth-value"
+                        data-endpoint="GETapi-verify-date" value="Bearer {YOUR_AUTH_KEY}" data-component="header">
+                    <br>
+                    <p>Example: <code>Bearer {YOUR_AUTH_KEY}</code></p>
+                </div>
+                <div style="padding-left: 28px; clear: unset;">
+                    <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+                    &nbsp;
+                    &nbsp;
+                    <input type="text" style="display: none" name="Content-Type" data-endpoint="GETapi-verify-date"
+                        value="application/json" data-component="header">
+                    <br>
+                    <p>Example: <code>application/json</code></p>
+                </div>
+                <div style="padding-left: 28px; clear: unset;">
+                    <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+                    &nbsp;
+                    &nbsp;
+                    <input type="text" style="display: none" name="Accept" data-endpoint="GETapi-verify-date"
+                        value="application/json" data-component="header">
+                    <br>
+                    <p>Example: <code>application/json</code></p>
+                </div>
+                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+                <div style=" padding-left: 28px;  clear: unset;">
+                    <b style="line-height: 2;"><code>date</code></b>&nbsp;&nbsp;
+                    <small>string</small>&nbsp;
+                    &nbsp;
+                    <input type="text" style="display: none" name="date" data-endpoint="GETapi-verify-date"
+                        value="12/05/2023" data-component="body">
+                    <br>
+                    <p>Verified date. Example: <code>12/05/2023</code></p>
+                </div>
+            </form>
+
+            <h3>Response</h3>
+            <h4 class="fancy-heading-panel"><b>Response Fields</b></h4>
+            <div style=" padding-left: 28px;  clear: unset;">
+                <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
+                <small>string</small>&nbsp;
+                &nbsp;
+                <br>
+                <p>A check to validate birthdate.</p>
+            </div>
+            <h2 id="endpoints-GETapi-validate-mobile-number-@-customer_phone_number-">VALIDATE MOBILE NUMBER</h2>
+
+            <p>
+                <small class="badge badge-darkred">requires authentication</small>
+            </p>
+
+
+
+            <span id="example-requests-GETapi-validate-mobile-number-@-customer_phone_number-">
+                <blockquote>Example request:</blockquote>
+
+
+                <div class="bash-example">
+                    <pre><code class="language-bash">curl --request GET \
+    --get "http://127.0.0.1:8000/api/validate-mobile-number/@{customer_phone_number}" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"customer_phone_number\": \"0542231666\"
+}"
+</code></pre>
+                </div>
+
+
+                <div class="javascript-example">
+                    <pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/validate-mobile-number/@{customer_phone_number}"
+);
+
+const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "customer_phone_number": "0542231666"
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+                </div>
+
+
+                <div class="python-example">
+                    <pre><code class="language-python">import requests
+import json
+
+url = 'http://127.0.0.1:8000/api/validate-mobile-number/@{customer_phone_number}'
+payload = {
+    "customer_phone_number": "0542231666"
+}
+headers = {
+  'Authorization': 'Bearer {YOUR_AUTH_KEY}',
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+
+response = requests.request('GET', url, headers=headers, json=payload)
+response.json()</code></pre>
+                </div>
+
+
+                <div class="php-example">
+                    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://127.0.0.1:8000/api/validate-mobile-number/@{customer_phone_number}';
+$response = $client-&gt;get(
+    $url,
+    [
+        'headers' =&gt; [
+            'Authorization' =&gt; 'Bearer {YOUR_AUTH_KEY}',
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'customer_phone_number' =&gt; '0542231666',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
+                </div>
+
+            </span>
+
+            <span id="example-responses-GETapi-validate-mobile-number-@-customer_phone_number-">
+                <blockquote>
+                    <p>Example response (200):</p>
+                </blockquote>
+                <details class="annotation">
+                    <summary style="cursor: pointer;">
+                        <small
+                            onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show
+                            headers</small>
+                    </summary>
+                    <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+ </code></pre>
+                </details>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: &quot;Success&quot;
+}</code>
+ </pre>
+            </span>
+            <span id="execution-results-GETapi-validate-mobile-number-@-customer_phone_number-" hidden>
+                <blockquote>Received response<span
+                        id="execution-response-status-GETapi-validate-mobile-number-@-customer_phone_number-"></span>:
+                </blockquote>
+                <pre class="json"><code id="execution-response-content-GETapi-validate-mobile-number-@-customer_phone_number-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+            </span>
+            <span id="execution-error-GETapi-validate-mobile-number-@-customer_phone_number-" hidden>
+                <blockquote>Request failed with error:</blockquote>
+                <pre><code id="execution-error-message-GETapi-validate-mobile-number-@-customer_phone_number-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+            </span>
+            <form id="form-GETapi-validate-mobile-number-@-customer_phone_number-" data-method="GET"
+                data-path="api/validate-mobile-number/@{customer_phone_number}" data-authed="1" data-hasfiles="0"
+                data-isarraybody="0" autocomplete="off"
+                onsubmit="event.preventDefault(); executeTryOut('GETapi-validate-mobile-number-@-customer_phone_number-', this);">
+                <h3>
+                    Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                        style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-tryout-GETapi-validate-mobile-number-@-customer_phone_number-"
+                        onclick="tryItOut('GETapi-validate-mobile-number-@-customer_phone_number-');">Try it out ⚡
+                    </button>
+                    <button type="button"
+                        style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-canceltryout-GETapi-validate-mobile-number-@-customer_phone_number-"
+                        onclick="cancelTryOut('GETapi-validate-mobile-number-@-customer_phone_number-');" hidden>Cancel
+                        🛑
+                    </button>&nbsp;&nbsp;
+                    <button type="submit"
+                        style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-executetryout-GETapi-validate-mobile-number-@-customer_phone_number-"
+                        data-initial-text="Send Request 💥" data-loading-text="⏱ Sending..." hidden>Send Request 💥
+                    </button>
+                </h3>
+                <p>
+                    <small class="badge badge-green">GET</small>
+                    <b><code>api/validate-mobile-number/@{customer_phone_number}</code></b>
+                </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                <div style="padding-left: 28px; clear: unset;">
+                    <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+                    &nbsp;
+                    &nbsp;
+                    <input type="text" style="display: none" name="Authorization" class="auth-value"
+                        data-endpoint="GETapi-validate-mobile-number-@-customer_phone_number-"
+                        value="Bearer {YOUR_AUTH_KEY}" data-component="header">
+                    <br>
+                    <p>Example: <code>Bearer {YOUR_AUTH_KEY}</code></p>
+                </div>
+                <div style="padding-left: 28px; clear: unset;">
+                    <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+                    &nbsp;
+                    &nbsp;
+                    <input type="text" style="display: none" name="Content-Type"
+                        data-endpoint="GETapi-validate-mobile-number-@-customer_phone_number-" value="application/json"
+                        data-component="header">
+                    <br>
+                    <p>Example: <code>application/json</code></p>
+                </div>
+                <div style="padding-left: 28px; clear: unset;">
+                    <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+                    &nbsp;
+                    &nbsp;
+                    <input type="text" style="display: none" name="Accept"
+                        data-endpoint="GETapi-validate-mobile-number-@-customer_phone_number-" value="application/json"
+                        data-component="header">
+                    <br>
+                    <p>Example: <code>application/json</code></p>
+                </div>
+                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+                <div style=" padding-left: 28px;  clear: unset;">
+                    <b style="line-height: 2;"><code>customer_phone_number</code></b>&nbsp;&nbsp;
+                    <small>string</small>&nbsp;
+                    &nbsp;
+                    <input type="text" style="display: none" name="customer_phone_number"
+                        data-endpoint="GETapi-validate-mobile-number-@-customer_phone_number-" value="0542231666"
+                        data-component="body">
+                    <br>
+                    <p>Customers phone number Example: <code>0542231666</code></p>
+                </div>
+            </form>
+
+            <h3>Response</h3>
+            <h4 class="fancy-heading-panel"><b>Response Fields</b></h4>
+            <div style=" padding-left: 28px;  clear: unset;">
+                <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
+                <small>string</small>&nbsp;
+                &nbsp;
+                <br>
+                <p>Success shows number with 233 added</p>
+            </div>
+            <h2 id="endpoints-POSTapi-customer-search-customer-phone">CUSTOMER EXISTENCE</h2>
+
+            <p>
+                <small class="badge badge-darkred">requires authentication</small>
+            </p>
+
+
+
+            <span id="example-requests-POSTapi-customer-search-customer-phone">
+                <blockquote>Example request:</blockquote>
+
+
+                <div class="bash-example">
+                    <pre><code class="language-bash">curl --request POST \
+    "http://127.0.0.1:8000/api/customer/search-customer-phone" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"phoneNumber\": \"0542231666\",
+    \"firstName\": \"PHRONTLYNE\"
+}"
+</code></pre>
+                </div>
+
+
+                <div class="javascript-example">
+                    <pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/customer/search-customer-phone"
+);
+
+const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "phoneNumber": "0542231666",
+    "firstName": "PHRONTLYNE"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+                </div>
+
+
+                <div class="python-example">
+                    <pre><code class="language-python">import requests
+import json
+
+url = 'http://127.0.0.1:8000/api/customer/search-customer-phone'
+payload = {
+    "phoneNumber": "0542231666",
+    "firstName": "PHRONTLYNE"
+}
+headers = {
+  'Authorization': 'Bearer {YOUR_AUTH_KEY}',
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+
+response = requests.request('POST', url, headers=headers, json=payload)
+response.json()</code></pre>
+                </div>
+
+
+                <div class="php-example">
+                    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://127.0.0.1:8000/api/customer/search-customer-phone';
+$response = $client-&gt;post(
+    $url,
+    [
+        'headers' =&gt; [
+            'Authorization' =&gt; 'Bearer {YOUR_AUTH_KEY}',
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'phoneNumber' =&gt; '0542231666',
+            'firstName' =&gt; 'PHRONTLYNE',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
+                </div>
+
+            </span>
+
+            <span id="example-responses-POSTapi-customer-search-customer-phone">
+                <blockquote>
+                    <p>Example response (200):</p>
+                </blockquote>
+                <details class="annotation">
+                    <summary style="cursor: pointer;">
+                        <small
+                            onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show
+                            headers</small>
+                    </summary>
+                    <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+ </code></pre>
+                </details>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{&quot;status&quot;:&quot;Exist&quot;, &quot;customer&quot;: [...an array of customer details]}</code>
+ </pre>
+            </span>
+            <span id="execution-results-POSTapi-customer-search-customer-phone" hidden>
+                <blockquote>Received response<span
+                        id="execution-response-status-POSTapi-customer-search-customer-phone"></span>:
+                </blockquote>
+                <pre class="json"><code id="execution-response-content-POSTapi-customer-search-customer-phone"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+            </span>
+            <span id="execution-error-POSTapi-customer-search-customer-phone" hidden>
+                <blockquote>Request failed with error:</blockquote>
+                <pre><code id="execution-error-message-POSTapi-customer-search-customer-phone">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+            </span>
+            <form id="form-POSTapi-customer-search-customer-phone" data-method="POST"
+                data-path="api/customer/search-customer-phone" data-authed="1" data-hasfiles="0" data-isarraybody="0"
+                autocomplete="off"
+                onsubmit="event.preventDefault(); executeTryOut('POSTapi-customer-search-customer-phone', this);">
+                <h3>
+                    Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                        style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-tryout-POSTapi-customer-search-customer-phone"
+                        onclick="tryItOut('POSTapi-customer-search-customer-phone');">Try it out ⚡
+                    </button>
+                    <button type="button"
+                        style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-canceltryout-POSTapi-customer-search-customer-phone"
+                        onclick="cancelTryOut('POSTapi-customer-search-customer-phone');" hidden>Cancel 🛑
+                    </button>&nbsp;&nbsp;
+                    <button type="submit"
+                        style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-executetryout-POSTapi-customer-search-customer-phone"
+                        data-initial-text="Send Request 💥" data-loading-text="⏱ Sending..." hidden>Send Request 💥
+                    </button>
+                </h3>
+                <p>
+                    <small class="badge badge-black">POST</small>
+                    <b><code>api/customer/search-customer-phone</code></b>
+                </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                <div style="padding-left: 28px; clear: unset;">
+                    <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+                    &nbsp;
+                    &nbsp;
+                    <input type="text" style="display: none" name="Authorization" class="auth-value"
+                        data-endpoint="POSTapi-customer-search-customer-phone" value="Bearer {YOUR_AUTH_KEY}"
+                        data-component="header">
+                    <br>
+                    <p>Example: <code>Bearer {YOUR_AUTH_KEY}</code></p>
+                </div>
+                <div style="padding-left: 28px; clear: unset;">
+                    <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+                    &nbsp;
+                    &nbsp;
+                    <input type="text" style="display: none" name="Content-Type"
+                        data-endpoint="POSTapi-customer-search-customer-phone" value="application/json"
+                        data-component="header">
+                    <br>
+                    <p>Example: <code>application/json</code></p>
+                </div>
+                <div style="padding-left: 28px; clear: unset;">
+                    <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+                    &nbsp;
+                    &nbsp;
+                    <input type="text" style="display: none" name="Accept"
+                        data-endpoint="POSTapi-customer-search-customer-phone" value="application/json"
+                        data-component="header">
+                    <br>
+                    <p>Example: <code>application/json</code></p>
+                </div>
+                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+                <div style=" padding-left: 28px;  clear: unset;">
+                    <b style="line-height: 2;"><code>phoneNumber</code></b>&nbsp;&nbsp;
+                    <small>string</small>&nbsp;
+                    &nbsp;
+                    <input type="text" style="display: none" name="phoneNumber"
+                        data-endpoint="POSTapi-customer-search-customer-phone" value="0542231666" data-component="body">
+                    <br>
+                    <p>Customers phone number Example: <code>0542231666</code></p>
+                </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+                    <b style="line-height: 2;"><code>firstName</code></b>&nbsp;&nbsp;
+                    <small>string</small>&nbsp;
+                    &nbsp;
+                    <input type="text" style="display: none" name="firstName"
+                        data-endpoint="POSTapi-customer-search-customer-phone" value="PHRONTLYNE" data-component="body">
+                    <br>
+                    <p>First Name of Customer Example: <code>PHRONTLYNE</code></p>
+                </div>
+            </form>
+
+            <h3>Response</h3>
+            <h4 class="fancy-heading-panel"><b>Response Fields</b></h4>
+            <div style=" padding-left: 28px;  clear: unset;">
+                <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
+                <small>string</small>&nbsp;
+                &nbsp;
+                <br>
+                <p>Shows the customer status in the system in the following forms: Exist, None or Multiple</p>
+            </div>
+            <div style=" padding-left: 28px;  clear: unset;">
+                <b style="line-height: 2;"><code>customer</code></b>&nbsp;&nbsp;
+                <small>string[]</small>&nbsp;
+                &nbsp;
+                <br>
+                <p>Customer details</p>
+            </div>
+            <h2 id="endpoints-POSTapi-policy-validate-sticker">Validate Sticker</h2>
+
+            <p>
+                <small class="badge badge-darkred">requires authentication</small>
+            </p>
+
+
+
+            <span id="example-requests-POSTapi-policy-validate-sticker">
+                <blockquote>Example request:</blockquote>
+
+
+                <div class="bash-example">
+                    <pre><code class="language-bash">curl --request POST \
+    "http://127.0.0.1:8000/api/policy/validate-sticker" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"regNumber\": \"TEST 1-99\"
+}"
+</code></pre>
+                </div>
+
+
+                <div class="javascript-example">
+                    <pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/policy/validate-sticker"
+);
+
+const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "regNumber": "TEST 1-99"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+                </div>
+
+
+                <div class="python-example">
+                    <pre><code class="language-python">import requests
+import json
+
+url = 'http://127.0.0.1:8000/api/policy/validate-sticker'
+payload = {
+    "regNumber": "TEST 1-99"
+}
+headers = {
+  'Authorization': 'Bearer {YOUR_AUTH_KEY}',
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+
+response = requests.request('POST', url, headers=headers, json=payload)
+response.json()</code></pre>
+                </div>
+
+
+                <div class="php-example">
+                    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://127.0.0.1:8000/api/policy/validate-sticker';
+$response = $client-&gt;post(
+    $url,
+    [
+        'headers' =&gt; [
+            'Authorization' =&gt; 'Bearer {YOUR_AUTH_KEY}',
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'regNumber' =&gt; 'TEST 1-99',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
+                </div>
+
+            </span>
+
+            <span id="example-responses-POSTapi-policy-validate-sticker">
+                <blockquote>
+                    <p>Example response (200):</p>
+                </blockquote>
+                <details class="annotation">
+                    <summary style="cursor: pointer;">
+                        <small
+                            onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show
+                            headers</small>
+                    </summary>
+                    <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+ </code></pre>
+                </details>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;sticker_status&quot;: &quot;Success&quot;,
+    &quot;sticker_number&quot;: &quot;AS24232&quot;,
+    &quot;sticker_link&quot;: &quot;https://sticker.link&quot;
+}</code>
+ </pre>
+            </span>
+            <span id="execution-results-POSTapi-policy-validate-sticker" hidden>
+                <blockquote>Received response<span
+                        id="execution-response-status-POSTapi-policy-validate-sticker"></span>:
+                </blockquote>
+                <pre class="json"><code id="execution-response-content-POSTapi-policy-validate-sticker"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+            </span>
+            <span id="execution-error-POSTapi-policy-validate-sticker" hidden>
+                <blockquote>Request failed with error:</blockquote>
+                <pre><code id="execution-error-message-POSTapi-policy-validate-sticker">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+            </span>
+            <form id="form-POSTapi-policy-validate-sticker" data-method="POST" data-path="api/policy/validate-sticker"
+                data-authed="1" data-hasfiles="0" data-isarraybody="0" autocomplete="off"
+                onsubmit="event.preventDefault(); executeTryOut('POSTapi-policy-validate-sticker', this);">
+                <h3>
+                    Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                        style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-tryout-POSTapi-policy-validate-sticker"
+                        onclick="tryItOut('POSTapi-policy-validate-sticker');">Try it out ⚡
+                    </button>
+                    <button type="button"
+                        style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-canceltryout-POSTapi-policy-validate-sticker"
+                        onclick="cancelTryOut('POSTapi-policy-validate-sticker');" hidden>Cancel 🛑
+                    </button>&nbsp;&nbsp;
+                    <button type="submit"
+                        style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-executetryout-POSTapi-policy-validate-sticker" data-initial-text="Send Request 💥"
+                        data-loading-text="⏱ Sending..." hidden>Send Request 💥
+                    </button>
+                </h3>
+                <p>
+                    <small class="badge badge-black">POST</small>
+                    <b><code>api/policy/validate-sticker</code></b>
+                </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                <div style="padding-left: 28px; clear: unset;">
+                    <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+                    &nbsp;
+                    &nbsp;
+                    <input type="text" style="display: none" name="Authorization" class="auth-value"
+                        data-endpoint="POSTapi-policy-validate-sticker" value="Bearer {YOUR_AUTH_KEY}"
+                        data-component="header">
+                    <br>
+                    <p>Example: <code>Bearer {YOUR_AUTH_KEY}</code></p>
+                </div>
+                <div style="padding-left: 28px; clear: unset;">
+                    <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+                    &nbsp;
+                    &nbsp;
+                    <input type="text" style="display: none" name="Content-Type"
+                        data-endpoint="POSTapi-policy-validate-sticker" value="application/json"
+                        data-component="header">
+                    <br>
+                    <p>Example: <code>application/json</code></p>
+                </div>
+                <div style="padding-left: 28px; clear: unset;">
+                    <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+                    &nbsp;
+                    &nbsp;
+                    <input type="text" style="display: none" name="Accept"
+                        data-endpoint="POSTapi-policy-validate-sticker" value="application/json"
+                        data-component="header">
+                    <br>
+                    <p>Example: <code>application/json</code></p>
+                </div>
+                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+                <div style=" padding-left: 28px;  clear: unset;">
+                    <b style="line-height: 2;"><code>regNumber</code></b>&nbsp;&nbsp;
+                    <small>string</small>&nbsp;
+                    &nbsp;
+                    <input type="text" style="display: none" name="regNumber"
+                        data-endpoint="POSTapi-policy-validate-sticker" value="TEST 1-99" data-component="body">
+                    <br>
+                    <p>The vehicle registration number Example: <code>TEST 1-99</code></p>
+                </div>
+            </form>
+
+            <h3>Response</h3>
+            <h4 class="fancy-heading-panel"><b>Response Fields</b></h4>
+            <div style=" padding-left: 28px;  clear: unset;">
+                <b style="line-height: 2;"><code>sticker_status</code></b>&nbsp;&nbsp;
+                <small>string</small>&nbsp;
+                &nbsp;
+                <br>
+                <p>Shows the status of retrieving the sticker</p>
+            </div>
+            <div style=" padding-left: 28px;  clear: unset;">
+                <b style="line-height: 2;"><code>sticker_number</code></b>&nbsp;&nbsp;
+                <small>string</small>&nbsp;
+                &nbsp;
+                <br>
+                <p>Shows the sticker id number</p>
+            </div>
+            <div style=" padding-left: 28px;  clear: unset;">
+                <b style="line-height: 2;"><code>sticker_link</code></b>&nbsp;&nbsp;
+                <small>string</small>&nbsp;
+                &nbsp;
+                <br>
+                <p>Shows the link to click to obtain the sticker</p>
+            </div>
+            <h2 id="endpoints-POST-api-invocies-korba-phrontlyne-app-payment">Payment into Phrontlyne</h2>
+
+            <p>
+                <small class="badge badge-darkred">requires authentication</small>
+            </p>
+
+
+
+            <span id="example-requests-POST-api-invocies-korba-phrontlyne-app-payment">
+                <blockquote>Example request:</blockquote>
+
+
+                <div class="bash-example">
+                    <pre><code class="language-bash">curl --request POST \
+    "http://127.0.0.1:8000/api/invocies/korba-phrontlyne-app-payment" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"transaction_id\": \"TEST 25644-35\",
+    \"invoice_number\": \"IN-25644-35\",
+    \"channel\": \"Korba App\"
+}"
+</code></pre>
+                </div>
+
+
+                <div class="javascript-example">
+                    <pre><code class="language-javascript">const url = new URL(
+    "http://127.0.0.1:8000/api/invocies/korba-phrontlyne-app-payment"
+);
+
+const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "transaction_id": "TEST 25644-35",
+    "invoice_number": "IN-25644-35",
+    "channel": "Korba App"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+                </div>
+
+
+                <div class="python-example">
+                    <pre><code class="language-python">import requests
+import json
+
+url = 'http://127.0.0.1:8000//api/invocies/korba-phrontlyne-app-payment'
+payload = {
+    "transaction_id": "TEST 25644-35",
+    "invoice_number": "IN-25644-35",
+    "channel": "Korba App"
+}
+headers = {
+  'Authorization': 'Bearer {YOUR_AUTH_KEY}',
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+
+response = requests.request('POST', url, headers=headers, json=payload)
+response.json()</code></pre>
+                </div>
+
+
+                <div class="php-example">
+                    <pre><code class="language-php">$client = new \GuzzleHttp\Client();
+$url = 'http://127.0.0.1:8000/api/invocies/korba-phrontlyne-app-payment';
+$response = $client-&gt;post(
+    $url,
+    [
+        'headers' =&gt; [
+            'Authorization' =&gt; 'Bearer {YOUR_AUTH_KEY}',
+            'Content-Type' =&gt; 'application/json',
+            'Accept' =&gt; 'application/json',
+        ],
+        'json' =&gt; [
+            'transaction_id' =&gt; 'TEST 25644-35',
+            'invoice_number' =&gt; 'IN-25644-35',
+            'channel' =&gt; 'Korba App',
+        ],
+    ]
+);
+$body = $response-&gt;getBody();
+print_r(json_decode((string) $body));</code></pre>
+                </div>
+
+            </span>
+
+            <span id="example-responses-POST-api-invocies-korba-phrontlyne-app-payment">
+                <blockquote>
+                    <p>Example response (200):</p>
+                </blockquote>
+                <details class="annotation">
+                    <summary style="cursor: pointer;">
+                        <small
+                            onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show
+                            headers</small>
+                    </summary>
+                    <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+ </code></pre>
+                </details>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;status&quot;: &quot;Payment confirmed&quot;,
+    &quot;ReceiptNumber&quot;: &quot;generated_receipt_id_number&quot;,
+    &quot;receiptUrl&quot;: &quot;https://example.receipt.link&quot;
+}</code>
+ </pre>
+            </span>
+            <span id="execution-results-POST-api-invocies-korba-phrontlyne-app-payment" hidden>
+                <blockquote>Received response<span
+                        id="execution-response-status-POST-api-invocies-korba-phrontlyne-app-payment"></span>:
+                </blockquote>
+                <pre class="json"><code id="execution-response-content-POST-api-invocies-korba-phrontlyne-app-payment"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+            </span>
+            <span id="execution-error-POST-api-invocies-korba-phrontlyne-app-payment" hidden>
+                <blockquote>Request failed with error:</blockquote>
+                <pre><code id="execution-error-message-POST-api-invocies-korba-phrontlyne-app-payment">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+            </span>
+            <form id="form-POST-api-invocies-korba-phrontlyne-app-payment" data-method="POST"
+                data-path="/api/invocies/korba-phrontlyne-app-payment" data-authed="1" data-hasfiles="0"
+                data-isarraybody="0" autocomplete="off"
+                onsubmit="event.preventDefault(); executeTryOut('POST-api-invocies-korba-phrontlyne-app-payment', this);">
+                <h3>
+                    Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                        style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-tryout-POST-api-invocies-korba-phrontlyne-app-payment"
+                        onclick="tryItOut('POST-api-invocies-korba-phrontlyne-app-payment');">Try it out ⚡
+                    </button>
+                    <button type="button"
+                        style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-canceltryout-POST-api-invocies-korba-phrontlyne-app-payment"
+                        onclick="cancelTryOut('POST-api-invocies-korba-phrontlyne-app-payment');" hidden>Cancel 🛑
+                    </button>&nbsp;&nbsp;
+                    <button type="submit"
+                        style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                        id="btn-executetryout-POST-api-invocies-korba-phrontlyne-app-payment"
+                        data-initial-text="Send Request 💥" data-loading-text="⏱ Sending..." hidden>Send Request 💥
+                    </button>
+                </h3>
+                <p>
+                    <small class="badge badge-black">POST</small>
+                    <b><code>/api/invocies/korba-phrontlyne-app-payment</code></b>
+                </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                <div style="padding-left: 28px; clear: unset;">
+                    <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+                    &nbsp;
+                    &nbsp;
+                    <input type="text" style="display: none" name="Authorization" class="auth-value"
+                        data-endpoint="POST-api-invocies-korba-phrontlyne-app-payment" value="Bearer {YOUR_AUTH_KEY}"
+                        data-component="header">
+                    <br>
+                    <p>Example: <code>Bearer {YOUR_AUTH_KEY}</code></p>
+                </div>
+                <div style="padding-left: 28px; clear: unset;">
+                    <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+                    &nbsp;
+                    &nbsp;
+                    <input type="text" style="display: none" name="Content-Type"
+                        data-endpoint="POST-api-invocies-korba-phrontlyne-app-payment" value="application/json"
+                        data-component="header">
+                    <br>
+                    <p>Example: <code>application/json</code></p>
+                </div>
+                <div style="padding-left: 28px; clear: unset;">
+                    <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+                    &nbsp;
+                    &nbsp;
+                    <input type="text" style="display: none" name="Accept"
+                        data-endpoint="POST-api-invocies-korba-phrontlyne-app-payment" value="application/json"
+                        data-component="header">
+                    <br>
+                    <p>Example: <code>application/json</code></p>
+                </div>
+                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+                <div style=" padding-left: 28px;  clear: unset;">
+                    <b style="line-height: 2;"><code>transaction_id</code></b>&nbsp;&nbsp;
+                    <small>string</small>&nbsp;
+                    &nbsp;
+                    <input type="text" style="display: none" name="transaction_id"
+                        data-endpoint="POST-api-invocies-korba-phrontlyne-app-payment" value="TEST 25644-35"
+                        data-component="body">
+                    <br>
+                    <p>The transaction id for the payment. Example: <code>TEST 25644-35</code></p>
+                </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+                    <b style="line-height: 2;"><code>invoice_number</code></b>&nbsp;&nbsp;
+                    <small>string</small>&nbsp;
+                    &nbsp;
+                    <input type="text" style="display: none" name="invoice_number"
+                        data-endpoint="POST-api-invocies-korba-phrontlyne-app-payment" value="IN-25644-35"
+                        data-component="body">
+                    <br>
+                    <p>The generated invoice number after saving a policy Example: <code>IN-25644-35</code></p>
+                </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+                    <b style="line-height: 2;"><code>channel</code></b>&nbsp;&nbsp;
+                    <small>string</small>&nbsp;
+                    &nbsp;
+                    <input type="text" style="display: none" name="channel"
+                        data-endpoint="POST-api-invocies-korba-phrontlyne-app-payment" value="Korba App"
+                        data-component="body">
+                    <br>
+                    <p>The third party application that is writing into Phrontlyne. Example: <code>Korba App</code></p>
+                </div>
+            </form>
 
         </div>
         <div class="dark-box">
